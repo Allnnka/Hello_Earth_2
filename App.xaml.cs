@@ -10,7 +10,6 @@ namespace Hello_Earth_2
 		public App()
 		{
 			InitializeComponent();
-
 			MainPage = new MainPage();
 		}
 	}

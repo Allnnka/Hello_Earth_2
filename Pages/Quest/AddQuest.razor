@@ -1,0 +1,19 @@
+﻿@page "/quest/addquest"
+@using Hello_Earth_2.Data.Quest
+
+<h3>AddQuest</h3>
+<input type="text" @bind="title" />
+<input type="text" @bind="questCode"/>
+<button @onclick="SaveQuestHandler">
+    Zapisz
+</button>
+
+@code {
+    private string title = "";
+    private string questCode = "";
+
+    private async void SaveQuestHandler()
+    {
+        await QuestService.AddGameTask(title,questCode);
+    }
+}

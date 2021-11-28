@@ -1,0 +1,1237 @@
+<?xml version="1.0"?>
+<ArrayOfZadanie xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Zadanie Seria="Mapy" Kod="M1" Tytuł="Dodaj dom do miejsc oznaczonych w mapach" LiczbaPowtórzeń="1" SposóbPrezentacjiZadania="WszystkiePunktyNaJednejStronie" WarunekUkończeniaZadania="Automatyczne">
+		<LiczbaPowtórzeńUwagi />
+		<Skrypt>
+			<Krok Symbol="1" Treść="Uruchom aplikację Mapy na smartfonie" />
+			<Krok Symbol="2" Treść="Z menu bocznego wybierz Twoje miejsca" />
+			<Krok Symbol="3" Treść="Na zakładce Oznaczone powinieneś widzieć pozycję Dom. Wybierz ją" />
+			<Krok Symbol="4" Treść="Możesz wpisać swój adres (np. Grudziądzka 5, Toruń) lub ewentualnie wskazać miejsce na mapie. Użyj pierwszej możliwości" />
+			<Krok Symbol="5" Treść="Wybierz Zapisz na górze ekranu, żeby zapamiętać to ustawienie" />
+			<Krok Symbol="6" Treść="Wróć do mapy" />
+		</Skrypt>
+		<Trudności IRS="0" KW="0" KNW="0" E="0" TU="0" MPS="0" FC="1" PZ="0" RSZ="0" />
+		<Warunki/>
+	</Zadanie>
+	<Zadanie Seria="Mapy" Kod="M2a" Tytuł="Zapisanie miejsc w mapach, szkoła" LiczbaPowtórzeń="1" SposóbPrezentacjiZadania="WszystkiePunktyNaJednejStronie" WarunekUkończeniaZadania="Brak">
+		<LiczbaPowtórzeńUwagi></LiczbaPowtórzeńUwagi>
+		<Skrypt>
+			<Krok Symbol="1" Treść="Uruchom aplikację Mapy na smartfonie" />
+			<Krok Symbol="2" Treść="W prawym górnym rogu jest ikonka przełączająca tryb pokazywania mapy (teren lub zdjęcia satelitarne). Zmień na zdjęcie satelitarne" />
+			<Krok Symbol="3" Treść="Wpisz nazwę lub adres szkoły" />
+			<Krok Symbol="4" Treść="Powiększ obraz aż rozpoznasz budynek na zdjęciu" />
+			<Krok Symbol="5" Treść="Dotknij czerwoną pinezkę (pojawia się po wyszukaniu miejsca). Przejdziesz do widoku ze zdjęciem" />
+			<Krok Symbol="6" Treść="Wybierz ikonę Zapisz. Wybierz listę Ulubione" />
+			<Krok Symbol="7" Treść="Następnie wybierz Wyznacz trasę i wybierz opcję przejścia pieszo" />
+			<Krok Symbol="a" Treść="Czy droga proponowana przez mapę jest drogą, którą chodzisz do szkoły?" />
+			<Krok Symbol="b" Treść="Czy zgadza się czas dotarcia do celu?" />
+		</Skrypt>
+		<Trudności IRS="0" KW="0" KNW="0" E="0" TU="0" MPS="0" FC="1" PZ="0" RSZ="0" />
+		<Warunki>
+			<Warunek>Task M1 Done</Warunek>
+		</Warunki>
+	</Zadanie>
+	<Zadanie Seria="Mapy" Kod="M2b" Tytuł="Zapisanie miejsc w mapach, kino" LiczbaPowtórzeń="1" SposóbPrezentacjiZadania="WszystkiePunktyNaJednejStronie" WarunekUkończeniaZadania="Brak">
+		<LiczbaPowtórzeńUwagi></LiczbaPowtórzeńUwagi>
+		<Skrypt>
+			<Krok Symbol="1" Treść="Uruchom aplikację Mapy na smartfonie" />
+			<Krok Symbol="3" Treść="Wpisz nazwę lub adres kina" />
+			<Krok Symbol="4" Treść="Powiększ obraz aż rozpoznasz budynek na zdjęciu" />
+			<Krok Symbol="5" Treść="Dotknij czerwoną pinezkę (pojawia się po wyszukaniu miejsca). Przejdziesz do widoku ze zdjęciem" />
+			<Krok Symbol="6" Treść="Wybierz ikonę Zapisz. Wybierz listę Ulubione" />
+		</Skrypt>
+		<Trudności IRS="0" KW="0" KNW="0" E="0" TU="0" MPS="0" FC="1" PZ="0" RSZ="0" />
+		<Warunki>
+			<Warunek>Task M2a Done</Warunek>
+		</Warunki>
+	</Zadanie>
+	<Zadanie Seria="Mapy" Kod="M2c" Tytuł="Zapisanie miejsc w mapach" LiczbaPowtórzeń="1" SposóbPrezentacjiZadania="WszystkiePunktyNaJednejStronie" WarunekUkończeniaZadania="Brak">
+		<LiczbaPowtórzeńUwagi></LiczbaPowtórzeńUwagi>
+		<Skrypt>
+			<Krok Symbol="1" Treść="Uruchom aplikację Mapy na smartfonie" />
+			<Krok Symbol="3" Treść="Wpisz adres zamieszkania dziadków: [Insert Person Grandparent street] [Insert Person Grandparent Nr]" />
+			<Krok Symbol="4" Treść="Powiększ obraz aż rozpoznasz budynek na zdjęciu" />
+			<Krok Symbol="5" Treść="Dotknij czerwoną pinezkę (pojawia się po wyszukaniu miejsca). Przejdziesz do widoku ze zdjęciem" />
+			<Krok Symbol="6" Treść="Wybierz ikonę Zapisz. Wybierz listę Ulubione" />
+		</Skrypt>
+		<Trudności IRS="0" KW="0" KNW="0" E="0" TU="0" MPS="0" FC="1" PZ="0" RSZ="0" />
+		<Warunki>
+			<Warunek>Task M2b Done</Warunek>
+			<Warunek>Person Grandparent Exists</Warunek>
+		</Warunki>
+	</Zadanie>
+	<Zadanie Seria="Mapy" Kod="M2d" Tytuł="Zapisanie miejsc w mapach" LiczbaPowtórzeń="1" SposóbPrezentacjiZadania="WszystkiePunktyNaJednejStronie" WarunekUkończeniaZadania="Brak">
+		<LiczbaPowtórzeńUwagi></LiczbaPowtórzeńUwagi>
+		<Skrypt>
+			<Krok Symbol="1" Treść="Uruchom aplikację Mapy na smartfonie" />
+			<Krok Symbol="3" Treść="Wpisz adres zamieszkania wujków: [Insert Person AuntUncle street] [Insert Person AuntUncle Nr]" />
+			<Krok Symbol="4" Treść="Powiększ obraz aż rozpoznasz budynek na zdjęciu" />
+			<Krok Symbol="5" Treść="Dotknij czerwoną pinezkę (pojawia się po wyszukaniu miejsca). Przejdziesz do widoku ze zdjęciem" />
+			<Krok Symbol="6" Treść="Wybierz ikonę Zapisz. Wybierz listę Ulubione" />
+		</Skrypt>
+		<Trudności IRS="0" KW="0" KNW="0" E="0" TU="0" MPS="0" FC="1" PZ="0" RSZ="0" />
+		<Warunki>
+			<Warunek>Task M2b Done</Warunek>
+			<Warunek>Person AuntUncle Exists</Warunek>
+		</Warunki>
+	</Zadanie>
+	<Zadanie Seria="Mapy" Kod="M3" Tytuł="Wyznaczanie pieszej trasy do domu" LiczbaPowtórzeń="1" SposóbPrezentacjiZadania="WszystkiePunktyNaJednejStronie" WarunekUkończeniaZadania="Brak">
+		<LiczbaPowtórzeńUwagi />
+		<Skrypt>
+			<Krok Symbol="1" Treść="[Location distanceFrom Home > 1000] Twoim zadaniem będzie wyznaczenie najkrótszej pieszej trasy do domu" />
+			<Krok Symbol="2" Treść="Uruchom aplikację Mapy na smartfonie" />
+			<Krok Symbol="3" Treść="Wejdź do menu bocznego, wybierz Twoje miejsca, na zakładce Oznaczone wybierz Dom" />
+			<Krok Symbol="4" Treść="Wybierz przycisk Wyznacz trasę na dole ekranu" />
+			<Krok Symbol="5" Treść="Zmień opcję na wędrówkę pieszą" />
+			<Krok Symbol="6" Treść="Wybierz Rozpocznij i poprowadź wszystkich do domu" />
+			<Krok Symbol="7" Treść="Alternatywne trasy oznaczone są szarym kolorem (można je cały czas wybrać)" />
+		</Skrypt>
+		<Trudności IRS="0" KW="1" KNW="0" E="0" TU="0" MPS="0" FC="2" PZ="0" RSZ="0" />
+		<DodatkowePunkty>
+			<DodatkowyPunkt NazwaTrudności="FC" LiczbaPunktów="1" Opis="p do FC – gdy nie wymagał żadnej pomocy" />
+		</DodatkowePunkty>
+		<Warunki>
+			<Warunek>Task M2b Done</Warunek>
+		</Warunki>
+	</Zadanie>
+	<Zadanie Seria="Mapy" Kod="M4" Tytuł="Wyznaczanie trasy do dowolnego miejsca i korzystanie ze wskazówek dojścia" LiczbaPowtórzeń="2" SposóbPrezentacjiZadania="WszystkiePunktyNaJednejStronie" WarunekUkończeniaZadania="Brak">
+		<LiczbaPowtórzeńUwagi>(różne miejsca)</LiczbaPowtórzeńUwagi>
+		<Skrypt>
+			<Krok Symbol="1" Treść="[Time at Saturday 9:00] Czeka Cię mała wyprawa do [Insert Place miejsce_spaceru description]" />
+			<Krok Symbol="2" Treść="Wyznacz najkrótszą pieszą trasę do [Insert Place miejsce_spaceru description]. Za dotarcie tam dostaniesz nagrodę (czas nie ma znaczenia, ale musisz to zrobić dziś)" />
+			<Krok Symbol="3" Treść="Uruchom aplikację Mapy na smartfonie" />
+			<Krok Symbol="4" Treść="W pasku szukania na górze ekranu wpisz nazwę lub adres miejsca: [Insert Place miejsce_spaceru description], [Insert Place miejsce_spaceru street] [Insert Place miejsce_spaceru nr]" />
+			<Krok Symbol="5" Treść="Wybierz Wyznacz trasę" />
+			<Krok Symbol="6" Treść="Przejdź w tryb wędrówki pieszej" />
+			<Krok Symbol="7" Treść="Wybierz Rozpocznij" />
+			<Krok Symbol="8" Treść="Przekaż opiekunom ile zajmie Ci dotarcie na miejsce i powrót" />
+			<Krok Symbol="9" Treść="[Location at miejsce_spaceru](Jeżeli jest gorąco, zabierz wodę) Dojdź na miejsce" />
+			<!-- <Krok Symbol="10" Treść="[Wykrycie automatyczne dotarcia do celu: tam nagroda, ale bez rozpakowania]" /> -->
+			<Krok Symbol="11" Treść="Brawo! Teraz musisz wrócić do domu. Wyznacz trasę powrotną" />
+		</Skrypt>
+		<Trudności IRS="0" KW="0" KNW="0" E="0" TU="0" MPS="0" FC="3" PZ="0" RSZ="4" />
+		<DodatkowePunkty>
+			<DodatkowyPunkt NazwaTrudności="FC" LiczbaPunktów="1" Opis="p do FC – gdy nie wymagał żadnej pomocy (tj. nie dzwonił)" />
+		</DodatkowePunkty>
+		<Warunki>
+			<Warunek>Task M3 Done</Warunek>
+		</Warunki>
+	</Zadanie>
+	<Zadanie Seria="Kalendarz" Kod="K1" Tytuł="Dodaj widżetu Miesiąc do ekranu" LiczbaPowtórzeń="1" SposóbPrezentacjiZadania="WszystkiePunktyNaJednejStronie" WarunekUkończeniaZadania="Automatyczne">
+		<LiczbaPowtórzeńUwagi />
+		<Skrypt>
+			<Krok Symbol="1" Treść="[Time at 17:00] Rozpoczynamy naukę korzystania z kalendarza w Twoim smartfonie" />
+			<Krok Symbol="2" Treść="Przytrzymaj dłużej ekran w pustym miejscu, żeby przejść do edycji zawartości ekranów (szybciej gestem szczypania)" />
+			<Krok Symbol="3" Treść="Na dole ekranu przejdź do Widżety" />
+			<Krok Symbol="4" Treść="Wybierz grupę Kalendarz i wybierz widżet Miesiąc" />
+			<Krok Symbol="5" Treść="Wybieraj przycisk Wstecz aż wrócisz do normalnego trybu pracy. Na ekranie będzie kalendarz" />
+		</Skrypt>
+		<Trudności IRS="0" KW="0" KNW="0" E="0" TU="0" MPS="0" FC="1" PZ="0" RSZ="0" />
+	</Zadanie>
+	<Zadanie Seria="Kalendarz" Kod="K2" Tytuł="Dodaj datę Twoich urodzin" LiczbaPowtórzeń="1" SposóbPrezentacjiZadania="WszystkiePunktyNaJednejStronie" WarunekUkończeniaZadania="Brak">
+		<LiczbaPowtórzeńUwagi />
+		<Skrypt>
+			<Krok Symbol="1" Treść="Dodaj datę swoich urodzin do kalendarza" />
+			<Krok Symbol="2" Treść="Na widżecie Miesiąc zmieniaj miesiące aż przejdziesz do miesiąca twoich urodzin" />
+			<Krok Symbol="3" Treść="Wybierz obszar dnia twoich urodzin" />
+			<Krok Symbol="4" Treść="Uruchomi się aplikacja Kalendarz z datami z tego okresu" />
+			<Krok Symbol="5" Treść="Wybierz czerwone kółko z plusem w prawym dolnym rogu" />
+			<Krok Symbol="6" Treść="Wybierz pozycję Wydarzenie" />
+			<Krok Symbol="7" Treść="Jako tytuł wpisz Moje urodziny" />
+			<Krok Symbol="8" Treść="Zaznacz opcję Cały dzień" />
+			<Krok Symbol="9" Treść="Wybierz Zapisz w prawym górnym rogu ekranu" />
+		</Skrypt>
+		<Trudności IRS="0" KW="0" KNW="0" E="0" TU="0" MPS="0" FC="2" PZ="0" RSZ="0" />
+		<Warunki>
+			<Warunek>Task K1 Done</Warunek>
+		</Warunki>
+	</Zadanie>
+	<Zadanie Seria="Kalendarz" Kod="K3" Tytuł="Dodaj daty urodzin/imienin wszystkich członków rodziny" LiczbaPowtórzeń="1" SposóbPrezentacjiZadania="WszystkiePunktyNaJednejStronie" WarunekUkończeniaZadania="Brak">
+		<LiczbaPowtórzeńUwagi />
+		<Skrypt>
+			<Krok Symbol="1" Treść="Wpisz wydarzenia urodzin i imienin: [Insert listFamily]" />
+		</Skrypt>
+		<Trudności IRS="0" KW="0" KNW="0" E="0" TU="0" MPS="0" FC="2" PZ="0" RSZ="0" />
+		<Warunki>
+			<Warunek>Task K2 Done</Warunek>
+		</Warunki>
+	</Zadanie>
+	<Zadanie Seria="Kalendarz" Kod="K4" Tytuł="Zapisz wydarzenie o konkretnej godzinie" LiczbaPowtórzeń="1" SposóbPrezentacjiZadania="WszystkiePunktyNaJednejStronie" WarunekUkończeniaZadania="Brak">
+		<LiczbaPowtórzeńUwagi />
+		<Skrypt>
+			<Krok Symbol="1" Treść="W widżecie miesiąc wybierz obszar bieżącego dnia (oznaczony niebieskim kółkiem)" />
+			<Krok Symbol="2" Treść="Wpisz tytuł Test" />
+			<Krok Symbol="3" Treść="Nie ustawiaj opcji Cały dzień, a za to poniżej sprawdź datę i zmień godzinę rozpoczęcia na godzinę i pięć minut od teraz" />
+			<Krok Symbol="4" Treść="Pozostałe opcje na razie zostaw bez zmian" />
+			<Krok Symbol="5" Treść="Wybierz Zapisz w prawym górnym rogu ekranu" />
+			<Krok Symbol="6" Treść="Wróć do pulpitu" />
+			<Krok Symbol="7" Treść="Uwaga! To nie alarm, ani przypomnienie – nie będzie żadnej akcji" />
+		</Skrypt>
+		<Trudności IRS="0" KW="0" KNW="0" E="0" TU="0" MPS="0" FC="2" PZ="0" RSZ="0" />
+		<Warunki>
+			<Warunek>Task K3 Done</Warunek>
+		</Warunki>
+	</Zadanie>
+	<Zadanie Seria="Kalendarz" Kod="K5" Tytuł="Edycja wydarzenia i dodanie przypomnienia" LiczbaPowtórzeń="1" SposóbPrezentacjiZadania="WszystkiePunktyNaJednejStronie" WarunekUkończeniaZadania="Brak">
+		<LiczbaPowtórzeńUwagi />
+		<Skrypt>
+			<Krok Symbol="1" Treść="W widżecie miesiąc wybierz obszar bieżącego dnia z widocznym wydarzeniem" />
+			<Krok Symbol="2" Treść="Wybierz wydarzenie o nazwie Test, które przed chwilą wpisałeś" />
+			<Krok Symbol="3" Treść="Wybierz ikonę edycji (kółko z rysunkiem ołówka)" />
+			<Krok Symbol="4" Treść="Zmień godzinę rozpoczęcia na godzinę i piętnaście minut od teraz" />
+			<Krok Symbol="5" Treść="Przejdź do sekcji Dodaj powiadomienie i wybierz ją" />
+			<Krok Symbol="6" Treść="Ustaw przypomnienie na 5 minut wcześniej i zaznacz Jako powiadomienie. Zaakceptuj wybierając Wykonane" />
+			<Krok Symbol="7" Treść="Wybierz Zapisz w prawym górnym rogu ekranu" />
+			<Krok Symbol="8" Treść="Wróć do pulpitu" />
+			<Krok Symbol="9" Treść="Poczekaj na powiadomienie (sygnał dźwiękowy)." />
+			<Krok Symbol="10" Treść="Ustaw drzemkę" />
+		</Skrypt>
+		<Trudności IRS="0" KW="0" KNW="0" E="0" TU="0" MPS="0" FC="2" PZ="0" RSZ="0" />
+		<Warunki>
+			<Warunek>Task K4 Done</Warunek>
+		</Warunki>
+	</Zadanie>
+	<Zadanie Seria="Komunikacja miejska" Kod="KM1" Tytuł="Przystanek" LiczbaPowtórzeń="1" SposóbPrezentacjiZadania="WszystkiePunktyNaJednejStronie" WarunekUkończeniaZadania="Automatyczne">
+		<LiczbaPowtórzeńUwagi />
+		<Skrypt>
+			<Krok Symbol="1" Treść="Idź na przystanek (w ciągu dnia, możesz w drodze ze szkoły)" />
+			<Krok Symbol="2" Treść="Jeżeli to konieczne, bardzo ostrożnie przechodź przez jezdnie (tylko na pasach)" />
+			<Krok Symbol="3" Treść="Znajdź rozkład jazdy autobusu [Insert Place ulubione_miejsce transportTip]. Sprawdź, czy dojedziesz do [Insert Place ulubione_miejsce description] (masz wysiąść na przystanku przy [Insert Place ulubione_miejsce street])" />
+			<Krok Symbol="4" Treść="Zrób zdjęcie tego rozkładu" />
+			<Krok Symbol="5" Treść="Zapisz godzinę wyjazdu autobusu po godzinie 17 w piątek" />
+			<Krok Symbol="5a" Input="KM1_17" InputType="String" Treść="17:NN" />
+			<Krok Symbol="6" Treść="I po 11 w sobotę" />
+			<Krok Symbol="6a" Input="KM1_11" InputType="String" Treść="11:NN" />
+			<Krok Symbol="7" Treść="Wróć do domu" />
+		</Skrypt>
+		<Trudności IRS="1" KW="0" KNW="0" E="0" TU="0" MPS="1" FC="2" PZ="0" RSZ="0" />
+	</Zadanie>
+	<Zadanie Seria="Komunikacja miejska" Kod="KM2" Tytuł="Aplikacja MZK" LiczbaPowtórzeń="1" SposóbPrezentacjiZadania="WszystkiePunktyNaJednejStronie" WarunekUkończeniaZadania="Brak">
+		<LiczbaPowtórzeńUwagi />
+		<Skrypt>
+			<Krok Symbol="1" Treść="Zainstaluj aplikację MZK lub Jak dojadę" />
+			<Krok Symbol="2" Treść="Potwierdź, że autobus nr [Insert Place ulubione_miejsce transportTip] zawiezie Cię do [Insert Place ulubione_miejsce description] na ulicę [Insert Place ulubione_miejsce street]" />
+			<Krok Symbol="3" Treść="Sprawdź ile przystanków musisz przejechać, po ilu przystankach i po ilu minutach (orientacyjnie) wysiadasz" />
+			<!-- <Krok Symbol="4" Treść="[Wpisz w formularzu na którym przystanku wysiadasz]" /> -->
+			<Krok Symbol="5" Treść="Potwierdź godziny wyjazdu. Czy są takie same, jak odczytane z tabliczki na przystanku?"/> <!--[Wpisz je ponownie do formularza - weryfikacja] --> 
+			<Krok Symbol="5a" Input="KM2_17" InputType="String" Treść="17:NN" />
+			<Krok Symbol="5b" Input="KM2_11" InputType="String" Treść="11:NN" />
+			<Krok Symbol="6" Treść="Podobnie sprawdź i zanotuj godziny powrotu (kilka!) i nazwę przystanku koło domu, na którym ma wysiąść" />
+			<Krok Symbol="7" Treść="Pokaż opiekunowi jak znaleźć godzinę wyjazdu autobusu i zaplanować powrót" />
+		</Skrypt>
+		<Trudności IRS="0" KW="0" KNW="0" E="0" TU="0" MPS="0" FC="2" PZ="0" RSZ="0" />
+		<Warunki>
+			<Warunek>Task KM1 Done</Warunek>
+		</Warunki>
+		<DodatkowePunkty>
+			<DodatkowyPunkt NazwaTrudności="KW" LiczbaPunktów="1" Opis="p do KW, +1 p do IRS za cierpliwość przy pokazywaniu opiekunowi aplikacji" />
+		</DodatkowePunkty>
+	</Zadanie>
+	<Zadanie Seria="Komunikacja miejska" Kod="KM3" Tytuł="Jedź autobusem/tramwajem po nagrodę" LiczbaPowtórzeń="3" SposóbPrezentacjiZadania="BlokiPunktówNaStronie_PrzewijanieWPoziomie" WarunekUkończeniaZadania="Brak">
+		<LiczbaPowtórzeńUwagi>(różne miejsca)</LiczbaPowtórzeńUwagi>
+		<Skrypt>
+			<Krok Symbol="1" Treść="[Time at Thursday] Wpisz do kalendarza zaplanowane wyjście do [Insert Place ulubione_miejsce description]" />
+			<Krok Symbol="2" Treść="[Test !firstTime] Znajdź połączenie autobusowe z miejscem, do którego masz dojechać" />
+			<Krok Symbol="4" Treść="[Time at Saturday] Zabierz ze sobą smartfon" />
+			<Krok Symbol="5" Treść="W sobotę wyjdź na przystanek o godzinie, która pozwoli Ci zdążyć na autobus o 11:NN" />
+			<Krok Symbol="6" Treść="Na przystanku upewnij się na którym przystanku masz wysiąść" />
+			<Krok Symbol="7" Treść="Sprawdź, gdzie jest przystanek na którym później będziesz wysiadał (ważne!)" />
+			<Krok Symbol="8" Treść="Gdy pojawi się autobus – wsiądź do środkowych drzwi" />
+			<Krok Symbol="9" Treść="[Test Variable ma_miesieczny = False] Skasuj jeden bilet" />
+			<Krok Symbol="10" Treść="Ustaw się dalej od drzwi, ale tak żebyś widział nazwy przystanków" />
+			<Krok Symbol="11" Treść="Gdy zobaczysz przystanek, na którym masz wysiąść, podejdź bliżej drzwi" />
+			<Krok Symbol="11a" Treść="Uwaga! Jeżeli przegapiłeś przystanek lub nie udało Ci się wysiąść, nie przejmuj się: wysiądź na następnym. Aplikacja automatycznie pokaże Ci trasę dojścia do [sklepu z grami]. Nie będzie daleko" />
+			<Krok Symbol="12" Treść="Po wyjściu z autobusu, zadzwoń do opiekuna, żeby dać znać, że dojechałeś" />
+			<Krok Symbol="13" Treść="Dojdź do [Insert Place ulubione_miejsce description]. [może wyświetla się trasa dojścia?]" />
+			<Krok Symbol="14" Treść="Sprawdź gdzie jest przystanek autobusu nr [Insert Place ulubione_miejsce transportTip], z którego będziesz wracał do domu. Potwierdź kilka kolejnych godzin wyjazdu" />
+			<Krok Symbol="15" Treść="Na miejscu pokaż sprzedawcy logo aplikacji (wyświetla się automatycznie) i wpisz pokazany przez niego czterocyfrowy pin, który po powrocie odblokuje nagrodę" />
+			<Krok Symbol="15a" Input="km3_pin" InputType="String" Treść="Wpisz pin:" />
+			<Krok Symbol="16" Treść="[WaitTest Variable km3_pin = 5438] Podziękuj i pożegnaj się" />
+			<Krok Symbol="17" Treść="Zadzwoń do domu, żeby dać znać, że wracasz" />
+			<Krok Symbol="18" Treść="Idź na przystanek i poczekaj na autobus nr [Insert Place ulubione_miejsce transportTip]" />
+			<Krok Symbol="19" Treść="Gdy przyjedzie, wsiądź do autobusu" />
+			<Krok Symbol="20" Treść="[Test Variable ma_miesieczny = False] Skasuj bilet i obserwuj przystanki" />
+			<Krok Symbol="21" Treść="Wysiądź z autobusu na przystanku koło domu" />
+			<Krok Symbol="22" Treść="Jeżeli to konieczne, bardzo ostrożnie przechodź przez jezdnie (tylko na pasach)" />
+			<Krok Symbol="23" Treść="Po powrocie do domu (GPS) będziesz mógł rozpakować nagrodę z pinu" />
+			<Krok Symbol="24" Treść="Opowiedz opiekunowi o wyprawie" />
+		</Skrypt>
+		<Trudności IRS="4" KW="4" KNW="2" E="3" TU="2" MPS="2" FC="4" PZ="2" RSZ="0" />
+		<Warunki>
+			<Warunek>Task KM2 Done</Warunek>
+		</Warunki>
+		<DodatkowePunkty>
+			<DodatkowyPunkt NazwaTrudności="FC" LiczbaPunktów="4" Opis="p do E, +2 p do FC jeżeli przegapił przystanek i dał sobie radę z pomocą aplikacji (automatyczna weryfikacja) – pojawia się informacja o nagrodzie specjalnej" />
+			<DodatkowyPunkt NazwaTrudności="FC" LiczbaPunktów="2" Opis="p do FC przy drugim i trzecim razie, za znalezienie połączenia" />
+		</DodatkowePunkty>
+	</Zadanie>
+	<Zadanie Seria="Komunikacja miejska" Kod="KM4" Tytuł="Spotkanie agentów" LiczbaPowtórzeń="3" SposóbPrezentacjiZadania="BlokiPunktówNaStronie_PrzewijanieWPoziomie" WarunekUkończeniaZadania="Brak">
+		<LiczbaPowtórzeńUwagi>(różne pary z drużyny)</LiczbaPowtórzeńUwagi>
+		<Skrypt>
+			<Krok Symbol="1" Treść="Nowa misja: staw się na spotkaniu o godzinie 11:37 w sobotę [data] w [miejscu] w celu wymiany haseł" />
+			<Krok Symbol="2" Treść="Zapisz termin spotkania w kalendarzu" />
+			<Krok Symbol="3" Treść="Korzystając z aplikacji ustal sposób dojazdu" />
+			<Krok Symbol="4" Treść="Powiedz opiekunowi o wyjeździe i sposobu dojazdu " />
+			<Krok Symbol="5" Treść="[Time at Saturday] Idź na przystanek i dojedź do [Insert GroupPlace KM4_miejsce description]" />
+			<Krok Symbol="6" Treść="Prześlij (przez aplikację) zdjęcie selfie na rozpoznawalnym tle, żebyście mogli się znaleźć" />
+			<Krok Symbol="7" Treść="Wymiana haseł (np. losowe cyfry) [paczka z nagrodą specjalną do odblokowania po powrocie do domu] Uwaga! Hasła pojawiają się dopiero gdy ich telefony są blisko w określonym terminie, żeby nie mogli oszukać gry dzwoniąc do siebie" />
+			<Krok Symbol="8" Treść="Zadzwoń do opiekuna, że wracasz" />
+			<Krok Symbol="9" Treść="Wróć do domu" />
+		</Skrypt>
+		<Trudności IRS="3" KW="3" KNW="0" E="1" TU="0" MPS="2" FC="4" PZ="0" RSZ="0" />
+		<Warunki>
+			<Warunek>Task KM3 Done</Warunek>
+			<Warunek>Group</Warunek>
+		</Warunki>
+		<DodatkowePunkty>
+			<DodatkowyPunkt NazwaTrudności="FC" LiczbaPunktów="4" Opis="p do E, +2 p do FC jeżeli przegapił przystanek i dał sobie radę z pomocą aplikacji (automatyczna weryfikacja)" />
+		</DodatkowePunkty>
+	</Zadanie>
+	<Zadanie Seria="Fryzjer" Kod="F1" Tytuł="Zapisz numer fryzjera" LiczbaPowtórzeń="2" SposóbPrezentacjiZadania="JedenPunktNaStronie_PrzewijanieWPoziomie" WarunekUkończeniaZadania="Automatyczne">
+		<LiczbaPowtórzeńUwagi>(2 są punktowane, ale opiekun zawsze może zainicjować tą serię ze swojego telefonu)</LiczbaPowtórzeńUwagi>
+		<Skrypt>
+			<Krok Symbol="1" Treść="[Time at 15:30] Zapisz w kontaktach numer [Insert Place fryzjer PhoneNumber] i adres [Insert Place fryzjer Street] [Insert Place fryzjer Nr] zakładu fryzjerskiego" />
+			<Krok Symbol="2" Treść="[Test Variable czy_dojazd_autem = False] Sprawdź połączenie autobusem do fryzjera w aplikacji MZK lub Jak dojadę. Omów dojazd z opiekunem" />
+			<Krok Symbol="3" Treść="[Test Variable czy_dojazd_autem = true] Sprawdź dojazd do fryzjera za pomocą aplikacji Mapy Będziesz nawigował kierowcę" />
+		</Skrypt>
+		<Trudności IRS="0" KW="0" KNW="0" E="0" TU="0" MPS="0" FC="1" PZ="0" RSZ="0" />
+		<Warunki>
+			<Warunek>Task K5 Done</Warunek>
+		</Warunki>
+	</Zadanie>
+	<Zadanie Seria="Fryzjer" Kod="F2" Tytuł="Zadzwoń do zakładu fryzjerskiego" LiczbaPowtórzeń="2" SposóbPrezentacjiZadania="BlokiPunktówNaStronie_PrzewijanieWPoziomie" WarunekUkończeniaZadania="Brak">
+		<LiczbaPowtórzeńUwagi>(2 są punktowane, ale opiekun zawsze może zainicjować tą serię ze swojego telefonu)</LiczbaPowtórzeńUwagi>
+		<Skrypt>
+			<Krok Symbol="1" Treść="Przygotuj kartkę i coś do pisania" />
+			<Krok Symbol="2" Treść="Zadzwoń pod numer [Insert Place fryzjer PhoneNumber]" />
+			<Krok Symbol="3" Treść="Przywitaj się, przedstaw się: Dzień dobry! Nazywam się [Insert Person Self Firstname] [Insert Person Self Lastname]. Czy mogę się umówić na strzyżenie?" />
+			<Krok Symbol="4" Treść="Zapytaj o możliwy termin wizyty po południu i zapisz go na kartce" />
+			<Krok Symbol="5" Treść="Zapytaj o cenę strzyżenia" />
+			<Krok Symbol="6" Treść="Pożegnaj się" />
+			<Krok Symbol="7" Treść="Ustal z opiekunem, czy termin jest odpowiedni (tzn. czy nie masz zaplanowanych innych zajęć)" />
+			<Krok Symbol="8" Treść="Jeżeli termin nie pasuje, to wspólnie z opiekunem zadzwońcie i przesuńcie wizytę" />
+			<Krok Symbol="9" Treść="Zapisz w kalendarzu (Google) termin spotkania z wcześniejszym powiadomieniem" />
+		</Skrypt>
+		<Trudności IRS="3" KW="2" KNW="0" E="0" TU="0" MPS="0" FC="2" PZ="0" RSZ="2" />
+		<Warunki>
+			<Warunek>Task F1 Done</Warunek>
+		</Warunki>
+		<DodatkowePunkty>
+			<DodatkowyPunkt NazwaTrudności="IRS" LiczbaPunktów="2" Opis="p. do IRS za miły ton (ocenia opiekun)" />
+		</DodatkowePunkty>
+	</Zadanie>
+	<Zadanie Seria="Ubiór" Kod="U1a" Tytuł="Przygotuj zestaw ubrań do konkretnej pogody" LiczbaPowtórzeń="1" SposóbPrezentacjiZadania="WszystkiePunktyNaJednejStronie" WarunekUkończeniaZadania="Brak">
+		<LiczbaPowtórzeńUwagi></LiczbaPowtórzeńUwagi>
+		<Skrypt>
+			<Krok Symbol="1" Treść="Przygotuj zestaw ubrań pasujący do deszczowej pogody i rozłóż na łóżku" />
+			<Krok Symbol="2" Treść="Po pierwsze znajdź w swoich ubraniach ubrania pasujące do rodzaju pogody. Przygotuj pełen zestaw ubrań (od bielizny po kurtkę, jeżeli jest potrzebna)" />
+			<Krok Symbol="3" Treść="Czy ubrania są czyste? Jeżeli nie, należy je wrzucić do kosza na pranie i poszukać innych czystych ubrań w szafie" />
+			<Krok Symbol="4" Treść="Zestaw rzeczy, który dobierzesz powinien być przede wszystkim odpowiedni do pogody, ale rzeczy muszą także pasować do siebie kolorystycznie" />
+			<Krok Symbol="5" Treść="Sprawdź także, czy ubrania nie są pogniecione. Teraz ich nie prasuj, ale pamiętaj że musisz je wyprasować, gdy będziesz je chciał ubrać" />
+			<Krok Symbol="6" Treść="Zawołaj opiekuna i poproś, żeby sprawdził wybrany przez Ciebie zestaw" />
+			<Krok Symbol="7" Treść="Jeżeli opiekun podpowiada Ci jakieś zmiany w zestawie ubrań, wprowadź je" />
+		</Skrypt>
+		<Trudności IRS="0" KW="0" KNW="0" E="0" TU="0" MPS="3" FC="3" PZ="0" RSZ="0" />
+		<DodatkowePunkty>
+			<DodatkowyPunkt NazwaTrudności="KW" LiczbaPunktów="2" Opis="p do KW za dzielne zniesienie uwag opiekuna" />
+		</DodatkowePunkty>
+	</Zadanie>
+	<Zadanie Seria="Ubiór" Kod="U1b" Tytuł="Przygotuj zestaw ubrań do konkretnej pogody" LiczbaPowtórzeń="1" SposóbPrezentacjiZadania="WszystkiePunktyNaJednejStronie" WarunekUkończeniaZadania="Brak">
+		<LiczbaPowtórzeńUwagi></LiczbaPowtórzeńUwagi>
+		<Skrypt>
+			<Krok Symbol="1" Treść="Przygotuj zestaw ubrań pasujący do śnieżnej pogody i rozłóż na łóżku" />
+			<Krok Symbol="2" Treść="Po pierwsze znajdź w swoich ubraniach ubrania pasujące do rodzaju pogody. Przygotuj pełen zestaw ubrań (od bielizny po kurtkę, jeżeli jest potrzebna)" />
+			<Krok Symbol="3" Treść="Czy ubrania są czyste? Jeżeli nie, należy je wrzucić do kosza na pranie i poszukać innych czystych ubrań w szafie" />
+			<Krok Symbol="4" Treść="Zestaw rzeczy, który dobierzesz powinien być przede wszystkim odpowiedni do pogody, ale rzeczy muszą także pasować do siebie kolorystycznie" />
+			<Krok Symbol="5" Treść="Sprawdź także, czy ubrania nie są pogniecione. Teraz ich nie prasuj, ale pamiętaj że musisz je wyprasować, gdy będziesz je chciał ubrać" />
+			<Krok Symbol="6" Treść="Zawołaj opiekuna i poproś, żeby sprawdził wybrany przez Ciebie zestaw" />
+			<Krok Symbol="7" Treść="Jeżeli opiekun podpowiada Ci jakieś zmiany w zestawie ubrań, wprowadź je" />
+		</Skrypt>
+		<Trudności IRS="0" KW="0" KNW="0" E="0" TU="0" MPS="3" FC="3" PZ="0" RSZ="0" />
+		<Warunki>
+			<Warunek>Task U1a Done</Warunek>
+		</Warunki>
+		<DodatkowePunkty>
+			<DodatkowyPunkt NazwaTrudności="KW" LiczbaPunktów="2" Opis="p do KW za dzielne zniesienie uwag opiekuna" />
+		</DodatkowePunkty>
+	</Zadanie>
+	<Zadanie Seria="Ubiór" Kod="U1c" Tytuł="Przygotuj zestaw ubrań do konkretnej pogody" LiczbaPowtórzeń="1" SposóbPrezentacjiZadania="WszystkiePunktyNaJednejStronie" WarunekUkończeniaZadania="Brak">
+		<LiczbaPowtórzeńUwagi></LiczbaPowtórzeńUwagi>
+		<Skrypt>
+			<Krok Symbol="1" Treść="Przygotuj zestaw ubrań pasujący do słonecznej pogody i rozłóż na łóżku" />
+			<Krok Symbol="2" Treść="Po pierwsze znajdź w swoich ubraniach ubrania pasujące do rodzaju pogody. Przygotuj pełen zestaw ubrań (od bielizny po kurtkę, jeżeli jest potrzebna)" />
+			<Krok Symbol="3" Treść="Czy ubrania są czyste? Jeżeli nie, należy je wrzucić do kosza na pranie i poszukać innych czystych ubrań w szafie" />
+			<Krok Symbol="4" Treść="Zestaw rzeczy, który dobierzesz powinien być przede wszystkim odpowiedni do pogody, ale rzeczy muszą także pasować do siebie kolorystycznie" />
+			<Krok Symbol="5" Treść="Sprawdź także, czy ubrania nie są pogniecione. Teraz ich nie prasuj, ale pamiętaj że musisz je wyprasować, gdy będziesz je chciał ubrać" />
+			<Krok Symbol="6" Treść="Zawołaj opiekuna i poproś, żeby sprawdził wybrany przez Ciebie zestaw" />
+			<Krok Symbol="7" Treść="Jeżeli opiekun podpowiada Ci jakieś zmiany w zestawie ubrań, wprowadź je" />
+		</Skrypt>
+		<Trudności IRS="0" KW="0" KNW="0" E="0" TU="0" MPS="3" FC="3" PZ="0" RSZ="0" />
+		<Warunki>
+			<Warunek>Task U1b Done</Warunek>
+		</Warunki>
+		<DodatkowePunkty>
+			<DodatkowyPunkt NazwaTrudności="KW" LiczbaPunktów="2" Opis="p do KW za dzielne zniesienie uwag opiekuna" />
+		</DodatkowePunkty>
+	</Zadanie>
+	<Zadanie Seria="Ubiór" Kod="U2" Tytuł="Przygotuj ubrania, na wypadek gdy nie masz pewności, jaka będzie pogoda." LiczbaPowtórzeń="1" SposóbPrezentacjiZadania="WszystkiePunktyNaJednejStronie" WarunekUkończeniaZadania="Opiekun">
+		<LiczbaPowtórzeńUwagi />
+		<Skrypt>
+			<Krok Symbol="1" Treść="Wyzwanie: Wyobraź sobie, że jest jesień. Załóżmy, że musisz wyjść z domu, ale nie wiesz jaka będzie pogoda. Może być zarówno ciepło, jak i może się nagle ochłodzić, a nawet spaść deszcz. Przygotuj zestaw ubrań tak, żebyś mógł część zdjąć (np. sweter) lub nałożyć (bluza lub kurtka)" />
+			<Krok Symbol="2" Treść="Skompletowany zestaw ułóż na łóżku" />
+			<Krok Symbol="3" Treść="Zawołaj opiekuna, żeby obejrzał przygotowany przez Ciebie zestaw" />
+			<Krok Symbol="4" Treść="Jeżeli opiekun ma jakieś uwagi, wysłuchaj ich i wprowadź poprawki" />
+		</Skrypt>
+		<Trudności IRS="0" KW="0" KNW="0" E="0" TU="0" MPS="3" FC="4" PZ="0" RSZ="0" />
+		<Warunki>
+			<Warunek>Task U1c Done</Warunek>
+		</Warunki>
+		<DodatkowePunkty>
+			<DodatkowyPunkt NazwaTrudności="KW" LiczbaPunktów="2" Opis="p do KW za dzielne zniesienie uwag opiekuna" />
+		</DodatkowePunkty>
+	</Zadanie>
+	<Zadanie Seria="Ubiór" Kod="U3" Tytuł="Przygotuj ubranie na specjalną okazję" LiczbaPowtórzeń="1" SposóbPrezentacjiZadania="WszystkiePunktyNaJednejStronie" WarunekUkończeniaZadania="Opiekun">
+		<LiczbaPowtórzeńUwagi></LiczbaPowtórzeńUwagi>
+		<Skrypt>
+			<Krok Symbol="1" Treść="Przygotuj odświętny zestaw ubrań pasujący na egzamin, spotkanie w sprawie pracy, do opery lub teatru. Ubrania muszą pasować do okazji – muszą być odświętne" />
+			<Krok Symbol="2" Treść="Upewnij się, że ubrania są czyste. Jeżeli są brudne, włóż je do kosza na pranie i wybierz inne – czyste" />
+			<Krok Symbol="3" Treść="Sprawdź także, czy ubrania nie są pogniecione. Teraz ich nie prasuj, ale pamiętaj że musisz je wyprasować, gdy będziesz je chciał ubrać" />
+			<Krok Symbol="4" Treść="Skompletowany zestaw ułóż na łóżku" />
+			<Krok Symbol="5" Treść="Zawołaj opiekuna, żeby obejrzał przygotowany przez Ciebie zestaw" />
+			<Krok Symbol="6" Treść="Jeżeli opiekun ma jakieś uwagi, wysłuchaj ich i wprowadź poprawki" />
+		</Skrypt>
+		<Trudności IRS="2" KW="0" KNW="0" E="0" TU="2" MPS="2" FC="3" PZ="0" RSZ="0" />
+		<Warunki>
+			<Warunek>Task U2 Done</Warunek>
+		</Warunki>
+		<DodatkowePunkty>
+			<DodatkowyPunkt NazwaTrudności="KW" LiczbaPunktów="2" Opis="p do KW za dzielne zniesienie uwag opiekuna" />
+		</DodatkowePunkty>
+	</Zadanie>
+	<Zadanie Seria="Ubiór" Kod="U4" Tytuł="Przygotuj ubranie sportowe" LiczbaPowtórzeń="1" SposóbPrezentacjiZadania="WszystkiePunktyNaJednejStronie" WarunekUkończeniaZadania="Opiekun">
+		<LiczbaPowtórzeńUwagi></LiczbaPowtórzeńUwagi>
+		<Skrypt>
+			<Krok Symbol="1" Treść="Przygotuj zestaw ubrań pasujący do gry na boisku, wyjścia na rower lub siłowni. Ubrania muszą być wygodne" />
+			<Krok Symbol="2" Treść="Upewnij się, że ubrania są czyste. Jeżeli są brudne, włóż je do kosza na pranie i wybierz inne – czyste" />
+			<Krok Symbol="3" Treść="Skompletowany zestaw ułóż na łóżku" />
+			<Krok Symbol="4" Treść="Zawołaj opiekuna, żeby obejrzał przygotowany przez Ciebie zestaw" />
+			<Krok Symbol="5" Treść="Jeżeli opiekun ma jakieś uwagi, wysłuchaj ich i wprowadź poprawki" />
+		</Skrypt>
+		<Trudności IRS="0" KW="0" KNW="0" E="0" TU="2" MPS="2" FC="3" PZ="0" RSZ="0" />
+		<Warunki>
+			<Warunek>Task U3 Done</Warunek>
+		</Warunki>
+		<DodatkowePunkty>
+			<DodatkowyPunkt NazwaTrudności="KW" LiczbaPunktów="2" Opis="p do KW za dzielne zniesienie uwag opiekuna" />
+		</DodatkowePunkty>
+	</Zadanie>
+	<Zadanie Seria="Wyjście rodziny do kina" Kod="KR1" Tytuł="Wybór filmu i rezerwacja biletu" LiczbaPowtórzeń="1" SposóbPrezentacjiZadania="WszystkiePunktyNaJednejStronie" WarunekUkończeniaZadania="Brak">
+		<LiczbaPowtórzeńUwagi />
+		<Skrypt>
+			<Krok Symbol="1" Treść="Twoim zadaniem będzie przygotowanie wspólnego wyjścia całej rodziny" />
+			<Krok Symbol="2" Treść="[Time at Tuesday,Wednesday] Zbierz rodzinę w jednym miejscu i ustalcie na jaki film i na jaką godzinę chcecie iść w weekend (piątek, sobota lub niedziela)" />
+			<Krok Symbol="3" Treść="Jeżeli to konieczne, to obejrzyj film z instrukcją rezerwacji biletu" />
+			<Krok Symbol="4" Treść="Wejdź na stronę kina i zarezerwuj bilety (tym razem nie kupuj biletu z drukowaniem)" />
+			<Krok Symbol="5" Treść="Zapisz termin wyjścia do kina w kalendarzu w swoim smartfonie" />
+			<Krok Symbol="6" Treść="Poinformuj wszystkich członków rodziny o rezerwacji miejsc" />
+			<Krok Symbol="7" Treść="Zapowiedz, że kupisz bilety" />
+		</Skrypt>
+		<Trudności IRS="2" KW="1" KNW="0" E="0" TU="2" MPS="0" FC="2" PZ="0" RSZ="0" />
+		<Warunki>
+			<Warunek>Task K1 Done</Warunek>
+		</Warunki>
+	</Zadanie>
+	<Zadanie Seria="Wyjście rodziny do kina" Kod="KR2" Tytuł="Kupno biletu" LiczbaPowtórzeń="1" SposóbPrezentacjiZadania="WszystkiePunktyNaJednejStronie" WarunekUkończeniaZadania="Brak">
+		<LiczbaPowtórzeńUwagi />
+		<Skrypt>
+			<Krok Symbol="1" Treść="[Time at Thursday,Friday] Uzgodnij z opiekunem termin i sposób dojazdu do [Insert Place kino Description]" />
+			<Krok Symbol="2" Treść="Zabierz swój smartfon i pieniądze/kartę (bankomatową)" />
+			<Krok Symbol="3" Treść="Idź lub dojedź do [Insert Place kino Description]" />
+			<Krok Symbol="4" Treść="Zadzwoń do opiekuna, że jesteś na miejscu" />
+			<Krok Symbol="5" Treść="Ustaw się w kolejce do kasy" />
+			<Krok Symbol="6" Treść="Po podejściu do kasy, powiedz że masz rezerwację (podaj imię i nazwisko)" />
+			<Krok Symbol="7" Treść="Zapłać i weź bilety. Podziękuj" />
+			<Krok Symbol="8" Treść="Zadzwoń do opiekuna i powiadom go, że wracasz do domu" />
+			<Krok Symbol="9" Treść="Wróć do domu" />
+			<Krok Symbol="10" Treść="Pokaż opiekunowi bilety" />
+		</Skrypt>
+		<Trudności IRS="3" KW="2" KNW="0" E="0" TU="2" MPS="2" FC="2" PZ="0" RSZ="0" />
+		<Warunki>
+			<Warunek>Task KR1 Done</Warunek>
+		</Warunki>
+	</Zadanie>
+	<Zadanie Seria="Wyjście do kina z kolegą" Kod="KK1" Tytuł="Rozmowa przez telefon – zaproszenie do kina" LiczbaPowtórzeń="1" SposóbPrezentacjiZadania="WszystkiePunktyNaJednejStronie" WarunekUkończeniaZadania="Brak">
+		<LiczbaPowtórzeńUwagi />
+		<Skrypt>
+			<Krok Symbol="1" Treść="[Jeden z pary, czwartek] Przejrzyj repertuar kina w Internecie. Wypisz na kartce filmy, które Cię zainteresowały i godziny seansów" />
+			<Krok Symbol="2" Treść="Czy jest film, który Cię zainteresował? [Jeżeli nie ma ciekawego filmu, zadanie zostaje zamrożone na dwa tygodnie]" />
+			<Krok Symbol="3" Treść="Zadzwoń do [innego gracza]" />
+			<Krok Symbol="4" Treść="Przywitaj się. Zagajenie: Cześć! Tu [Bartek]. Dzwonię do Ciebie, bo obaj bierzemy udział w grze. Naszym zadaniem jest wspólne wyjście do kina" />
+			<Krok Symbol="5" Treść="Ustalcie razem na jaki film idziecie" />
+			<Krok Symbol="6" Treść="Jeżeli nie jesteście zgodni, zadanie zostaje zamrożone [automatycznie zostanie przypomniane po dwóch tygodniach; można też wpisać datę interesującej premiery(?)]" />
+			<Krok Symbol="7" Treść="Ustalcie termin w weekend (najlepiej sobota, ale tak żeby po seansie nie było ciemno)" />
+			<Krok Symbol="8" Treść="Zaoferuj, ze zarezerwujesz dwa bilety i że powiadomisz SMSem o dokonanej rezerwacji" />
+			<Krok Symbol="9" Treść="Pożegnaj się" />
+			<Krok Symbol="10" Treść="Zarezerwuj bilety i wyślij SMSem potwierdzenie, że się udało (w tym cenę jednego biletu)" />
+			<Krok Symbol="11" Treść="Zapisz termin wyjścia do kina w kalendarzu w Twoim smartfonie" />
+			<Krok Symbol="12" Treść="Przekaż opiekunowi informacje o tym z kim idziesz do kina, na jaki film i kiedy" />
+		</Skrypt>
+		<Trudności IRS="4" KW="4" KNW="0" E="0" TU="3" MPS="0" FC="4" PZ="0" RSZ="0" />
+		<Warunki>
+			<Warunek>Task KR2 Done</Warunek>
+		</Warunki>
+		<DodatkowePunkty>
+			<DodatkowyPunkt NazwaTrudności="IRS" LiczbaPunktów="2" Opis="p. do IRS za miły ton (ocenia opiekun)" />
+			<DodatkowyPunkt NazwaTrudności="KW" LiczbaPunktów="2" Opis="p. do KW, jeżeli czas rozmowy jest dłuższy niż 3 minuty" />
+		</DodatkowePunkty>
+	</Zadanie>
+	<Zadanie Seria="Zakupy codzienne" Kod="Z1" Tytuł="Przygotowanie listy zakupów" LiczbaPowtórzeń="3" SposóbPrezentacjiZadania="WszystkiePunktyNaJednejStronie" WarunekUkończeniaZadania="Brak">
+		<LiczbaPowtórzeńUwagi>(nie częściej niż raz w tygodniu, najlepiej piątek lub sobota)</LiczbaPowtórzeńUwagi>
+		<Skrypt>
+			<Krok Symbol="1" Treść="Spytaj opiekuna, czy nie trzeba zrobić zakupów spożywczych. Jeżeli tak, zaraz po nie pójdziesz" />
+			<Krok Symbol="2" Treść="Przygotuj kartkę i coś do pisania lub aplikację w telefonie umożliwiającą zapisanie rzeczy do kupienia (nawet zwykłą aplikację-notatnik)" />
+			<Krok Symbol="3" Treść="Ustal z opiekunem listę potrzebnych zakupów (np. chleb, mleko itp.). Lista powinna zawierać nazwę towaru i ilość (np. chleb jasny (najlepiej rycerski) x2 lub masło ekstra (najtańsze) 1 szt.)" />
+			<Krok Symbol="4" Treść="Weź od rodziców kwotę potrzebną na te zakupy i upewnij się do którego sklepu masz iść" />
+			<Krok Symbol="5" Opcjonalne="True" Treść="Jeżeli chcesz kupić też coś dla siebie, zabierz swoje pieniądze" />
+		</Skrypt>
+		<Trudności IRS="2" KW="2" KNW="0" E="0" TU="0" MPS="0" FC="2" PZ="0" RSZ="0" />
+		<DodatkowePunkty>
+			<DodatkowyPunkt NazwaTrudności="FC" LiczbaPunktów="2" Opis="p. do FC za samodzielne odszukanie najtańszych produktów oraz zamienników" />
+			<DodatkowyPunkt NazwaTrudności="FC" LiczbaPunktów="2" Opis="p do FC dodatkowe kupienie czegoś dla siebie (za własne pieniądze)" />
+		</DodatkowePunkty>
+	</Zadanie>
+	<Zadanie Seria="Zakupy codzienne" Kod="Z2a" Tytuł="Wyjście po zakupy do sklepu z koszykami" LiczbaPowtórzeń="3" SposóbPrezentacjiZadania="BlokiPunktówNaStronie_PrzewijanieWPoziomie" WarunekUkończeniaZadania="Brak">
+		<LiczbaPowtórzeńUwagi>(na początek nie częściej niż raz w tygodniu, najlepiej piątek lub sobota)</LiczbaPowtórzeńUwagi>
+		<Skrypt>
+			<Krok Symbol="1" Treść="Uzgodnij z opiekunem do którego sklepu należy pójść i sposób dojścia" />
+			<Krok Symbol="2" Treść="Zabierz swój smartfon i pieniądze w gotówce lub kartę oraz worek na zakupy lub torbę i monetę (1 zł lub 2 zł) na koszyk" />
+			<Krok Symbol="3" Treść="Idź do sklepu" />
+			<Krok Symbol="4" Treść="Weź koszyk (zazwyczaj koszyki stoją przy kasach, a jeśli ich nie ma, stań i poczekaj, aż ktoś wyłoży zakupy z koszyka i go zwolni. Koszyki mogą wymagać włożenia monety" />
+			<Krok Symbol="5" Treść="Znajdź towary z listy i wkładaj je do koszyka" />
+			<Krok Symbol="6" Treść="Jeżeli czegoś nie możesz znaleźć, nie przejmuj się. Przejdź do następnej pozycji na liście zakupów" />
+			<Krok Symbol="a" Treść="zapytaj o nią kogoś z obsługi sklepu (np. osobę wykładającą towar lub ochroniarza). Nie zapomnij podziękować za pomoc (Dziękuję bardzo)" />
+			<Krok Symbol="b" Treść="Jeżeli nie ma tej rzeczy w sklepie zadzwoń do opiekuna i ustalcie ewentualny zamiennik" />
+			<Krok Symbol="7" Treść="Jeżeli jest kilka rodzajów (np. masła), wybierz ten ustalony z opiekunem lub najtańszy" />
+			<Krok Symbol="8" Treść="Jeżeli zabrałeś własne pieniądze i chcesz kupić coś dla siebie, zrób to" />
+			<Krok Symbol="9" Treść="Jeśli masz już wszystkie dostępne produkty z listy, ustaw się do kasy" />
+			<Krok Symbol="10" Treść="Wyjmij rzeczy z koszyka i połóż je na miejscu na zakupy" />
+			<Krok Symbol="11" Treść="Kasjer będzie skanował kolejne produkty. Zeskanowane możesz wkładać do torby" />
+			<Krok Symbol="12" Treść="Na koniec kasjer powie ile musisz zapłacić" />
+			<Krok Symbol="13" Treść="Zapłać gotówką lub kartą. Weź paragon" />
+			<Krok Symbol="15" Treść="Podziękuj i pożegnaj się" />
+			<Krok Symbol="14" Treść="Po wyjściu ze sklepu zadzwoń do opiekuna i powiadom go, że wracasz do domu" />
+			<Krok Symbol="15" Treść="Wróć do domu" />
+			<Krok Symbol="16" Treść="Daj opiekunowi zakupy i pomóż je rozpakować (szczególnie rzeczy do lodówki)" />
+			<Krok Symbol="17" Treść="Daj opiekunowi paragon. Jeżeli dostałeś gotówkę – rozlicz się" />
+			<Krok Symbol="18" Treść="Opowiedz opiekunowi, co robiłeś" />
+		</Skrypt>
+		<Trudności IRS="4" KW="3" KNW="0" E="0" TU="2" MPS="2" FC="3" PZ="0" RSZ="3" />
+		<DodatkowePunkty>
+			<DodatkowyPunkt NazwaTrudności="FC" LiczbaPunktów="1" Opis="p do FC – gdy trzeba było poczekać na swoją kolei dłużej do kasy (z relacji w domu – pytania, które podpowiemy opiekunowi)" />
+		</DodatkowePunkty>
+	</Zadanie>
+	<Zadanie Seria="Zakupy chemiczne / supermarket (generalizacja)" Kod="Z3" Tytuł="Lista zakupów" LiczbaPowtórzeń="2" SposóbPrezentacjiZadania="WszystkiePunktyNaJednejStronie" WarunekUkończeniaZadania="Brak">
+		<LiczbaPowtórzeńUwagi>(na początek nie częściej niż raz w tygodniu, najlepiej piątek lub sobota)</LiczbaPowtórzeńUwagi>
+		<Skrypt>
+			<Krok Symbol="1" Treść="Przygotuj kartkę i coś do pisania lub aplikację w telefonie umożliwiającą Ci zapisanie rzeczy do kupienia (nawet zwykłą aplikację-notatnik)" />
+			<Krok Symbol="2" Treść="Ustal z opiekunem listę potrzebnych produktów kosmetycznych i chemicznych oraz termin zakupów" />
+			<Krok Symbol="3" Opcjonalne="True" Treść="Jeżeli w pobliżu jest kilka sklepów sieciowych: sprawdź w Internecie, w których możesz dostać produkty z listy taniej – porównaj ceny, powiedz opiekunowi i wybierzcie najtańszy sklep" />
+			<Krok Symbol="4" Treść="Weź od rodziców kwotę potrzebną na te zakupy (do rozliczenia po powrocie)" />
+			<Krok Symbol="5" Opcjonalne="True" Treść="Jeżeli chcesz kupić też coś dla siebie, odłóż swoje pieniądze" />
+			<Krok Symbol="6" Treść="Zaplanuj z opiekunem termin wyjścia do sklepu i wpisz go do kalendarza" />
+		</Skrypt>
+		<Trudności IRS="3" KW="2" KNW="0" E="0" TU="2" MPS="0" FC="3" PZ="0" RSZ="0" />
+		<DodatkowePunkty>
+			<DodatkowyPunkt NazwaTrudności="FC" LiczbaPunktów="2" Opis="p. do FC za samodzielne odszukanie najtańszych produktów oraz zamienników (wybór sklepu)" />
+		</DodatkowePunkty>
+	</Zadanie>
+	<Zadanie Seria="Prace domowe. Sprzątanie" Kod="S1" Tytuł="Ścieranie kurzu" LiczbaPowtórzeń="3" SposóbPrezentacjiZadania="WszystkiePunktyNaJednejStronie" WarunekUkończeniaZadania="Opiekun">
+		<LiczbaPowtórzeńUwagi>(aż do wejścia w rutynę, w pierwszym tygodniu tylko ścieranie kurzu; w kolejnych wpierw kurze, a potem odkurzacz)</LiczbaPowtórzeńUwagi>
+		<Skrypt>
+			<Krok Symbol="1" Treść="[Time at Thursday] Informacja o tym, że w sobotę rano będzie zadanie starcia kurzu" />
+			<Krok Symbol="2" Treść="[Time at Saturday] [Inicjowane na smartfon opiekuna, tylko za pierwszym razem] Do opiekuna: Pokaż dziecku krok-po-kroku jak ścierasz kurze (nie zakładaj, że coś jest oczywiste i gracz powinien to wcześniej wiedzieć)" />
+			<Krok Symbol="2a" Treść="[Test firstTime] Poproś opiekuna o pokazanie jak zetrzeć kurze" />
+			<Krok Symbol="3" Treść="Wyjmij sprzęty potrzebne do wycierania kurzu" />
+			<Krok Symbol="4" Treść="Wytrzyj kurz zgodnie z instrukcją opiekuna. Możesz założyć rękawice ochronne" />
+			<Krok Symbol="5" Treść="Skończ wycieranie kurzu, dopiero gdy powierzchnia będzie czysta" />
+			<Krok Symbol="6" Treść="Poproś opiekuna o sprawdzenie, czy zrobiłeś to prawidłowo" />
+		</Skrypt>
+		<Trudności IRS="0" KW="0" KNW="0" E="0" TU="0" MPS="0" FC="1" PZ="0" RSZ="0" />
+		<DodatkowePunkty>
+			<DodatkowyPunkt NazwaTrudności="FC" LiczbaPunktów="1" Opis="p. do FC za brak poprawek" />
+			<DodatkowyPunkt NazwaTrudności="FC" LiczbaPunktów="2" Opis="p. do FC, gdy to nowa umiejętność (za pierwszym razem)" />
+			<DodatkowyPunkt NazwaTrudności="KW" LiczbaPunktów="2" Opis="do KW za dzielne zniesienie uwag opiekuna" />
+		</DodatkowePunkty>
+	</Zadanie>
+	<Zadanie Seria="Prace domowe. Sprzątanie" Kod="S2" Tytuł="Odkurzanie podłogi w swoim pokoju" LiczbaPowtórzeń="3" SposóbPrezentacjiZadania="WszystkiePunktyNaJednejStronie" WarunekUkończeniaZadania="Opiekun">
+		<LiczbaPowtórzeńUwagi>(aż do wejścia w rutynę)</LiczbaPowtórzeńUwagi>
+		<Skrypt>
+			<Krok Symbol="1" Treść="[Time at Saturday] [Inicjowane na smartfon opiekuna, tylko za pierwszym razem] Do opiekuna: Pokaż dziecku krok-po-kroku jak odkurzasz podłogę i jakich końcówek odkurzacza używasz (nie zakładaj, że coś jest oczywiste i gracz powinien to wcześniej wiedzieć)" />
+			<Krok Symbol="1a" Treść="[Test firstTime] Poproś opiekuna o pokazanie jak odkurzać" />
+			<Krok Symbol="2" Treść="Wyjmij odkurzacz" />
+			<Krok Symbol="3" Treść="Podłącz go do kontaktu" />
+			<Krok Symbol="4" Treść="Włącz odkurzacz" />
+			<Krok Symbol="5" Treść="Poruszaj końcówką odkurzacza po podłodze w pokoju do przodu i do tyłu, miejsce przy miejscu tak, żebyś odkurzył całą powierzchnię" />
+			<Krok Symbol="6" Treść="Gdy skończysz, zawołaj [opiekuna], żeby sprawdził czy jest już czysto" />
+			<Krok Symbol="7" Treść="Skończ odkurzanie, dopiero gdy podłoga będzie czysta i powiadom opiekuna, że skończyłeś" />
+			<Krok Symbol="8" Treść="Na koniec odkurz samą rurą szczotkę odkurzacza" />
+			<Krok Symbol="9" Treść="Wyłącz odkurzacz i schowaj na miejsce" />
+		</Skrypt>
+		<Trudności IRS="0" KW="0" KNW="0" E="0" TU="0" MPS="0" FC="3" PZ="0" RSZ="0" />
+		<DodatkowePunkty>
+			<DodatkowyPunkt NazwaTrudności="FC" LiczbaPunktów="1" Opis="p. do FC za brak poprawek" />
+			<DodatkowyPunkt NazwaTrudności="FC" LiczbaPunktów="2" Opis="p. do FC, gdy to nowa umiejętność (za pierwszym razem)" />
+			<DodatkowyPunkt NazwaTrudności="KW" LiczbaPunktów="2" Opis="do KW za dzielne zniesienie uwag opiekuna" />
+		</DodatkowePunkty>
+	</Zadanie>
+	<Zadanie Seria="Prace domowe. Sprzątanie" Kod="S3" Tytuł="Mycie podłogi" LiczbaPowtórzeń="3" SposóbPrezentacjiZadania="WszystkiePunktyNaJednejStronie" WarunekUkończeniaZadania="Opiekun">
+		<LiczbaPowtórzeńUwagi>(aż do wejścia w rutynę)</LiczbaPowtórzeńUwagi>
+		<Skrypt>
+			<Krok Symbol="1" Treść="[Time at Thursday] Informacja o tym, że w sobotę rano będzie zadanie umycia podłogi w [Insert Variable pokoj_do_mycia_podlogi]" />
+			<Krok Symbol="2" Treść="[Time at Saturday] [Inicjowane na smartfon opiekuna po zaliczeniu zadania S2, tylko za pierwszym razem] Do opiekuna: Pokaż graczowi krok-po-kroku jak myjesz podłogę (nie zakładaj, że coś jest oczywiste i gracz powinien to wcześniej wiedzieć)" />
+			<Krok Symbol="2a" Treść="[Test firstTime] Poproś opiekuna o pokazanie jak myc podłogę" />
+			<Krok Symbol="3" Treść="Wyjmij sprzęty potrzebne do umycia podłogi w [Insert Variable pokoj_do_mycia_podlogi]" />
+			<Krok Symbol="4" Treść="Umyj podłogę zgodnie z instrukcją poruszając mopem od jednej krawędzi podłogi do drugiej" />
+			<Krok Symbol="5" Treść="Upewnij się że podłoga jest dobrze umyta, także pod stołem i pod szafkami" />
+			<Krok Symbol="6" Treść="Powiadom opiekuna, że skończyłeś i poproś go o sprawdzenie. W razie potrzeby popraw miejsca niedoczyszczone" />
+		</Skrypt>
+		<Trudności IRS="0" KW="0" KNW="0" E="0" TU="0" MPS="0" FC="3" PZ="0" RSZ="0" />
+		<DodatkowePunkty>
+			<DodatkowyPunkt NazwaTrudności="FC" LiczbaPunktów="1" Opis="p. do FC za brak poprawek" />
+			<DodatkowyPunkt NazwaTrudności="KW" LiczbaPunktów="2" Opis="do KW za dzielne zniesienie uwag opiekuna" />
+		</DodatkowePunkty>
+	</Zadanie>
+	<Zadanie Seria="Prace domowe. Sprzątanie" Kod="S4" Tytuł="Mycie wanny i zlewu" LiczbaPowtórzeń="3" SposóbPrezentacjiZadania="WszystkiePunktyNaJednejStronie" WarunekUkończeniaZadania="Opiekun">
+		<LiczbaPowtórzeńUwagi>(aż do wejścia w rutynę)</LiczbaPowtórzeńUwagi>
+		<Skrypt>
+			<Krok Symbol="1" Treść="[Time at Thursday] Informacja o tym, że w sobotę rano będzie zadanie umycia wanny i zlewu" />
+			<Krok Symbol="2" Treść="[Time at Saturday] [Inicjowane na smartfon opiekuna, tylko za pierwszym razem] Do opiekuna: Pokaż dziecku krok-po-kroku jak myjesz wannę i zlew (nie zakładaj, że coś jest oczywiste i gracz powinien to wcześniej wiedzieć)" />
+			<Krok Symbol="2a" Treść="[Test firstTime] Poproś opiekuna o pokazanie jak myc zlew" />
+			<Krok Symbol="3" Treść="Wyjmij sprzęty potrzebne do umycia wanny i zlewu" />
+			<Krok Symbol="4" Treść="Umyj wannę i zlew według instrukcji" />
+			<Krok Symbol="5" Treść="Skończ wycieranie mycie, dopiero gdy powierzchnia będzie czysta" />
+			<Krok Symbol="6" Treść="Upewnij się, czy wanna jest dobrze umyta i zawołaj opiekuna, prosząc żeby to sprawdził. W razie potrzeby popraw" />
+		</Skrypt>
+		<Trudności IRS="0" KW="0" KNW="0" E="0" TU="0" MPS="0" FC="3" PZ="0" RSZ="0" />
+		<DodatkowePunkty>
+			<DodatkowyPunkt NazwaTrudności="FC" LiczbaPunktów="1" Opis="p. do FC za brak poprawek" />
+			<DodatkowyPunkt NazwaTrudności="KW" LiczbaPunktów="2" Opis="do KW za dzielne zniesienie uwag opiekuna" />
+		</DodatkowePunkty>
+	</Zadanie>
+	<Zadanie Seria="Prace domowe. Pranie" Kod="P1" Tytuł="Segregowanie prania" LiczbaPowtórzeń="3" SposóbPrezentacjiZadania="JedenPunktNaStronie_PrzewijanieWPoziomie" WarunekUkończeniaZadania="Opiekun">
+		<LiczbaPowtórzeńUwagi>(aż do wejścia w rutynę)</LiczbaPowtórzeńUwagi>
+		<Skrypt>
+			<Krok Symbol="1" Treść="[Time at Thursday] Informacja o tym, że w sobotę rano zadaniem gracza będzie wykonanie prania, co obejmuje także segregowanie" />
+			<Krok Symbol="2" Link="http:\\youtube" Treść="Obejrzyj film o tym w jaki sposób należy segregować pranie, kolory i temperatury" />
+			<Krok Symbol="3" Treść="Obejrzyj go jeszcze raz z opiekunem, który może mieć swoje zasady segregowania prania" />
+			<Krok Symbol="4" Treść="[Time at Saturday] [Pierwsze dwa razy z opiekunem, który pokazuje jak dzieli pranie; wówczas inicjacja z telefonu opiekuna] Wyjmij rzeczy z kosza na pranie" />
+			<Krok Symbol="4a" Treść="[Test firstTime] Poproś opiekuna o pokazanie jak dzielić pranie" />
+			<Krok Symbol="5" Treść="Podziel je na kolory oraz temperatury prania. Poszczególne grupy możesz włożyć do reklamówek lub do osobnych koszy" />
+			<Krok Symbol="6" Treść="Wybierz grupę, która będzie prana jako pierwsza, a resztę posegregowaną włóż w reklamówkach z powrotem do kosza lub koszy na posegregowane pranie" />
+			<Krok Symbol="7" Treść="Sprawdź dokładnie czy wszystkie rzeczy został właściwie posegregowane, a przede wszystkim czy w koszu z jasnym praniem nie znalazła się jakaś rzecz ciemnego koloru" />
+			<Krok Symbol="8" Treść="Poproś opiekuna, żeby sprawdził, czy dobrze posegregowałeś pranie" />
+		</Skrypt>
+		<Trudności IRS="0" KW="0" KNW="0" E="0" TU="0" MPS="1" FC="3" PZ="0" RSZ="0" />
+		<DodatkowePunkty>
+			<DodatkowyPunkt NazwaTrudności="FC" LiczbaPunktów="2" Opis="p do FC za samodzielne sprawdzenie, czy pranie jest prawidłowo posegregowane" />
+			<DodatkowyPunkt NazwaTrudności="FC" LiczbaPunktów="1" Opis="p. do FC za brak poprawek" />
+			<DodatkowyPunkt NazwaTrudności="KW" LiczbaPunktów="2" Opis="do KW za dzielne zniesienie uwag opiekuna" />
+		</DodatkowePunkty>
+	</Zadanie>
+	<Zadanie Seria="Prace domowe. Pranie" Kod="P2" Tytuł="Pranie" LiczbaPowtórzeń="4" SposóbPrezentacjiZadania="JedenPunktNaStronie_PrzewijanieWPoziomie" WarunekUkończeniaZadania="Opiekun">
+		<LiczbaPowtórzeńUwagi>(kolorowe i białe, różne temperatury, aż do wejścia w rutynę)</LiczbaPowtórzeńUwagi>
+		<Skrypt>
+			<Krok Symbol="2" Treść="[Test Variable pralka_zawsze_podlaczona = False] Włącz pralkę do kontaktu" />
+			<Krok Symbol="3" Treść="Otwórz bęben pralki i włóż do niego jedną grupę posegregowanych rzeczy do prania (Spytaj opiekuna jaką grupę wyprać)" />
+			<Krok Symbol="4" Treść="Nastaw w pralce odpowiedni program i temperaturę" />
+			<Krok Symbol="5" Treść="Wsyp proszek lub wlej płyn do prania zgodnie z jego przeznaczeniem (zwróć uwagę, że płyn musi być do odpowiedniego typu rzeczy: białe lub kolorowe)" />
+			<Krok Symbol="6" Treść="Przed uruchomieniem prania zawołaj opiekuna, żeby sprawdził, czy program jest odpowiedni" />
+			<Krok Symbol="7" Treść="Uruchom pranie" />
+		</Skrypt>
+		<Trudności IRS="0" KW="0" KNW="0" E="0" TU="0" MPS="1" FC="3" PZ="0" RSZ="0" />
+		<DodatkowePunkty>
+			<DodatkowyPunkt NazwaTrudności="FC" LiczbaPunktów="1" Opis="p. do FC, gdy pierwszy raz i nauka programowania pralki" />
+			<DodatkowyPunkt NazwaTrudności="KW" LiczbaPunktów="1" Opis="p do KW za dzielne zniesienie uwag opiekuna w razie problemów" />
+		</DodatkowePunkty>
+	</Zadanie>
+	<Zadanie Seria="Prace domowe. Pranie" Kod="P3" Tytuł="Rozwieszanie prania" LiczbaPowtórzeń="4" SposóbPrezentacjiZadania="JedenPunktNaStronie_PrzewijanieWPoziomie" WarunekUkończeniaZadania="Opiekun">
+		<LiczbaPowtórzeńUwagi />
+		<Skrypt>
+			<Krok Symbol="1" Treść="Po zakończeniu prania (pralka powinna zaznaczyć to sygnałem dźwiękowym) wyjmij rzeczy z pralki i włóż je do miski na pranie" />
+			<Krok Symbol="2" Informacja="Wpisać P4" Treść="Jeżeli rzeczy zafarbowały zobacz opis postępowania na końcu zadania" />
+			<Krok Symbol="3" Treść="[Test Variable pralka_zawsze_podlaczona = False] Wyłącz pralkę z kontaktu" />
+			<Krok Symbol="4" Treść="[Time at Saturday] Wyjmij i rozłóż suszarkę lub idź do suszarni" />
+			<Krok Symbol="5" Treść="[Test firstTime] Poproś opiekuna, żeby pokazał Ci w jaki sposób należy rozwiesić pranie" />
+			<Krok Symbol="6" Treść="Rozwieś wszystkie wyprane rzeczy zgodnie z instrukcją" />
+			<Krok Symbol="7" Treść="Upewnij się że każda rzecz jest dobrze powieszona (nie ma fałdek, ani zagnieceń, ubrania nie wiszą jedno na drugim)" />
+			<Krok Symbol="8" Treść="Zawołaj opiekuna, żeby sprawdził, że pranie jest dobrze rozwieszone. W razie uwag popraw" />
+		</Skrypt>
+		<Trudności IRS="0" KW="0" KNW="0" E="0" TU="0" MPS="0" FC="2" PZ="0" RSZ="0" />
+		<DodatkowePunkty>
+			<DodatkowyPunkt NazwaTrudności="FC" LiczbaPunktów="1" Opis="p. do FC za brak poprawek" />
+			<DodatkowyPunkt NazwaTrudności="KW" LiczbaPunktów="2" Opis="p do KW za dzielne zniesienie uwag opiekuna" />
+		</DodatkowePunkty>
+	</Zadanie>
+	<Zadanie Seria="Prace domowe. Pranie" Kod="P4" Tytuł="Pranie zafarbowanych rzeczy" LiczbaPowtórzeń="-1" SposóbPrezentacjiZadania="WszystkiePunktyNaJednejStronie" WarunekUkończeniaZadania="Opiekun">
+		<LiczbaPowtórzeńUwagi />
+		<Skrypt>
+			<Krok Symbol="1" Treść="Poinformuj opiekuna o tym, że wybrane rzeczy zafarbowały" />
+			<Krok Symbol="2" Treść="Nalej do miski pół szklanki octu i włóż zafarbowane pranie" />
+			<Krok Symbol="3" Treść="Po kilku godzinach włóż całe pranie do pralki" />
+			<Krok Symbol="4" Treść="Powtórzyć program prania" />
+			<Krok Symbol="5" Treść="Sprawdź, czy rzeczy się wyprały. Daj znać opiekunowi" />
+		</Skrypt>
+		<Trudności IRS="0" KW="0" KNW="0" E="4" TU="2" MPS="2" FC="3" PZ="0" RSZ="0" />
+	</Zadanie>
+	<Zadanie Seria="Prace domowe. Pranie" Kod="P5" Tytuł="Prasowanie i rozkładanie prania" LiczbaPowtórzeń="4" SposóbPrezentacjiZadania="JedenPunktNaStronie_PrzewijanieWPoziomie" WarunekUkończeniaZadania="Opiekun">
+		<LiczbaPowtórzeńUwagi />
+		<Skrypt>
+			<Krok Symbol="1" Treść="[Time at Sunday] [Pierwsze dwa razy z opiekunem, który pokazuje jak należy prasować rzeczy; wówczas inicjacja z telefonu opiekuna]" />
+			<!-- <Krok Symbol="2" Treść="[Jeżeli nie prasuje się rzeczy przejdź od razu do punktu 15]" /> -->
+			<Krok Symbol="3" Treść="[Test Variable czy_prasuje_sie_rzeczy = False] Następnego dnia po praniu sprawdź, czy rozwieszone pranie jest już suche" />
+			<Krok Symbol="4" Treść="[Test Variable czy_prasuje_sie_rzeczy = False] Gdy jest – zdejmij je z suszarki" />
+			<Krok Symbol="5" Treść="[Test Variable czy_prasuje_sie_rzeczy = False] Sprawdź na metkach każdego ubrania temperaturę prasowania (może być liczba kropek) i podziel na grupy" />
+			<Krok Symbol="6" Treść="[Test Variable czy_prasuje_sie_rzeczy = False] Nastaw żelazko na właściwą temperaturę dla pierwszej grupy z najmniejszą liczbą kropek" />
+			<Krok Symbol="7" Treść="[Test Variable czy_prasuje_sie_rzeczy = False] Rozkładaj rzeczy na desce do prasowania lub stole z rozłożonym kocem i prześcieradłem" />
+			<Krok Symbol="8" Treść="[Test Variable czy_prasuje_sie_rzeczy = False] Odczekaj aż lampka żelazka zgaśnie, co oznacza, że jest już odpowiednio nagrzane" />
+			<Krok Symbol="9" Treść="[Test Variable czy_prasuje_sie_rzeczy = False] Uważaj na rozgrzane żelazko – może mocno oparzyć. Jeżeli tak się stanie odstaw żelazko tak, żeby nie zrobiło dziury w ubraniu i długo schładzaj oparzone miejsce zimną wodą" />
+			<Krok Symbol="10" Treść="[Test Variable czy_prasuje_sie_rzeczy = False] Prasuj poruszając rozgrzanym żelazkiem po ubraniu. Zwróć uwagę, aby prasowane rzeczy nie były zagięte – należy je równo rozłożyć" />
+			<Krok Symbol="11" Treść="[Test Variable czy_prasuje_sie_rzeczy = False] Wyprasowane rzeczy odkładaj" />
+			<Krok Symbol="12" Treść="[Test Variable czy_prasuje_sie_rzeczy = False] Po wyprasowaniu jednej grupy rzeczy, zmień temperaturę żelazka dla kolejnej grupy itd" />
+			<Krok Symbol="13" Treść="[Test Variable czy_prasuje_sie_rzeczy = False] Po wyprasowaniu wszystkich rzeczy poproś [opiekuna], żeby sprawdził czy wszystko jest dobrze wyprasowanie. Jeżeli ma uwagi, popraw" />
+			<Krok Symbol="14" Treść="[Test Variable czy_prasuje_sie_rzeczy = False] Odstaw żelazko tak, żeby mogło wystygnąć nie narażając nikogo na oparzenia" />
+			<Krok Symbol="15" Treść="Obejrzyj film pokazujący jak należy składać pranie" />
+			<Krok Symbol="16" Treść="Rozłóż rzeczy na stole, a następnie każdą rzecz po kolei składaj według instrukcji podanej na filmie" />
+			<Krok Symbol="17" Treść="Pamiętaj, aby bieliznę i skarpetki ułożyć osobno" />
+			<Krok Symbol="18" Treść="Zwróć uwagę na sposób składania skarpet – instrukcja na filmiku" />
+			<Krok Symbol="19" Treść="Upewnij się, że każda rzecz jest dobrze złożona" />
+			<Krok Symbol="20" Treść="Ułożone rzeczy zanieś na ich miejsca" />
+		</Skrypt>
+		<Trudności IRS="0" KW="0" KNW="0" E="0" TU="0" MPS="2" FC="4" PZ="0" RSZ="0" />
+		<DodatkowePunkty>
+			<DodatkowyPunkt NazwaTrudności="FC" LiczbaPunktów="1" Opis="p. do FC za brak poprawek" />
+			<DodatkowyPunkt NazwaTrudności="KW" LiczbaPunktów="2" Opis="do KW za dzielne zniesienie uwag opiekuna" />
+		</DodatkowePunkty>
+	</Zadanie>
+	<Zadanie Seria="Pizza" Kod="PZS1" Tytuł="Rozmowa przez telefon (na razie bez zapraszania – oswojenie)" LiczbaPowtórzeń="1" SposóbPrezentacjiZadania="WszystkiePunktyNaJednejStronie" WarunekUkończeniaZadania="Brak">
+		<LiczbaPowtórzeńUwagi />
+		<Skrypt>
+			<Krok Symbol="1" Treść="Przywitaj się. Zagajenie: Cześć! Nazywam się [Insert Person Self Firstname]. Dzwonię do Ciebie bo obaj bierzemy udział w grze" />
+			<Krok Symbol="2" Treść="Dowiedz się jak Twój rozmówca ma na imię, ile ma lat, czy lubi pizzę, jaką?" />
+			<Krok Symbol="3" Treść="Nie kończ rozmowy od razu – postaraj się powiedzieć coś o sobie" />
+			<Krok Symbol="4" Treść="Pożegnaj się" />
+			<Krok Symbol="5" Treść="Przekaż opiekunowi uzyskane informacje" />
+		</Skrypt>
+		<Trudności IRS="1" KW="2" KNW="0" E="1" TU="0" MPS="0" FC="2" PZ="0" RSZ="0" />
+		<DodatkowePunkty>
+			<DodatkowyPunkt NazwaTrudności="IRS" LiczbaPunktów="2" Opis="p. do IRS za miły ton (ocenia opiekun)" />
+			<DodatkowyPunkt NazwaTrudności="KW" LiczbaPunktów="2" Opis="p. do KW, jeżeli czas rozmowy jest dłuższy niż 3 minuty" />
+			<DodatkowyPunkt NazwaTrudności="FC" LiczbaPunktów="1" Opis="p. do FC, +2 p do E. jeżeli dzwoni do gracza spoza drużyny (grupy terapeutycznej)" />
+		</DodatkowePunkty>
+	</Zadanie>
+	<Zadanie Seria="Pizza. Wyjście z kolegą" Kod="PZK1" Tytuł="Wspólne wyjście do [pizzerii]" LiczbaPowtórzeń="2" SposóbPrezentacjiZadania="BlokiPunktówNaStronie_PrzewijanieWPoziomie" WarunekUkończeniaZadania="Brak">
+		<LiczbaPowtórzeńUwagi>(różne osoby)</LiczbaPowtórzeńUwagi>
+		<Skrypt>
+			<Krok Symbol="1" Treść="Sprawdź ceny w [Insert Place pizzeria Description]" />
+			<Krok Symbol="2" Treść="Zadzwoń do [Adama]" />
+			<Krok Symbol="a" Treść="Przywitaj się" />
+			<Krok Symbol="b" Treść="Zaproś go na pizzę do [Insert Place pizzeria Description]" />
+			<Krok Symbol="c" Treść="Przekaż informacje o cenach i umów się, że płacicie pół-na-pół" />
+			<Krok Symbol="d" Treść="Ustal termin, który będzie pasował Wam obu" />
+			<Krok Symbol="e" Treść="Pożegnaj się: Do zobaczenia" />
+			<Krok Symbol="3" Treść="Zarezerwuj stolik w [Insert Place pizzeria Description]" />
+			<Krok Symbol="4" Treść="Zabierz swój smartfon i pieniądze/kartę (bankomatową)" />
+			<Krok Symbol="5" Treść="Zadzwoń godzinę przed wyjściem do [Adama], żeby potwierdzić spotkanie" />
+			<Krok Symbol="6" Treść="W ustalonym terminie przyjdź do [Insert Place pizzeria Description]" />
+			<Krok Symbol="7" Treść="Gdy się spotkacie, przywitajcie się" />
+			<Krok Symbol="8" Treść="Zajmijcie zamówiony stolik" />
+			<Krok Symbol="10" Treść="Obaj wyślijcie SMSy do opiekunów, że jesteście na miejscu" />
+			<Krok Symbol="11" Treść="Ustalcie wspólnie jaką pizzę pół-na-pół zamówicie" />
+			<Krok Symbol="12" Treść="Złóżcie zamówienie" />
+			<Krok Symbol="13" Treść="Czekając na pizzę porozmawiajcie o ulubionych daniach, które można zamówić poza domem. Dowiedz się co lubi [Adam]" />
+			<Krok Symbol="14" Treść="Gdy pizza zostanie podana, życzcie sobie Smacznego" />
+			<Krok Symbol="15" Treść="W trakcie jedzenie porozmawiajcie o aktualnych zainteresowaniach. Spróbuj przekonać [Adama], dlaczego warto zainteresować się tym, co Cię aktualnie pasjonuje, ale jednocześnie wysłuchaj opowieści o zainteresowaniach [Adama]" />
+			<Krok Symbol="16" Treść="Po zjedzeniu pizzy i zakończeniu rozmowy uśmiechnij się do [Adama]" />
+			<Krok Symbol="17" Treść="Zapłaćcie razem" />
+			<Krok Symbol="18" Treść="Wspólnie wyjdźcie z lokalu" />
+			<Krok Symbol="19" Treść="Podziękujcie sobie za spotkanie i pożegnajcie się" />
+			<Krok Symbol="20" Treść="Zadzwoń do domu, żeby dać znać, że wracasz" />
+			<Krok Symbol="21" Treść="Opowiedz opiekunowi o spotkaniu" />
+		</Skrypt>
+		<Trudności IRS="4" KW="4" KNW="2" E="3" TU="2" MPS="2" FC="4" PZ="2" RSZ="0" />
+		<DodatkowePunkty>
+			<DodatkowyPunkt NazwaTrudności="KW" LiczbaPunktów="2" Opis="p. do KW za pobyt w pizzerii trwa przynajmniej 60 minut," />
+			<DodatkowyPunkt NazwaTrudności="KW" LiczbaPunktów="2" Opis="p. do KW jeżeli opowiada o wyjściu dłużej niż 10 minut" />
+			<DodatkowyPunkt NazwaTrudności="PZ" LiczbaPunktów="2" Opis="p. do PZ za to, że umie opowiedzieć o zainteresowaniach kolegi" />
+			<DodatkowyPunkt NazwaTrudności="IRS" LiczbaPunktów="2" Opis="p. do IRS za to, że udało się zamówić pizzę pół-na-pół" />
+			<DodatkowyPunkt NazwaTrudności="IRS" LiczbaPunktów="1" Opis="p. do IRS za wspólne zapłacenie rachunku" />
+			<DodatkowyPunkt NazwaTrudności="IRS" LiczbaPunktów="1" Opis="p. do IRS jeżeli partner spoza grupy terapeutycznej (drużyny)" />
+		</DodatkowePunkty>
+	</Zadanie>
+	<Zadanie Seria="Samodzielne przygotowywanie posiłków" Kod="J1" Tytuł="Herbata" LiczbaPowtórzeń="10" SposóbPrezentacjiZadania="WszystkiePunktyNaJednejStronie" WarunekUkończeniaZadania="Opiekun">
+		<LiczbaPowtórzeńUwagi>(na sygnał od opiekuna, aplikacja sugeruje w losowych odstępach dni)</LiczbaPowtórzeńUwagi>
+		<Skrypt>
+			<Krok Symbol="1" Treść="Zapytaj opiekunów czy chcieliby herbaty?" />
+			<Krok Symbol="2" Treść="Nalej wodę do czajnika" />
+			<Krok Symbol="3" Treść="Postaw na kuchenkę i zapal gaz / Włącz czajnik elektryczny" />
+			<Krok Symbol="4" Treść="Przygotuj czyste kubki dla siebie i innych" />
+			<Krok Symbol="5" Treść="Znajdź herbatę (w torebkach lub sypaną – zdjęcia)" />
+			<Krok Symbol="6" Treść="Włóż jedną torebkę do filiżanki lub nasyp pół łyżeczki herbaty sypanej" />
+			<Krok Symbol="7" Treść="Gdy woda się zagotuje, nalej wrzątku do kubka z herbatą (nie nalewaj do samego brzegu, żeby można było przenieść kubek nie rozlewając)" />
+			<Krok Symbol="8" Treść="Zawołaj, że herbata gotowa" />
+			<Krok Symbol="9" Treść="Zanieś do miejsca, gdzie są opiekunowi" />
+			<Krok Symbol="10" Opcjonalne="True" Treść="Wypijcie razem rozmawiając. Zapytaj opiekuna, jak mu minął dzień i wysłuchaj go" />
+		</Skrypt>
+		<Trudności IRS="0" KW="2" KNW="0" E="0" TU="1" MPS="0" FC="2" PZ="0" RSZ="0" />
+		<DodatkowePunkty>
+			<DodatkowyPunkt NazwaTrudności="KW" LiczbaPunktów="1" Opis="p. do KW za spokojnie wspólnie wypitą herbatę z rozmową lub grą" />
+		</DodatkowePunkty>
+	</Zadanie>
+	<Zadanie Seria="Samodzielne przygotowywanie posiłków" Kod="J2" Tytuł="Kanapka" LiczbaPowtórzeń="10" SposóbPrezentacjiZadania="JedenPunktNaStronie_Zdjęcia_PrzewijanieWPoziomie" WarunekUkończeniaZadania="Brak">
+		<LiczbaPowtórzeńUwagi>(na sygnał od opiekuna, aplikacja sugeruje w losowych odstępach dni)</LiczbaPowtórzeńUwagi>
+		<Skrypt>
+			<Krok Symbol="1" Treść="Ukrój tyle kawałków chleba, ile zjesz" />
+			<Krok Symbol="2" Opcjonalne="True" Treść="Możesz posmarować chleb masłem" />
+			<Krok Symbol="3" Treść="Połóż na chleb szynkę, ser lub dżem" />
+			<Krok Symbol="4" Opcjonalne="True" Treść="Bonus: Położenie na chleb i zjedzenie z kanapką czegoś dodatkowego z poniższej listy da Ci dodatkowe punkty (pomidor, ogórek, sałata itp.)" />
+			<Krok Symbol="5" Treść="Wyjmij talerz i połóż kanapkę na talerzu" />
+			<Krok Symbol="7" Opcjonalne="True" Treść="Możesz nalać sobie wody lub soku do szklanki lub zrób herbatę" />
+			<Krok Symbol="8" Treść="Zjedz bez pośpiechu" />
+		</Skrypt>
+		<Trudności IRS="0" KW="0" KNW="0" E="0" TU="0" MPS="0" FC="2" PZ="0" RSZ="0" />
+		<DodatkowePunkty>
+			<DodatkowyPunkt NazwaTrudności="FC" LiczbaPunktów="1" Opis="p. do FC za każdą dodatkową rzecz na kanapce (do 3 rzeczy max.)" />
+		</DodatkowePunkty>
+	</Zadanie>
+	<Zadanie Seria="Samodzielne przygotowywanie posiłków" Kod="J3" Tytuł="Płatki/Müsli z mlekiem" LiczbaPowtórzeń="10" SposóbPrezentacjiZadania="JedenPunktNaStronie_Zdjęcia_PrzewijanieWPoziomie" WarunekUkończeniaZadania="Opiekun">
+		<LiczbaPowtórzeńUwagi />
+		<Skrypt>
+			<Krok Symbol="1" Treść="[Time Evening] Jutro rano przed szkołą sam zrobisz sobie płatki/müsli na śniadanie z ciepłym mlekiem. Uzyskasz dodatkowe punkty, jeżeli zadanie wykonasz samodzielnie" />
+			<Krok Symbol="2" Treść="[Time Morning] Wyjmij mleko z lodówki i nalej do kubka" />
+			<Krok Symbol="3" Treść="Wstaw kubek z mlekiem do mikrofalówki i nastaw na 1 minutę" />
+			<Krok Symbol="4" Treść="Weź miseczkę lub talerz i nasyp płatków lub müsli" />
+			<Krok Symbol="5" Treść="Gdy mikrofalówka skończy, upewnij się wierzchem dłoni, że kubek nie parzy" />
+			<Krok Symbol="6" Treść="Zalej płatki/müsli mlekiem" />
+			<Krok Symbol="7" Treść="Jeżeli po zmieszaniu jest za mało ciepłe, wstaw miseczkę/talerz na minutę do mikrofalówki" />
+			<Krok Symbol="8" Treść="Możesz jeść" />
+			<Krok Symbol="1" Treść="Jutro rano przed szkołą sam zrobisz sobie płatki/müsli na śniadanie z zimnym mlekiem" />
+			<!-- <Krok Symbol="2" Treść="[Bonus, gracz wie że dodatkowe punkty, gdy żadnego wyręczania przez opiekunów]" /> -->
+			<Krok Symbol="3" Treść="[Time delay 960] [Time Morning] Do miski lub talerza nasyp płatki/müsli" />
+			<Krok Symbol="4" Treść="Wyjmij mleko z lodówki i zalej płatki/müsli uważając, żeby nie wylać" />
+			<Krok Symbol="5" Treść="Możesz jeść" />
+		</Skrypt>
+		<Trudności IRS="0" KW="0" KNW="0" E="1" TU="0" MPS="0" FC="3" PZ="0" RSZ="0" />
+	</Zadanie>
+	<Zadanie Seria="Samodzielne przygotowywanie posiłków" Kod="J4" Tytuł="Wspólna kolacja - kanapki" LiczbaPowtórzeń="3" SposóbPrezentacjiZadania="JedenPunktNaStronie_Zdjęcia_PrzewijanieWPoziomie" WarunekUkończeniaZadania="Opiekun">
+		<LiczbaPowtórzeńUwagi />
+		<Skrypt>
+			<Krok Symbol="1" Treść="Jutro Twoim zadaniem będzie przygotowanie kanapek na kolację dla całej rodziny. Ustal z opiekunem godzinę." />
+			<Krok Symbol="1a" Treść="[Test Person Sibling Exists] Umówcie się, kto będzie zmywał, skoro Ty przygotowujesz posiłek" />
+			<Krok Symbol="1b" Treść="[Test Person Sibling NotExists] Opiekun bierze zmywanie na siebie" />
+			<Krok Symbol="2" Treść="[Time delay 1200] Zapytaj domowników o to, z czym chcieliby kanapki i ile masz ich każdemu zrobić" />
+			<Krok Symbol="3" Opcjonalne="True" Treść="Dostaniesz dodatkowe punkty za całkowitą samodzielność w przygotowaniu kolacji i za cierpliwość" />
+			<Krok Symbol="4" Treść="Wstaw wodę na herbatę (nalej więcej wody, bo dla wszystkich)" />
+			<Krok Symbol="5" Informacja="Info jak zrobić kanapki" Treść="Przygotuj kanapki i połóż je na talerzu" />
+			<Krok Symbol="5a" Treść="Uwaga! Gdy woda ugotuje się, gdy nie będziesz jeszcze gotowy po prostu ją wyłącz. Zawsze możesz włączyć czajnik jeszcze raz" />
+			<Krok Symbol="6" Informacja="Info jak zrobić herbe" Treść="Przygotuj herbatę dla wszystkich." />
+			<Krok Symbol="7" Treść="Zanieś kanapki i herbatę na miejsce, gdzie zwykle jecie posiłki" />
+			<Krok Symbol="8" Treść="Zawołaj wszystkich na kolację" />
+			<Krok Symbol="9" Treść="Gdy usiądą, życz wszystkim Smacznego!" />
+			<Krok Symbol="10" Treść="[Test Person Sibling Exists] Ustalcie kiedy brat/siostra będzie robił kolację. Wówczas Ty pozmywaj" />
+			<Krok Symbol="11" Treść="Gdy wszyscy zjedzą, pomóż pozbierać naczynia" />
+		</Skrypt>
+		<Trudności IRS="0" KW="2" KNW="0" E="0" TU="2" MPS="1" FC="3" PZ="0" RSZ="0" />
+		<DodatkowePunkty>
+			<DodatkowyPunkt NazwaTrudności="KNW" LiczbaPunktów="1" Opis="p. do KNW za poprawne zachowanie przy stole" />
+			<DodatkowyPunkt NazwaTrudności="FC" LiczbaPunktów="1" Opis="p do FC, +2 p do TU za pomoc w pozbieraniu naczyń" />
+			<DodatkowyPunkt NazwaTrudności="FC" LiczbaPunktów="1" Opis="p do FC za kompletny brak wyręczania" />
+			<DodatkowyPunkt NazwaTrudności="TU" LiczbaPunktów="1" Opis="p do TU za brak złości przy kolacji spowodowanych przygotowaniem posiłku" />
+		</DodatkowePunkty>
+	</Zadanie>
+	<Zadanie Seria="Samodzielne przygotowywanie posiłków" Kod="J5" Tytuł="Wspólna kolacja – tosty z szynką lub na słodko (chodzi o toster kanapkowy)" LiczbaPowtórzeń="3" SposóbPrezentacjiZadania="JedenPunktNaStronie_Zdjęcia_PrzewijanieWPoziomie" WarunekUkończeniaZadania="Opiekun">
+		<LiczbaPowtórzeńUwagi />
+		<Skrypt>
+			<Krok Symbol="1" Treść="Jutro Twoim zadaniem będzie przygotowanie tostów na kolację dla całej rodziny" />
+			<Krok Symbol="2a" Treść="[Test Person Sibling Exists] Umówcie się, kto będzie zmywał, skoro Ty przygotowujesz posiłek" />
+			<Krok Symbol="2b" Treść="[Test Person Sibling NotExists] Opiekun bierze zmywanie na siebie" />
+			<Krok Symbol="3" Treść="Uwaga! Dodatkowe punkty będą za samodzielność i za cierpliwość" />
+			<Krok Symbol="4" Treść="[Time delay 1200] [Time Evening] Wstaw wodę na herbatę (więcej, dla wszystkich)" />
+			<Krok Symbol="5" Treść="Przygotuj po 4 kromki chleba dla każdego domownika (po jednym toście z szynką i po jednym na słodko)" />
+			<Krok Symbol="6" Treść="Na dwóch sznytkach połóż ser. Dodatkowo na jednej szynkę" />
+			<Krok Symbol="7" Treść="Złóż w podwójne kanapki gotowe do włożenia do tostera" />
+			<Krok Symbol="8" Treść="Uruchom toster i włóż pierwszą porcję" />
+			<Krok Symbol="9" Treść="Gdy toster da znać, że tost jest gotowy (Gorące!), użyj drewnianej łopatki żeby wyjąć tosty i nałożyć kolejne" />
+			<Krok Symbol="10" Treść="Gotowe tosty połóż na talerzu (osobno z szynką i z samym serem) i przykryj talerzem" />
+			<Krok Symbol="11" Treść="To samo rób z kolejnymi tostami" />
+			<Krok Symbol="12" Treść="Zanieś wszystko do stołu lub ławy, gdzie zwykle jecie posiłki. Weź dżem do tostów na słodko" />
+			<Krok Symbol="13" Treść="Zrób zdjęcie stołu z kanapkami i herbatą z aplikacji" />
+			<Krok Symbol="14" Treść="Życz wszystkim Smacznego!" />
+			<Krok Symbol="15" Treść="[Test Person Sibling Exists] Ustalcie kiedy brat/siostra będzie robił kolację. Wówczas Ty pozmywaj" />
+			<Krok Symbol="16" Treść="Gdy wszyscy zjedzą, pomóż pozbierać naczynia" />
+		</Skrypt>
+		<Trudności IRS="0" KW="2" KNW="0" E="0" TU="2" MPS="2" FC="3" PZ="0" RSZ="0" />
+		<DodatkowePunkty>
+			<DodatkowyPunkt NazwaTrudności="KNW" LiczbaPunktów="1" Opis="p. do KNW za poprawne zachowanie przy stole" />
+			<DodatkowyPunkt NazwaTrudności="FC" LiczbaPunktów="1" Opis="p do FC, +2 p do TU za pomoc w pozbieraniu naczyń" />
+			<DodatkowyPunkt NazwaTrudności="FC" LiczbaPunktów="1" Opis="p do FC za kompletny brak wyręczania" />
+			<DodatkowyPunkt NazwaTrudności="TU" LiczbaPunktów="1" Opis="p do TU za brak złości przy śniadaniu spowodowanych przygotowaniem posiłku" />
+		</DodatkowePunkty>
+	</Zadanie>
+	<Zadanie Seria="Samodzielne przygotowywanie posiłków" Kod="J6" Tytuł="Sobotnie śniadanie (jajka i tosty/chleb z masłem)" LiczbaPowtórzeń="3" SposóbPrezentacjiZadania="JedenPunktNaStronie_Zdjęcia_PrzewijanieWPoziomie" WarunekUkończeniaZadania="Opiekun">
+		<LiczbaPowtórzeńUwagi />
+		<Skrypt>
+			<Krok Symbol="1" Treść="[Time at Thursday] W sobotę Twoim zadaniem będzie ugotowanie jajek na wspólne śniadanie" />
+			<Krok Symbol="1a" Treść="[Test Person Sibling NotExists] Opiekun robi kanapki" />
+			<Krok Symbol="2" Treść="Uwaga! Dodatkowe punkty będą za samodzielność i za cierpliwość" />
+			<Krok Symbol="3" Treść="Spytaj opiekuna ile jajek przygotować" />
+			<Krok Symbol="3a" Treść="Wyjmij jajka z lodówki i umyj je ściereczką (bez płynu!)" />
+			<Krok Symbol="4" Treść="Wybierz garnek dwa razy większy od objętości jajek i włóż do niego jajka" />
+			<Krok Symbol="5" Treść="Wlej wodę do garnka tak, żeby zakrywała jajka, ale żeby nie sięgała brzegu garnka (tak, żeby wygodne było później wyjmowanie jajek bez rozlewania wody)" />
+			<Krok Symbol="6" Treść="Postaw garnek z jajkami na kuchence i włącz gaz pod garnkiem Uwaga! Najlepiej użyj jednego z palników w głębi (dzięki temu nie będzie ryzyka, że garnek kogoś oparzy, szczególnie, jeżeli w domu są małe dzieci)" />
+			<Krok Symbol="7" Treść="Należy obserwować wodę, żeby wiedzieć, kiedy zacznie się gotować" />
+			<Krok Symbol="8" Treść="Po 3 minutach jajka są ugotowane na miękko, po 6 minutach – na półmiękko, po 8-10 minutach – na twardo" />
+			<Krok Symbol="9" Treść="Wyjmuj je z wody łyżką do zupy lub specjalną łyżką do jajek i przekładaj do miseczki. Nie zostawiaj jajek w gorącej wodzie Uważaj! Jeżeli woda pryśnie, może Cię poparzyć" />
+			<Krok Symbol="9a" Treść="Uwaga! Czas gotowania nie zawsze gwarantuje, że uda się ugotować jajka na miękko lub twardo. Nie zrażaj się, większość osób ma z tym problem" />
+			<Krok Symbol="10" Treść="Garnek zostaw do ostygnięcia ustawiony tak, żeby nie było ryzyka wylania wody na kogoś (np. małe dzieci)" />
+			<Krok Symbol="11" Treść="Jajka na twardo warto zalać zimną wodą, żeby łatwiej było zdejmować skorupkę" />
+			<Krok Symbol="12" Treść="Jajka w miseczce zanieś do miejsca, gdzie zwykle jecie posiłki" />
+			<Krok Symbol="13" Treść="Gdy usiądziecie do śniadania, życz wszystkim Smacznego!" />
+			<Krok Symbol="14" Treść="[Test Person Sibling Exists] Ustalcie kiedy brat/siostra będzie gotował jajka, wówczas Ty zrób kanapki lub herbatę" />
+			<Krok Symbol="15" Treść="Gdy wszyscy zjedzą, pomóż pozbierać naczynia i pozmywać" />
+		</Skrypt>
+		<Trudności IRS="0" KW="2" KNW="0" E="0" TU="1" MPS="2" FC="3" PZ="0" RSZ="0" />
+		<DodatkowePunkty>
+			<DodatkowyPunkt NazwaTrudności="FC" LiczbaPunktów="1" Opis="p do FC, +2 p do TU za pomoc w pozbieraniu i pozmywaniu naczyń" />
+			<DodatkowyPunkt NazwaTrudności="FC" LiczbaPunktów="1" Opis="p do FC za kompletny brak wyręczania" />
+			<DodatkowyPunkt NazwaTrudności="TU" LiczbaPunktów="1" Opis="p do TU za brak złości przy śniadaniu spowodowanych gotowaniem jajek" />
+		</DodatkowePunkty>
+	</Zadanie>
+	<Zadanie Seria="Samodzielne przygotowywanie posiłków" Kod="J7" Tytuł="Kanapki na drugie śniadanie do szkoły" LiczbaPowtórzeń="3" SposóbPrezentacjiZadania="JedenPunktNaStronie_Zdjęcia_PrzewijanieWPoziomie" WarunekUkończeniaZadania="Opiekun">
+		<LiczbaPowtórzeńUwagi />
+		<Skrypt>
+			<Krok Symbol="1" Treść="Jutro Twoim zadaniem będzie przygotowanie dla siebie kanapek na drugie śniadanie do szkoły" />
+			<Krok Symbol="2" Treść="Ustaw sobie budzik 15 minut wcześniej, żeby mieć czas na samodzielne przygotowanie kanapek" />
+			<Krok Symbol="3" Informacja="Jak zrobić kanapce" Treść="[Time Morning] Przygotuj kanapkę, z czym lubisz" />
+			<Krok Symbol="4" Link="Filmik do pakowania kanapek" Treść="Zawiń kanapkę w papier śniadaniowy i włóż do woreczka lub pudełka" />
+			<Krok Symbol="5" Treść="Zapakowaną kanapkę włóż do woreczka lub pudełka, a potem do plecaka" />
+			<Krok Symbol="6" Treść="Posprzątaj użyte rzeczy (chleb do chlebaka, masło i wędlinę do lodówki itp.)" />
+		</Skrypt>
+		<Trudności IRS="0" KW="0" KNW="0" E="0" TU="0" MPS="2" FC="3" PZ="0" RSZ="0" />
+	</Zadanie>
+	<Zadanie Seria="Samodzielne przygotowywanie posiłków" Kod="J8" Tytuł="Gotowanie makaronu" LiczbaPowtórzeń="3" SposóbPrezentacjiZadania="JedenPunktNaStronie_Zdjęcia_PrzewijanieWPoziomie" WarunekUkończeniaZadania="Opiekun">
+		<LiczbaPowtórzeńUwagi />
+		<Skrypt>
+			<Krok Symbol="1" Treść="[opiekun zatwierdza]" />
+			<Krok Symbol="1a" Treść="[Time Evening] Dziś na kolację będzie makaron. Twoim zadaniem będzie ugotowanie makaronu" />
+			<Krok Symbol="2" Treść="Weź średniej wielkości garnek" />
+			<Krok Symbol="3" Treść="Nalej do niego wody, około ¾ (garnek nie może być pełen)" />
+			<Krok Symbol="4" Treść="Wsyp dużą płaską łyżkę soli, zamieszaj" />
+			<Krok Symbol="5" Treść="Poczekaj, aż woda się zagotuje (pokażą się bąbelki)" />
+			<Krok Symbol="6" Treść="Wtedy włóż makaron uważając, żeby się nie poparzyć" />
+			<Krok Symbol="7" Treść="Zamieszaj i zostaw na kuchence. Włącz pochłaniacz," />
+			<Krok Symbol="8" Treść="Zmniejsz gaz pokrętłem, nałóż pokrywkę na garnek, pilnując, żeby woda się nie podnosiła za bardzo; jeśli zacznie się wylewać, albo podnieś pokrywkę i tak zostaw albo jeszcze bardziej zmniejsz gaz" />
+			<Krok Symbol="9" Treść="Gotuj tak długo, jak podaje przepis na torebce makaronu (zazwyczaj około 20 minut)" />
+			<Krok Symbol="10" Treść="Po 20 minutach sprawdź, czy makaron jest odpowiednio miękki. W tym celu nadziej kawałek makaronu na widelec, włóż go pod zimną wodę, aby się nie poparzyć i ugryź" />
+			<Krok Symbol="11" Treść="Jeśli makaron jest dobry, wyłącz gaz na kuchence" />
+			<Krok Symbol="12" Treść="Weź sitko, włóż je do zlewu, odkręć zimną wodę tak, żeby woda nie lała się do sitka" />
+			<Krok Symbol="13" Treść="Przelej makaron z garnka do sitka" />
+			<Krok Symbol="14" Treść="Możesz makaron wypłukać" />
+			<Krok Symbol="15" Treść="Zostaw makaron do ostygnięcia" />
+			<Krok Symbol="16" Treść="Posprzątaj po gotowaniu" />
+		</Skrypt>
+		<Trudności IRS="0" KW="0" KNW="0" E="0" TU="0" MPS="0" FC="4" PZ="0" RSZ="0" />
+	</Zadanie>
+	<Zadanie Seria="Bananowiec (ciasto)" Kod="B3" Tytuł="Pieczenie ciasta" LiczbaPowtórzeń="2" SposóbPrezentacjiZadania="JedenPunktNaStronie_Zdjęcia_PrzewijanieWPoziomie" WarunekUkończeniaZadania="Opiekun">
+		<LiczbaPowtórzeńUwagi />
+		<Skrypt>
+			<Krok Symbol="1" Treść="Przygotuj sobie miejsce na stole w kuchni. Wyczyść je" />
+			<Krok Symbol="2" Treść="Wyjmij wszystkie składniki:" />
+			<Krok Symbol="a" Treść="4 (dojrzałe) banany" />
+			<Krok Symbol="b" Treść="1 szklanka cukru" />
+			<Krok Symbol="c" Treść="1/2 szklanki mąki" />
+			<Krok Symbol="d" Treść="1 mała łyżeczka sody oczyszczonej lub proszku do pieczenia" />
+			<Krok Symbol="e" Opcjonalne="True" Treść="bakalie (żurawina, orzechy, migdały)" />
+			<Krok Symbol="f" Treść="1/2 szklanki oleju słonecznikowego" />
+			<Krok Symbol="g" Treść="1 jajko" />
+			<Krok Symbol="3" Treść="Weź dużą miskę" />
+			<Krok Symbol="4" Treść="Obierz 4 banany" />
+			<Krok Symbol="5" Treść="Pokrój banany na kawałki" />
+			<Krok Symbol="6" Treść="Włóż pokrojone banany do miski" />
+			<Krok Symbol="7" Treść="Gnieć widelcem aż do uzyskania w miarę jednolitej masy" />
+			<Krok Symbol="8" Treść="Wsyp pół szklanki mąki" />
+			<Krok Symbol="9" Treść="Wsyp szklankę cukru" />
+			<Krok Symbol="10" Treść="Wlej pół szklanki oleju słonecznikowego" />
+			<Krok Symbol="11" Treść="Wsyp małą łyżeczkę sody oczyszczonej lub proszku do pieczenia" />
+			<Krok Symbol="12" Treść="W dodatkowej miseczce lub szklance rozbij jajko i całe (bez skorupki) wlej do miski" />
+			<Krok Symbol="13" Treść="Wymieszaj całość łyżką do zupy (minimum 10 obrotów)" />
+			<Krok Symbol="14" Treść="Wyjmij formę do pieczenia" />
+			<Krok Symbol="15" Treść="Wyłóż formę papierem do pieczenia (nie mylić z papierem śniadaniowym)" />
+			<Krok Symbol="16" Treść="Ustaw piekarnik na 180°C" />
+			<Krok Symbol="17" Treść="Wstaw formę z ciastem do piekarnika" />
+			<Krok Symbol="18" Treść="Ustaw alarm w smartfonie na 40 minut od teraz" />
+			<Krok Symbol="19" Treść="Można wyskrobać/wylizać naczynie, w którym było ciasto!" />
+			<Krok Symbol="20" Treść="Przygotuj podstawę na gorące naczynia lub drewnianą(!) deskę do krojenia" />
+			<Krok Symbol="21" Treść="Po 40 minutach (alarm) wyłącz piekarnik" />
+			<Krok Symbol="22" Treść="Koniecznie nałóż rękawice kuchenne" />
+			<Krok Symbol="23" Treść="Rękoma w rękawicach wyjmij formę z piekarnika i postaw na podstawce lub drewnianej desce do krojenia" />
+			<Krok Symbol="24" Treść="Zrób zdjęcie z aplikacji" />
+			<Krok Symbol="25" Treść="Poczekaj aż ciasto ostygnie" />
+		</Skrypt>
+		<Trudności IRS="0" KW="0" KNW="0" E="0" TU="2" MPS="2" FC="4" PZ="1" RSZ="1" />
+		<DodatkowePunkty>
+			<DodatkowyPunkt NazwaTrudności="FC" LiczbaPunktów="1" Opis="do FC, +1 do TU za cierpliwość przy wykonywaniu zadania" />
+		</DodatkowePunkty>
+	</Zadanie>
+	<Zadanie Seria="Prezenty. Święta Bożego Narodzenia" Kod="ŚBN1" Tytuł="Boże Narodzenie – zaplanowanie kupna prezentów" LiczbaPowtórzeń="1" SposóbPrezentacjiZadania="WszystkiePunktyNaJednejStronie" WarunekUkończeniaZadania="Brak">
+		<LiczbaPowtórzeńUwagi />
+		<Skrypt>
+			<Krok Symbol="1" Treść="[Pod koniec listopada] Powiadomienie w grze: Za 4 tygodnie będą Święta Bożego Narodzenia. Powinieneś kupić drobne prezenty dla członków rodziny: [tu wymienione osoby wskazane przez opiekuna]" />
+			<Krok Symbol="2" Treść="Sprawdź ile masz pieniędzy (gotówka lub konto)" />
+			<Krok Symbol="3" Treść="Czy wiesz, jakie prezenty chciałaby od Ciebie dostać osoby z twojej rodziny?" />
+			<Krok Symbol="a" Treść="Jeżeli tak, to -&gt;c" />
+			<Krok Symbol="b" Treść="Zapytaj każdego po kolei o to, co lubi i co by go ucieszyło. Zrób to w taki sposób, aby nie podać powodu, dla którego o to pytasz np. Jaki drobiazg sprawiłby Ci przyjemność? Z czego byś się ucieszyła/ucieszył?. Zapisz sobie w notatniku, żebyś nie musiał pytać przy  kolejnych uroczystościach" />
+			<Krok Symbol="4" Treść="Czy masz wystarczającą ilość pieniędzy? [Aplikacja czeka na odpowiedź]" />
+			<Krok Symbol="Jeżeli nie: masz dwa tygodnie czasu aby je zdobyć (np" Treść="kieszonkowe)" />
+			<Krok Symbol="5" Treść="Zastanów się jaką kwotę chcesz przeznaczyć na prezenty" />
+			<Krok Symbol="6" Treść="Przygotuj w smartfonie lub na kartce listę prezentów dla każdej osoby" />
+			<Krok Symbol="7" Treść="Sprawdź np. w Internecie w jakim sklepie możesz kupić to, co zaplanowałeś" />
+			<Krok Symbol="8" Treść="[Opcjonalnie] Proponujemy, żebyś umówił się z [kolegą/rodzeństwem] na wspólne wyjście po zakupy (będzie za to dodatkowa nagroda)" />
+			<Krok Symbol="a" Treść="Zadzwoń do niego i ustalcie termin" />
+			<Krok Symbol="b" Treść="Zapisz ten termin w kalendarzu" />
+			<Krok Symbol="7" Treść="Zaplanuj i wpisz do kalendarza wyjście do sklepu po prezenty z przypomnieniem dzień wcześniej" />
+		</Skrypt>
+		<Trudności IRS="0" KW="0" KNW="0" E="0" TU="2" MPS="2" FC="2" PZ="0" RSZ="0" />
+		<DodatkowePunkty>
+			<DodatkowyPunkt NazwaTrudności="IRS" LiczbaPunktów="2" Opis="p. do IRS 2, gdy umówił się z kimś na wspólne zakupy" />
+		</DodatkowePunkty>
+	</Zadanie>
+	<Zadanie Seria="Prezenty. Święta Bożego Narodzenia" Kod="ŚBN2" Tytuł="Boże Narodzenie– kupno prezentu" LiczbaPowtórzeń="1" SposóbPrezentacjiZadania="WszystkiePunktyNaJednejStronie" WarunekUkończeniaZadania="Opiekun">
+		<LiczbaPowtórzeńUwagi />
+		<Skrypt>
+			<Krok Symbol="1" Treść="[Gdy Kalendarz przypomina o wyjściu; dzień przed samymi zakupami] Zaplanuj sposób dojazdu do sklepów" />
+			<Krok Symbol="2" Treść="[Opcjonalnie] Zadzwoń do [osoby], z którą się umówiłeś na zakupy i ustalcie kiedy i gdzie się spotkacie" />
+			<Krok Symbol="3" Treść="Uprzedź wcześniej rodziców, że wychodzisz na zakupy i z kim" />
+			<Krok Symbol="4" Treść="Zabierz:" />
+			<Krok Symbol="a" Treść="pieniądze (gotówka lub karta)," />
+			<Krok Symbol="b" Treść="listę zakupów/prezentów (kartka lub smartfon)," />
+			<Krok Symbol="c" Treść="jeżeli jedziesz autobusem, weź kartę miejską lub kup bilet, zabierz legitymację, jeżeli jest potrzebna," />
+			<Krok Symbol="d" Treść="zabierz smartfon" />
+			<Krok Symbol="5" Treść="Jedź się do sklepu" />
+			<Krok Symbol="6" Treść="Kup to, co masz na liście zakupów/prezentów" />
+			<Krok Symbol="7" Treść="Kup papier z motywami świątecznymi do pakowania prezentów" />
+			<Krok Symbol="8" Treść="Zadzwoń do [opiekuna], że wracasz" />
+			<Krok Symbol="9" Treść="Wróć do domu" />
+			<Krok Symbol="10" Treść="Schowaj prezenty, w miejscu gdzie mama, tata, siostra lub brat go nie znajdą" />
+		</Skrypt>
+		<Trudności IRS="4" KW="0" KNW="0" E="0" TU="0" MPS="4" FC="4" PZ="0" RSZ="0" />
+		<DodatkowePunkty>
+			<DodatkowyPunkt NazwaTrudności="IRS" LiczbaPunktów="3" Opis="p. do IRS 2, gdy gracz wyszedł się z kimś na wspólne zakupy" />
+		</DodatkowePunkty>
+	</Zadanie>
+	<Zadanie Seria="Prezenty. Święta Bożego Narodzenia" Kod="ŚBN3" Tytuł="Boże Narodzenie – pakowanie prezentów" LiczbaPowtórzeń="1" SposóbPrezentacjiZadania="JedenPunktNaStronie_Zdjęcia_PrzewijanieWPoziomie" WarunekUkończeniaZadania="Brak">
+		<LiczbaPowtórzeńUwagi />
+		<Skrypt />
+		<Trudności IRS="0" KW="0" KNW="0" E="0" TU="0" MPS="0" FC="2" PZ="0" RSZ="0" />
+	</Zadanie>
+	<Zadanie Seria="Prezenty. Dzień Kobiet w domu" Kod="DK1" Tytuł="Dzień Kobiet – przygotowania" LiczbaPowtórzeń="1" SposóbPrezentacjiZadania="JedenPunktNaStronie_PrzewijanieWPoziomie" WarunekUkończeniaZadania="Brak">
+		<LiczbaPowtórzeńUwagi />
+		<Skrypt>
+			<Krok Symbol="1" Treść="[Time at 08.02] Alert: Pamiętaj o dniu kobiet, odłóż z kieszonkowego na kwiaty dla [Insert Variable dla_kogo_kwiaty]" />
+			<Krok Symbol="2" Treść="[Time at 03.03] Za 4 dni będzie Dzień Kobiet. Powinieneś kupić kwiaty dla [Insert Variable dla_kogo_kwiaty]" />
+			<Krok Symbol="3" Treść="Sprawdź ile masz pieniędzy?" />
+			<Krok Symbol="6" Treść="Sprawdź w mapach gdzie są kwiaciarnie w pobliżu drogi ze szkoły (jeżeli jest weekend, sprawdź czy są czynne)" />
+			<Krok Symbol="7" Treść="Zaplanuj i wpisz do kalendarza wyjście do sklepu po kwiaty w Dniu Kobiet" />
+		</Skrypt>
+		<Trudności IRS="0" KW="0" KNW="0" E="0" TU="2" MPS="2" FC="2" PZ="0" RSZ="0" />
+	</Zadanie>
+	<Zadanie Seria="Prezenty. Święta Wielkanocne (generalizacja)" Kod="ŚW1" Tytuł="Święta Wielkanocne – przygotowania" LiczbaPowtórzeń="1" SposóbPrezentacjiZadania="WszystkiePunktyNaJednejStronie" WarunekUkończeniaZadania="Brak">
+		<LiczbaPowtórzeńUwagi />
+		<Skrypt>
+			<Krok Symbol="1" Treść="[Time BeforeEaster] Wiadomość do gracza: Za 4 tygodnie będzie Wielkanoc. Powinieneś kupić drobne prezenty dla członków rodziny, żeby pokazać, że o nich pamiętasz i że są dla Ciebie ważni" />
+			<Krok Symbol="2" Treść="Sprawdź ile masz pieniędzy (gotówka lub konto)?" />
+			<Krok Symbol="3" Treść="Czy masz pieniądze? [Aplikacja czeka na odpowiedź]" />
+			<Krok Symbol="4" Treść="Czy wiesz, co osoby z twojej rodziny chciałaby od Ciebie dostać? Powinieneś pamiętać ich upodobania z Bożego Narodzenia" />
+			<Krok Symbol="a" Treść="[Tak] Jeżeli wiesz, to -&gt;c" />
+			<Krok Symbol="b" Treść="[Nie] Powiedz opiekunowi ile masz pieniędzy na prezenty i zapytaj go o to, co ucieszyłoby Twoich bliskich, także samego opiekuna Jaki drobiazg sprawiłby Ci przyjemność? Z czego byś się ucieszyła/ ucieszył?" />
+			<Krok Symbol="b2" Treść="Zapisz informacje o upodobaniach bliskich w notatniku, żebyś nie musiał pytać przy kolejnych uroczystościach (np urodzinach lub przyszłorocznych świętach)" />
+			<Krok Symbol="c" Treść="Zapisz pomysły na prezenty w notatniku (na kartce lub w smartfonie)" />
+			<Krok Symbol="d" Treść="Sprawdź np. w Internecie, w jakich sklepach możesz kupić to, co zaplanowałeś" />
+			<Krok Symbol="e" Treść="Zaplanuj i wpisz do kalendarza (z przypomnieniem) wyjście do sklepu po prezenty" />
+		</Skrypt>
+		<Trudności IRS="2" KW="0" KNW="0" E="0" TU="2" MPS="2" FC="3" PZ="0" RSZ="0" />
+		<DodatkowePunkty>
+			<DodatkowyPunkt NazwaTrudności="TU" LiczbaPunktów="1" Opis="p. do MPS, +1 p. do TU - jeżeli wie co lubi [opiekun], bez pytania [potwierdza opiekun po rozmowie]" />
+		</DodatkowePunkty>
+	</Zadanie>
+	<Zadanie Seria="Prezenty. Święta Wielkanocne (generalizacja)" Kod="ŚW2" Tytuł="Święta Wielkanocne– kupno prezentu" LiczbaPowtórzeń="1" SposóbPrezentacjiZadania="WszystkiePunktyNaJednejStronie" WarunekUkończeniaZadania="Brak">
+		<LiczbaPowtórzeńUwagi />
+		<Skrypt>
+			<Krok Symbol="1" Treść="Uprzedź opiekuna, że idziesz na małe zakupy" />
+			<Krok Symbol="2" Treść="Zabierz:" />
+			<Krok Symbol="a" Treść="pieniądze (gotówka lub karta)" />
+			<Krok Symbol="b" Treść="jeżeli jedziesz autobusem, weź kartę miejską lub pieniądze na bilet i legitymację, jeżeli jest potrzebna," />
+			<Krok Symbol="c" Treść="smartfon" />
+			<Krok Symbol="3" Treść="Jedź się do sklepu" />
+			<Krok Symbol="4" Treść="Kup to, co zaplanowałeś (wg notatek)" />
+			<Krok Symbol="5" Treść="Zadzwoń do opiekuna, że wracasz" />
+			<Krok Symbol="6" Treść="Wróć do domu" />
+			<Krok Symbol="7" Treść="Schowaj prezent, w miejscu gdzie mama, tata, siostra lub brat go nie znajdą" />
+		</Skrypt>
+		<Trudności IRS="4" KW="0" KNW="0" E="0" TU="0" MPS="2" FC="3" PZ="0" RSZ="0" />
+	</Zadanie>
+	<Zadanie Seria="Prezenty. Dzień Matki w domu (generalizacja)" Kod="DM1" Tytuł="Dzień Matki w domu – przygotowania" LiczbaPowtórzeń="1" SposóbPrezentacjiZadania="BlokiPunktówNaStronie_PrzewijanieWPoziomie" WarunekUkończeniaZadania="Brak">
+		<LiczbaPowtórzeńUwagi />
+		<Skrypt>
+			<Krok Symbol="1" Treść="[Time at 21.05] Za tydzień dni będzie Dzień Matki. Powinieneś kupić mamie prezent lub kwiaty" />
+			<Krok Symbol="2" Treść="Sprawdź ile masz pieniędzy?" />
+			<Krok Symbol="3" Treść="Czy masz pieniądze? [Aplikacja czeka na odpowiedź]" />
+			<Krok Symbol="4" Treść="Jeżeli nie: wykonaj w dniu matki (26 maja) własnoręcznie bananowca lub kanapki [instrukcja wyświetlana na żądanie w wyskakującym okienku]" />
+			<Krok Symbol="5" Treść="Jeżeli tak:" />
+			<Krok Symbol="a" Treść="Czy wiesz co mała chciałaby od Ciebie dostać? (bombonierka lub czekolada, kwiatek)" />
+			<Krok Symbol="b" Treść="Zapytaj mamę co lubi i co by ją ucieszyło. Zrób to w taki sposób, aby nie podać powodu dla którego ją o to pytasz np. Jaki drobiazg sprawiłby Ci przyjemność? Z czego byś się ucieszyła?. Zapisz sobie w notatniku, żebyś nie musiał pytać przy urodzinach i kolejnych" />
+			<Krok Symbol="c" Treść="Zastanów się jaką kwotę chcesz przeznaczyć na prezenty i co chcesz za to kupić?" />
+			<Krok Symbol="d" Treść="Sprawdź np. w Internecie w jakim sklepie możesz kupić to, co zaplanowałeś" />
+			<Krok Symbol="e" Treść="Zaplanuj i wpisz do kalendarza (z przypomnieniem) wyjście do sklepu po prezent" />
+		</Skrypt>
+		<Trudności IRS="2" KW="0" KNW="0" E="0" TU="2" MPS="2" FC="2" PZ="0" RSZ="0" />
+	</Zadanie>
+	<Zadanie Seria="Prezenty. Dzień Matki w domu (generalizacja)" Kod="DM2" Tytuł="Dzień Matki w domu – kupno prezentu" LiczbaPowtórzeń="1" SposóbPrezentacjiZadania="BlokiPunktówNaStronie_PrzewijanieWPoziomie" WarunekUkończeniaZadania="Brak">
+		<LiczbaPowtórzeńUwagi />
+		<Skrypt>
+			<Krok Symbol="1" Treść="Uprzedź opiekuna, że idziesz na małe zakupy" />
+			<Krok Symbol="2" Treść="Zabierz" />
+			<Krok Symbol="a" Treść="pieniądze (gotówka lub karta)," />
+			<Krok Symbol="b" Treść="jeżeli jedziesz autobusem, weź kartę miejską lub pieniądze na bilet, legitymację, jeżeli jest potrzebna," />
+			<Krok Symbol="c" Treść="smartfon" />
+			<Krok Symbol="3" Treść="Jedź do sklepu" />
+			<Krok Symbol="4" Treść="Kup to, co zaplanowałeś" />
+			<Krok Symbol="5" Treść="Zadzwoń do opiekuna, że wracasz" />
+			<Krok Symbol="6" Treść="Wróć do domu" />
+			<Krok Symbol="7" Treść="Schowaj prezent, w miejscu gdzie mama go nie znajdzie, żeby zrobić jej niespodziankę" />
+			<Krok Symbol="a" Treść="Jeżeli to kwiaty: nalej do butelki lub wazonu zimnej wody; wstaw do niego kwiaty; postaw wazon np. za biurkiem, ale daleko od kaloryfera (pamiętaj, żeby stały w miejscu niewidocznym tak, aby mam wcześniej nie znalazła prezentu)" />
+			<Krok Symbol="b" Treść="Jeżeli czekoladki lub inny: schowaj między ubrania" />
+			<Krok Symbol="8" Treść="Zapisz w kalendarzu z przypomnieniem, żeby przed wyjściem do szkoły wręczyć mamie prezent" />
+			<Krok Symbol="9" Treść="Zastanów się nad czymś dodatkowym. Może oprócz prezentu zrobisz mamie śniadanie (kanapki) lub upieczesz bananowca?" />
+		</Skrypt>
+		<Trudności IRS="2" KW="0" KNW="0" E="0" TU="0" MPS="2" FC="2" PZ="0" RSZ="0" />
+	</Zadanie>
+	<Zadanie Seria="Prezenty. Urodziny (generalizacja)" Kod="UR1" Tytuł="Urodziny – przygotowania" LiczbaPowtórzeń="2" SposóbPrezentacjiZadania="WszystkiePunktyNaJednejStronie" WarunekUkończeniaZadania="Brak">
+		<LiczbaPowtórzeńUwagi>(dla różnych solenizantów)</LiczbaPowtórzeńUwagi>
+		<Skrypt>
+			<Krok Symbol="1" Treść="[Time at UR1_date] Za tydzień będzie dzień urodzin [Insert Person UR1_person firstname] [Insert Person UR1_person lastname]. Powinieneś kupić mu/jej kwiaty lub jakiś inny drobiazg" />
+			<Krok Symbol="2" Treść="Sprawdź ile masz pieniędzy? (Gotówka lub konto)" />
+			<Krok Symbol="3" Input="UR1_UR1_person_pieniadze" InputType="Bool" Treść="Czy masz pieniądze?" />
+			<Krok Symbol="4" Informacja="Instrukcja kanapek czy coś" Treść="[Test Variable UR1_UR1_person_pieniadze = False] Własnoręcznie upiecz bananowca lub kanapki" />
+			<!-- <Krok Symbol="5" Treść="[Jeżeli tak]" /> -->
+			<Krok Symbol="5a" Input="UR1_UR1_person_wiesz_co_lubi" Treść="[Test Variable UR1_UR1_person_pieniadze = True] Czy wiesz co [Insert Person UR1_person firstname] chciałaby od Ciebie dostać? (bombonierka lub czekolada, kwiatek)" />
+			<Krok Symbol="5b" Treść="[Test Variable UR1_UR1_person_wiesz_co_lubi = False]Zapytaj [Insert Person UR1_person firstname] co lubi i co by ją/jego ucieszyło. Zrób to w taki sposób, aby nie podać powodu, dla którego ją o to pytasz np. Jaki drobiazg sprawiłby Ci przyjemność? Z czego byś się ucieszyła/ucieszył?. Zapisz to sobie w notatniku" />
+			<Krok Symbol="5c" Treść="[Test Variable UR1_UR1_person_wiesz_co_lubi = True]Zastanów się, jaką kwotę chcesz przeznaczyć na prezenty" />
+			<Krok Symbol="5d" Treść="[Test Variable UR1_UR1_person_wiesz_co_lubi = True]Sprawdź np. w Internecie, w jakim sklepie możesz kupić to, co zaplanowałeś" />
+			<Krok Symbol="5e" Treść="[Test Variable UR1_UR1_person_wiesz_co_lubi = True]Zaplanuj i wpisz do kalendarza (z przypomnieniem) wyjście do sklepu po prezenty" />
+		</Skrypt>
+		<Trudności IRS="2" KW="0" KNW="0" E="0" TU="2" MPS="2" FC="2" PZ="0" RSZ="0" />
+	</Zadanie>
+	<Zadanie Seria="Prezenty. Urodziny (generalizacja)" Kod="UR2" Tytuł="Urodziny – kupno prezentu" LiczbaPowtórzeń="2" SposóbPrezentacjiZadania="BlokiPunktówNaStronie_PrzewijanieWPoziomie" WarunekUkończeniaZadania="Brak">
+		<LiczbaPowtórzeńUwagi>(dla różnych solenizantów)</LiczbaPowtórzeńUwagi>
+		<Skrypt>
+			<Krok Symbol="1" Treść="[Kalendarz przypomina o wyjściu] Uprzedź rodziców, że idziesz na małe zakupy" />
+			<Krok Symbol="2" Treść="Zabierz" />
+			<Krok Symbol="a" Treść="pieniądze (gotówka lub karta)," />
+			<Krok Symbol="b" Treść="jeżeli jedziesz autobusem, weź kartę miejską lub kup bilet, legitymację, jeżeli jest potrzebna," />
+			<Krok Symbol="c" Treść="smartfon" />
+			<Krok Symbol="3" Treść="Jedź do sklepu" />
+			<Krok Symbol="4" Treść="Kup to, co zaplanowałeś" />
+			<Krok Symbol="5" Treść="Zadzwoń do [opiekuna], że wracasz" />
+			<Krok Symbol="6" Treść="Wróć do domu" />
+			<Krok Symbol="7" Treść="Schowaj prezent, w miejscu gdzie [solenizant] go nie znajdzie" />
+			<Krok Symbol="a" Treść="Jeżeli to kwiaty: nalej do butelki lub wazonu zimnej wody; wstaw do niego kwiaty; postaw wazon np. za biurkiem, ale daleko od kaloryfera (pamiętaj, żeby stały w miejscu niewidocznym tak, aby solenizant wcześniej ich nie znalazł)" />
+			<Krok Symbol="b" Treść="Jeżeli prezentem są czekoladki lub coś innego niewielkich rozmiarów: schowaj między ubrania" />
+			<Krok Symbol="8" Treść="Zapisz w kalendarzu (z przypomnieniem), żeby rano przed wyjściem do szkoły wręczyć [solenizantowi] prezent" />
+		</Skrypt>
+		<Trudności IRS="2" KW="0" KNW="0" E="0" TU="0" MPS="2" FC="4" PZ="0" RSZ="0" />
+	</Zadanie>
+	<Zadanie Seria="SMSy z życzeniami" Kod="SMS1" Tytuł="SMS z życzeniami na urodziny" LiczbaPowtórzeń="5" SposóbPrezentacjiZadania="WszystkiePunktyNaJednejStronie" WarunekUkończeniaZadania="Automatyczne">
+		<LiczbaPowtórzeńUwagi>(dla różnych solenizantów)</LiczbaPowtórzeńUwagi>
+		<Skrypt>
+			<Krok Symbol="1" Treść="Gracz dostaje wiadomość: Dziś [solenizant] ma urodziny. Wyślij mu SMS z życzeniami. Jego numer to [NUMER]" />
+			<Krok Symbol="2" Informacja="Dużo zdrowia i miłości,
+moc uśmiechu i słodkości,
+mało smutku, trudów, łez,
+niech się spełni to, co chcesz!
+lub:
+Z okazji Twego święta życzę Ci kolejnych dni,
+miesięcy i lat pełnych miłości i radości,
+ciągłego uśmiechu na twarzy, jak również tego,
+abyś potrafił się cieszyć życiem
+w każdym jego momencie." Treść="W swoim smartfonie napisz SMS z życzeniami np.:" />
+			<Krok Symbol="3" Treść="Podpisz się, żeby [solenizant] wiedział od kogo dostaje życzenia" />
+			<Krok Symbol="4" Treść="Wyślij SMS" />
+		</Skrypt>
+		<Trudności IRS="0" KW="0" KNW="0" E="0" TU="2" MPS="0" FC="3" PZ="0" RSZ="0" />
+	</Zadanie>
+	<Zadanie Seria="SMSy z życzeniami" Kod="SMS2" Tytuł="SMS z życzeniami na Święta Bożego Narodzenia" LiczbaPowtórzeń="1" SposóbPrezentacjiZadania="WszystkiePunktyNaJednejStronie" WarunekUkończeniaZadania="Automatyczne">
+		<LiczbaPowtórzeńUwagi />
+		<Skrypt>
+			<Krok Symbol="1" Informacja="Zdrowych, pogodnych i pełnych radości
+świąt Bożego Narodzenia
+a także wielu wspaniałych chwil
+spędzonych w gronie najbliższych
+Albo:
+Pokój na ziemi ludziom,
+a w niebie cisza gwiazd,
+grają anieli,
+świat się chlebem dzieli.
+Świat ma dziś świąteczny blask...
+Pięknych i radosnych
+Świąt Bożego Narodzenia!" Treść="[Time at 24.12] Napisz w smartfonie SMS z życzeniami na święta Bożego Narodzenia np." />
+			<Krok Symbol="2" Treść="Podpisz się, aby adresat wiedział, od kogo dostał życzenia" />
+			<Krok Symbol="3" Treść="Wyślij SMS" />
+		</Skrypt>
+		<Trudności IRS="0" KW="0" KNW="0" E="0" TU="2" MPS="0" FC="3" PZ="0" RSZ="0" />
+		<DodatkowePunkty>
+			<DodatkowyPunkt NazwaTrudności="TU" LiczbaPunktów="2" Opis="do TU za wysłanie SMSów do osób spoza listy ustalonej przez opiekuna" />
+		</DodatkowePunkty>
+	</Zadanie>
+	<Zadanie Seria="Finał" Kod="FU1" Tytuł="Zaproszenie gości" LiczbaPowtórzeń="1" SposóbPrezentacjiZadania="WszystkiePunktyNaJednejStronie" WarunekUkończeniaZadania="Opiekun">
+		<LiczbaPowtórzeńUwagi />
+		<Skrypt>
+			<Krok Symbol="1" Treść="[Time at Saturday] Zbliża się Wielki Finał. Twoim zadaniem będzie przygotowanie przyjęcia w jedną z kolejnych sobót" />
+			<Krok Symbol="2" Treść="Zapytaj opiekuna ilu gości możesz zaprosić, ile dostaniesz pieniędzy na produkty i ustalcie termin (najlepiej: któraś z kolejnych sobót, popołudnie)" />
+			<Krok Symbol="3" Treść="Wpisz ustalony termin przyjęcia do kalendarza (z przypomnieniem)" />
+			<Krok Symbol="4" Treść="Przygotuj razem z opiekunem listę gości" />
+			<Krok Symbol="5" Treść="Wybierz trzy zabawy na przyjęcie, które zajmą m/w jedną lub dwie godziny:" />
+			<Krok Symbol="a" Treść="może zabawę towarzyszką," />
+			<Krok Symbol="b" Treść="może jakąś grę dla wielu osób (komputerową lub planszową)," />
+			<Krok Symbol="c" Treść="może na koniec film (najlepiej kilka do wyboru przez gości)" />
+			<Krok Symbol="6" Treść="Zaproś gości korzystając z SMSów, Messengera lub telefonicznie. W każdym przypadku podaj miejsce i termin (datę i godzinę). Poproś o potwierdzenie przybycia: Bedę wdzięczny, jeżeli dasz mi znać, czy przyjdziesz" />
+		</Skrypt>
+		<Trudności IRS="0" KW="0" KNW="0" E="0" TU="0" MPS="0" FC="0" PZ="0" RSZ="0" />
+	</Zadanie>
+	<Zadanie Seria="Finał" Kod="FU2" Tytuł="Przygotowania do przyjęcia – plan" LiczbaPowtórzeń="1" SposóbPrezentacjiZadania="WszystkiePunktyNaJednejStronie" WarunekUkończeniaZadania="Opiekun">
+		<LiczbaPowtórzeńUwagi />
+		<Skrypt>
+			<Krok Symbol="1" Treść="[Time at Wednesday] Na przyjęcie będziesz musiał przygotować kanapki i ciasto (bananowiec)" />
+			<Krok Symbol="2" Informacja="produkty do banannowca" Treść="Przygotuj listę produktów, jakie będą Ci potrzebne. Pamiętaj o ciastkach, napojach, produktach do bananowca" />
+			<Krok Symbol="2a" Informacja="produkty do kanapek" Treść="I produktach do kanapek" />
+			<Krok Symbol="3" Treść="Z pomocą opiekuna sprawdź, czego z tych rzeczy nie ma w domu i przygotuj listę zakupów" />
+			<Krok Symbol="4" Treść="Zakupy zrobisz jutro. Weź od opiekuna obiecane pieniądze na zakupy" />
+		</Skrypt>
+		<Trudności IRS="0" KW="0" KNW="0" E="0" TU="0" MPS="0" FC="0" PZ="0" RSZ="0" />
+	</Zadanie>
+	<Zadanie Seria="Finał" Kod="FU3" Tytuł="Przygotowanie do przyjęcia - zakupy" LiczbaPowtórzeń="1" SposóbPrezentacjiZadania="WszystkiePunktyNaJednejStronie" WarunekUkończeniaZadania="Opiekun">
+		<LiczbaPowtórzeńUwagi />
+		<Skrypt>
+			<Krok Symbol="1" Treść="[Time at Thursday] Zrób zakupy zgodnie z listą, jaką przygotowałeś wczoraj" />
+			<Krok Symbol="2" Treść="Zadbaj o dodatki taki, jak np. serwetki" />
+		</Skrypt>
+		<Trudności IRS="0" KW="0" KNW="0" E="0" TU="0" MPS="0" FC="0" PZ="0" RSZ="0" />
+	</Zadanie>
+	<Zadanie Seria="Finał" Kod="FU4" Tytuł="Przygotowania do przyjęcia - sprzątanie i ciasto" LiczbaPowtórzeń="1" SposóbPrezentacjiZadania="WszystkiePunktyNaJednejStronie" WarunekUkończeniaZadania="Opiekun">
+		<LiczbaPowtórzeńUwagi />
+		<Skrypt>
+			<Krok Symbol="1" Treść="[Time at Friday] Posprzątaj swój pokój oraz pokój, w którym będzie przyjęcie" />
+			<Krok Informacja="Info jak robić bananowca" Symbol="2" Treść="Upiecz bananowca" />
+		</Skrypt>
+		<Trudności IRS="0" KW="0" KNW="0" E="0" TU="0" MPS="0" FC="0" PZ="0" RSZ="0" />
+	</Zadanie>
+</ArrayOfZadanie>
