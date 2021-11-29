@@ -1,0 +1,34 @@
+﻿@page "/parentform/addchild"
+@using Hello_Earth_2.Data.User.Child
+
+<h3>AddQuest</h3>
+<input type="text" @bind="firstName" />
+<input type="text" @bind="lastName"/>
+<br/>
+<select @onchange="@(e=>gender=e.Value.ToString())">
+    <option value="0">Dziewczynka</option>
+    <option value="1">Chłopiec</option>
+</select>
+<br/>
+<input type="datetime" @bind="birthday"/>
+
+<input type="text" @bind="phoneNumber"/>
+<br/>
+<button @onclick="SaveChildHandler">
+    Zapisz
+</button>
+
+@code {
+    private string firstName = "";
+    private string lastName = "";
+    private string gender = "0";
+   // private DateTime birthdayTmp = new DateTime();
+    private long birthday=0;
+
+    private string phoneNumber="";
+    
+    private async void SaveChildHandler()
+    {
+        await ChildService.AddChild(firstName,lastName,gender,birthday,phoneNumber);
+    }
+}

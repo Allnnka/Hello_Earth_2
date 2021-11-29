@@ -1,0 +1,28 @@
+﻿@page "/parentform/addchildinfo";
+
+@using Hello_Earth_2.Utils.Questions
+
+<h1>Formularz rodzica</h1>
+
+@if (questions == null)
+{
+	<p><em>Loading...</em></p>
+}
+else
+{
+	@foreach(var ques in questions)
+	{
+		<p>@ques.QuestionText</p>
+		<br />
+	}
+}
+
+
+@code {
+	private List<Question> questions;
+
+	protected override void OnInitialized()
+	{
+		questions =QuestionForm.GetQuestions();
+	}
+}
