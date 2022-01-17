@@ -13,7 +13,6 @@ namespace Hello_Earth_2
 			: base(handle, ownership)
 		{
 		}
-
 		protected override MauiApp CreateMauiApp() => MauiProgram.CreateMauiApp();
 	}
 }
