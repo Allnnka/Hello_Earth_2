@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "08tss5sZjoLNH1olFi2JVVQtIpGEqN3EoT9B/wGwMWI46wXNNi0MJoFffsNHZbQTx3mzFqq8qT5VT28gchoWPg==",
+  "success": true,
+  "projectFilePath": "I:\\Nauka\\magisterka\\Hello_Earth_2\\HelloEarth2\\HelloEarth2\\HelloEarth2.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\JQbss\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\JQbss\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\JQbss\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.6.1\\xamarin.essentials.1.6.1.nupkg.sha512",
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\5.0.0.2012\\xamarin.forms.5.0.0.2012.nupkg.sha512"
+  ],
+  "logs": []
+}
