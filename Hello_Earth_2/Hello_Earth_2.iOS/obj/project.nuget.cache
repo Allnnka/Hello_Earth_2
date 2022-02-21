@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "XH5SFZcoi6I2YPIUkCy0a7IALL4iU8Pj5aCCGAofrrhc73vNVWaGDPbSPLgZ1QPwLK4tbuyBR3oPWV+3lAZ+cw==",
+  "success": true,
+  "projectFilePath": "I:\\Nauka\\magisterka\\Hello_Earth_2\\Hello_Earth_2\\Hello_Earth_2.iOS\\Hello_Earth_2.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\JQbss\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\JQbss\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
+    "C:\\Users\\JQbss\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512"
+  ],
+  "logs": []
+}

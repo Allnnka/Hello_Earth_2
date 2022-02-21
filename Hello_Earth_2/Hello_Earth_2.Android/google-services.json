@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "438418172142",
+    "firebase_url": "https://helloearth2-5887b-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "helloearth2-5887b",
+    "storage_bucket": "helloearth2-5887b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:438418172142:android:1c65ee40b2f783ef9fabff",
+        "android_client_info": {
+          "package_name": "com.companyname.hello_earth_2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "438418172142-hrcj5nobn2kf0tne20o4phav0ii6r893.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.companyname.hello_earth_2",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "438418172142-qk79mhb9suru8fmj6mb3s35u3neu4mrm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZ7_qCKO-UvC_kwEcWadEp_uWJ7K3U-uw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "438418172142-qk79mhb9suru8fmj6mb3s35u3neu4mrm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
