@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hello_Earth_2.View.Home;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -9,7 +10,6 @@ namespace Hello_Earth_2
         public App()
         {
             InitializeComponent();
-
             MainPage = new NavigationPage(new HomePage());
 
         }
