@@ -1,1 +1,11 @@
-<resources><string name="gcm_defaultSenderId" translatable="false">438418172142</string><string name="google_app_id" translatable="false">1:438418172142:android:1c65ee40b2f783ef9fabff</string><string name="default_web_client_id" translatable="false">438418172142-qk79mhb9suru8fmj6mb3s35u3neu4mrm.apps.googleusercontent.com</string><string name="firebase_database_url" translatable="false">https://helloearth2-5887b-default-rtdb.europe-west1.firebasedatabase.app</string><string name="google_api_key" translatable="false">AIzaSyBZ7_qCKO-UvC_kwEcWadEp_uWJ7K3U-uw</string><string name="google_crash_reporting_api_key" translatable="false">AIzaSyBZ7_qCKO-UvC_kwEcWadEp_uWJ7K3U-uw</string><string name="google_storage_bucket" translatable="false">helloearth2-5887b.appspot.com</string><string name="project_id" translatable="false">helloearth2-5887b</string></resources>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="gcm_defaultSenderId" translatable="false">438418172142</string>
+  <string name="google_app_id" translatable="false">1:438418172142:android:1c65ee40b2f783ef9fabff</string>
+  <string name="default_web_client_id" translatable="false">438418172142-qk79mhb9suru8fmj6mb3s35u3neu4mrm.apps.googleusercontent.com</string>
+  <string name="firebase_database_url" translatable="false">https://helloearth2-5887b-default-rtdb.europe-west1.firebasedatabase.app</string>
+  <string name="google_api_key" translatable="false">AIzaSyBZ7_qCKO-UvC_kwEcWadEp_uWJ7K3U-uw</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBZ7_qCKO-UvC_kwEcWadEp_uWJ7K3U-uw</string>
+  <string name="google_storage_bucket" translatable="false">helloearth2-5887b.appspot.com</string>
+  <string name="project_id" translatable="false">helloearth2-5887b</string>
+</resources>
