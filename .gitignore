@@ -8,7 +8,6 @@ obj/
 *.userprefs
 .packages
 .vs
-.vs/
 
 ### VisualStudio ###
 ## Ignore Visual Studio temporary files, build results, and
@@ -411,3 +410,4 @@ FodyWeavers.xsd
 # Additional files built by Visual Studio
 
 # End of https://www.toptal.com/developers/gitignore/api/xamarinstudio,visualstudio
+/Hello_Earth_2/Hello_Earth_2.Android/obj/
