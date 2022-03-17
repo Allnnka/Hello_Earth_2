@@ -29,3 +29,4 @@ I:\Nauka\magisterka\Hello_Earth_2\Hello_Earth_2\Hello_Earth_2\obj\Debug\netstand
 I:\Nauka\magisterka\Hello_Earth_2\Hello_Earth_2\Hello_Earth_2\obj\Debug\netstandard2.0\ref\Hello_Earth_2.dll
 I:\Nauka\magisterka\Hello_Earth_2\Hello_Earth_2\Hello_Earth_2\obj\Debug\netstandard2.0\View\Home\HomePage.xaml.g.cs
 I:\Nauka\magisterka\Hello_Earth_2\Hello_Earth_2\Hello_Earth_2\obj\Debug\netstandard2.0\View\Home\RegistrationPage.xaml.g.cs
+I:\Nauka\magisterka\Hello_Earth_2\Hello_Earth_2\Hello_Earth_2\obj\Debug\netstandard2.0\View\Home\RegistrationParentPage.xaml.g.cs

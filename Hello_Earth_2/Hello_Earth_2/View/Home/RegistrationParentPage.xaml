@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Hello_Earth_2.View.Home.RegistrationParentPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Welcome to Xamarin.Forms!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Entry
+                Keyboard="Chat"
+                Placeholder="Wpisz login"
+                Text="{Binding UserName}"
+            />
+            <Entry
+                Keyboard="Chat"
+                Placeholder="Wpisz adres e-mail"
+                Text="{Binding Email}"
+            />
+            <Entry
+                Keyboard="Chat"
+                IsPassword="True"
+                Placeholder="Wpisz hasło"
+                Text="{Binding Password}"
+            />
+            <Button
+                Text="Cofnij"
+                x:Name="btnBack"
+            />
+            <Button
+                Text="Dalej"
+                x:Name="btnTest"
+                Command="{Binding RegistrationCommand}"
+            />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -712,3 +712,8 @@ I:\Nauka\magisterka\Hello_Earth_2\Hello_Earth_2\Hello_Earth_2.Android\obj\Debug\
 I:\Nauka\magisterka\Hello_Earth_2\Hello_Earth_2\Hello_Earth_2.Android\obj\Debug\120\android\src\mono\com\google\firebase\installations\internal\FidListenerImplementor.java
 I:\Nauka\magisterka\Hello_Earth_2\Hello_Earth_2\Hello_Earth_2.Android\obj\Debug\120\googsvcsjson\values\goog_svcs_json.xml
 I:\Nauka\magisterka\Hello_Earth_2\Hello_Earth_2\Hello_Earth_2.Android\obj\Debug\120\57405C7B0DB59484-files.cache
+I:\Nauka\magisterka\Hello_Earth_2\Hello_Earth_2\Hello_Earth_2.Android\obj\Debug\120\android\assets\Firebase.dll
+I:\Nauka\magisterka\Hello_Earth_2\Hello_Earth_2\Hello_Earth_2.Android\obj\Debug\120\android\assets\LiteDB.dll
+I:\Nauka\magisterka\Hello_Earth_2\Hello_Earth_2\Hello_Earth_2.Android\obj\Debug\120\android\assets\Newtonsoft.Json.dll
+I:\Nauka\magisterka\Hello_Earth_2\Hello_Earth_2\Hello_Earth_2.Android\obj\Debug\120\android\assets\System.Reactive.dll
+I:\Nauka\magisterka\Hello_Earth_2\Hello_Earth_2\Hello_Earth_2.Android\obj\Debug\120\android\assets\System.Runtime.InteropServices.WindowsRuntime.dll

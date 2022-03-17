@@ -33,5 +33,19 @@ namespace Hello_Earth_2.Droid
             var token = user.User.GetIdToken(false);
             return token.ToString();
         }
+
+        public async Task<bool> SendEmailVerification()
+        {
+            try
+            {
+                var user = FirebaseAuth.Instance.CurrentUser;
+                ActionCodeSettings actionCodeSettings = ActionCodeSettings.NewBuilder().SetUrl("https://helloearth2-5887b.firebaseapp.com").Build();
+                await user.SendEmailVerificationAsync(actionCodeSettings);
+                return true;
+            }catch(Exception e)
+            {
+                return false;
+            }
+        }
     }
 }

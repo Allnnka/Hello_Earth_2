@@ -3,9 +3,13 @@ public class MonoPackageManager_Resources {
 	public static String[] Assemblies = new String[]{
 		/* We need to ensure that "Hello_Earth_2.Android.dll" comes first in this list. */
 		"Hello_Earth_2.Android.dll",
+		"Firebase.dll",
 		"FormsViewGroup.dll",
 		"Hello_Earth_2.dll",
+		"LiteDB.dll",
 		"Microsoft.Bcl.AsyncInterfaces.dll",
+		"Newtonsoft.Json.dll",
+		"System.Reactive.dll",
 		"System.Text.Encodings.Web.dll",
 		"System.Text.Json.dll",
 		"Xamarin.AndroidX.Activity.dll",
