@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace Hello_Earth_2.ViewModel.Home
 {
-    public class HomeViewModel
+    public class HomeViewModel : INotifyPropertyChanged
     {
         private bool _isRegistrationParent = false;
         private bool _isRegistrationChild = false;
@@ -14,6 +16,8 @@ namespace Hello_Earth_2.ViewModel.Home
 
         private Color _loginColor = Color.Red;
         private Color _registrationColor = Color.Gray;
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public ICommand ParentCommand { get; set; }
         public ICommand PlayerCommand { get; set; }
@@ -23,29 +27,41 @@ namespace Hello_Earth_2.ViewModel.Home
         public bool IsRegistrationParent
         { 
             get { return _isRegistrationParent; }
-            set { _isRegistrationParent = value; } 
+            set { 
+                _isRegistrationParent = value;
+            } 
         }
         public bool IsRegistrationChild
         {
             get { return _isRegistrationChild; }
-            set { _isRegistrationChild = value; }
+            set { 
+                _isRegistrationChild = value;
+            }
         }
         public bool IsLogin
         {
             get { return _isLogin; }
-            set { _isLogin = value; }
+            set { 
+                _isLogin = value;
+            }
         }
 
         public Color LoginColor
         {
             get { return _loginColor; }
-            set { _loginColor = value; }
+            set {
+                _loginColor = value;
+                OnPropertyChanged(nameof(LoginColor));
+            }
         }
 
         public Color RegistrationColor
         {
             get { return _registrationColor; }
-            set { _registrationColor = value; }
+            set {
+                _registrationColor = value;
+                OnPropertyChanged(nameof(RegistrationColor)); 
+            }
         }
 
 
@@ -69,16 +85,23 @@ namespace Hello_Earth_2.ViewModel.Home
 
         private void LoginFormHandler()
         {
-            _isLogin = true;
-            _loginColor = Color.Red;
-            _registrationColor = Color.Gray;
+            IsLogin = true;
+            LoginColor = Color.Red;
+            RegistrationColor = Color.Gray;
         }
 
         private void RegistrationFormHandler()
         {
-            _isLogin = false;
-            _loginColor = Color.Gray;
-            _registrationColor = Color.Red;
+            IsLogin = false;
+            LoginColor = Color.Gray;
+            RegistrationColor= Color.Red;
+        }
+
+        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            var handler = PropertyChanged;
+            if (handler != null)
+                handler(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 
