@@ -2,8 +2,6 @@
 using Hello_Earth_2.Services;
 using Hello_Earth_2.Services.ServiceImplementation;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 

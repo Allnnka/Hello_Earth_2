@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Hello_Earth_2.View.Home
+namespace Hello_Earth_2.View.Registration
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class RegistrationParentView : ContentView
+    public partial class RegistrationParentFormPage : ContentPage
     {
-        public RegistrationParentView()
+        public RegistrationParentFormPage()
         {
             InitializeComponent();
             BindingContext = new RegistrationParentViewModel();

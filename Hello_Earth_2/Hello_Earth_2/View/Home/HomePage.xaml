@@ -1,14 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             xmlns:home="clr-namespace:Hello_Earth_2.View.Home"
              x:Class="Hello_Earth_2.View.Home.HomePage">
     <ContentPage.Content>
         <StackLayout>
-            <Button Text="Zaloguj się" Command="{Binding LoginFormCommand}" CommandParameter=""  TextColor="{Binding LoginColor, Mode=TwoWay}"/>
+            <Button Text="Zaloguj się" Command="{Binding LoginFormCommand}" TextColor="{Binding LoginColor}"/>
 
-            <Button Text="Zarejestruj się" Command="{Binding RegistrationFormCommand}" TextColor="{Binding RegistrationColor, Mode=TwoWay}"/>
-            <home:RegistrationParentView/>
+            <Button Text="Zarejestruj się" Command="{Binding RegistrationFormCommand}" TextColor="{Binding RegistrationColor}"/>
+            <StackLayout IsVisible="{Binding IsRegister}">
+                <Button Text="Profil Gracza" Command="{Binding PlayerCommand}" TextColor="{Binding PlayerButtonColor}"/>
+                <Button Text="Profil Rodzica" Command="{Binding ParentCommand}" TextColor="{Binding ParentButtonColor}"/>
+            </StackLayout>
+            <Button Text="Dalej" Command="{Binding FurtherCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

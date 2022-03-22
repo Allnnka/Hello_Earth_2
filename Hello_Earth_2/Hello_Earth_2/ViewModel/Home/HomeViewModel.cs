@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hello_Earth_2.View.Registration;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -13,9 +14,12 @@ namespace Hello_Earth_2.ViewModel.Home
         private bool _isRegistrationParent = false;
         private bool _isRegistrationChild = false;
         private bool _isLogin = true;
+        private bool _isRegister = false;
 
         private Color _loginColor = Color.Red;
         private Color _registrationColor = Color.Gray;
+        private Color _playerButtonColor = Color.Red;
+        private Color _parentButtonColor = Color.Gray;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -23,12 +27,14 @@ namespace Hello_Earth_2.ViewModel.Home
         public ICommand PlayerCommand { get; set; }
         public ICommand LoginFormCommand { get; set; }
         public ICommand RegistrationFormCommand { get; set; }
+        public ICommand FurtherCommand { get; set; }
 
         public bool IsRegistrationParent
         { 
             get { return _isRegistrationParent; }
             set { 
                 _isRegistrationParent = value;
+                OnPropertyChanged(nameof(IsRegistrationChild));
             } 
         }
         public bool IsRegistrationChild
@@ -36,6 +42,7 @@ namespace Hello_Earth_2.ViewModel.Home
             get { return _isRegistrationChild; }
             set { 
                 _isRegistrationChild = value;
+                OnPropertyChanged(nameof(IsRegistrationChild));
             }
         }
         public bool IsLogin
@@ -43,6 +50,16 @@ namespace Hello_Earth_2.ViewModel.Home
             get { return _isLogin; }
             set { 
                 _isLogin = value;
+                OnPropertyChanged(nameof(IsLogin));
+            }
+        }
+        public bool IsRegister
+        {
+            get { return _isRegister; }
+            set
+            {
+                _isRegister = value;
+                OnPropertyChanged(nameof(IsRegister));
             }
         }
 
@@ -64,6 +81,25 @@ namespace Hello_Earth_2.ViewModel.Home
             }
         }
 
+        public Color PlayerButtonColor
+        {
+            get { return _playerButtonColor; }
+            set
+            {
+                _playerButtonColor = value;
+                OnPropertyChanged(nameof(PlayerButtonColor));
+            }
+        }
+
+        public Color ParentButtonColor
+        {
+            get { return _parentButtonColor; }
+            set
+            {
+                _parentButtonColor = value;
+                OnPropertyChanged(nameof(ParentButtonColor));
+            }
+        }
 
         public HomeViewModel()
         {
@@ -71,21 +107,27 @@ namespace Hello_Earth_2.ViewModel.Home
             PlayerCommand = new Command(()=> RegistrationChildHandler());
             LoginFormCommand = new Command(()=> LoginFormHandler());
             RegistrationFormCommand = new Command(() => RegistrationFormHandler());
+            FurtherCommand = new Command(() => FurtherFormHandler());
         }
 
         private void RegistrationParentHandler()
         {
-            _isRegistrationParent = !_isRegistrationParent;
+            IsRegistrationParent = !IsRegistrationParent;
+            ParentButtonColor = Color.Red;
+            PlayerButtonColor = Color.Gray;
         }
 
         private void RegistrationChildHandler()
         {
-            _isRegistrationChild =!_isRegistrationChild;
+            IsRegistrationChild =!IsRegistrationChild;
+            PlayerButtonColor = Color.Red;
+            ParentButtonColor = Color.Gray;
         }
 
         private void LoginFormHandler()
         {
             IsLogin = true;
+            IsRegister = false;
             LoginColor = Color.Red;
             RegistrationColor = Color.Gray;
         }
@@ -93,8 +135,17 @@ namespace Hello_Earth_2.ViewModel.Home
         private void RegistrationFormHandler()
         {
             IsLogin = false;
+            IsRegister = true;
             LoginColor = Color.Gray;
             RegistrationColor= Color.Red;
+        }
+
+        private async void FurtherFormHandler()
+        {
+            if(IsRegister && IsRegistrationParent)
+            {
+                await Application.Current.MainPage.Navigation.PushModalAsync(new RegistrationParentFormPage());
+            }
         }
 
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)

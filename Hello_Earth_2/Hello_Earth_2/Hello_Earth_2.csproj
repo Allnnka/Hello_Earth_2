@@ -31,7 +31,7 @@
     <EmbeddedResource Update="View\Home\HomePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\Home\RegistrationParentView.xaml">
+    <EmbeddedResource Update="View\Registration\RegistrationParentFormPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
