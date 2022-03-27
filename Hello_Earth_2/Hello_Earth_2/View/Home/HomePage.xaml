@@ -3,15 +3,45 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="Hello_Earth_2.View.Home.HomePage">
     <ContentPage.Content>
-        <StackLayout>
-            <Button Text="Zaloguj się" Command="{Binding LoginFormCommand}" TextColor="{Binding LoginColor}"/>
+        <Frame>
+            <Frame.Background>
+                <LinearGradientBrush StartPoint="0,0"
+                             EndPoint="1,1">
+                    <GradientStop Color="{StaticResource PrimaryBgColor}"
+                          Offset="0.1"/>
+                    <GradientStop Color="{StaticResource SecondaryBgColor}"
+                          Offset="1.0"/>
+                </LinearGradientBrush>
+            </Frame.Background>
+            <StackLayout>
+                <StackLayout>
+                    <Image Source="logo.jpg"/>
+                </StackLayout>
+                <Frame CornerRadius="10" Margin="20,0,20,0" Padding="45,20" BackgroundColor="Red">
+                    <StackLayout>
+                        <Grid ColumnSpacing="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="60"/>
+                            </Grid.RowDefinitions>
+                            <Button Text="Zaloguj się" Command="{Binding LoginFormCommand}" TextColor="{Binding LoginColor}"  Grid.Column="0" Grid.Row="0"/>
+                            <Button Text="Załóż konto" Command="{Binding RegistrationFormCommand}" TextColor="{Binding RegistrationColor}" Grid.Column="1" Grid.Row="0"/>
+                        </Grid>
 
-            <Button Text="Zarejestruj się" Command="{Binding RegistrationFormCommand}" TextColor="{Binding RegistrationColor}"/>
-            <StackLayout IsVisible="{Binding IsRegister}">
-                <Button Text="Profil Gracza" Command="{Binding PlayerCommand}" TextColor="{Binding PlayerButtonColor}"/>
-                <Button Text="Profil Rodzica" Command="{Binding ParentCommand}" TextColor="{Binding ParentButtonColor}"/>
+                        <StackLayout IsVisible="{Binding IsRegister}">
+                            <Button Text="Profil Gracza" Command="{Binding PlayerCommand}" TextColor="{Binding PlayerButtonColor}"/>
+                            <Button Text="Profil Rodzica" Command="{Binding ParentCommand}" TextColor="{Binding ParentButtonColor}"/>
+                            <Button Text="These buttons" Style="{StaticResource PrimaryButton}" BackgroundColor="{StaticResource SecondaryBgColor}" />
+                        </StackLayout>
+                    </StackLayout>
+
+                </Frame>
+
+                <Button Text="Dalej" Command="{Binding FurtherCommand}"/>
             </StackLayout>
-            <Button Text="Dalej" Command="{Binding FurtherCommand}"/>
-        </StackLayout>
+        </Frame>
     </ContentPage.Content>
 </ContentPage>

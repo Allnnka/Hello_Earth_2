@@ -3,6 +3,21 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Hello_Earth_2.App">
     <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="PrimaryBgColor">#D1E086</Color>
+            <Color x:Key="SecondaryBgColor">#E8ECD2</Color>
+            <Color x:Key="PrimaryColor">#7F1F55</Color>
+            <Color x:Key="DisableTextColor">#979797</Color>
+            <Color x:Key="SecondaryColor">#7EC79B</Color>
+            <Color x:Key="ThirdyColor">#9EC77E</Color>
 
+
+            <Style x:Key="PrimaryButton" TargetType="Button">
+                <Setter Property="BorderRadius" Value="10" />
+                <Setter Property="WidthRequest" Value="220" />
+                <Setter Property="HeightRequest" Value="45"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource PrimaryColor}" />
+            </Style>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -64,7 +64,7 @@ namespace Hello_Earth_2.ViewModel.Home
                 }
                 catch (Exception e)
                 {
-                    App.Current.MainPage.DisplayAlert("Sie wyjebał", $"{e.Message}", "ok");
+                    App.Current.MainPage.DisplayAlert("Oppss, coś poszło nie tak", $"{e.Message}", "ok");
                 }
             }
             else
