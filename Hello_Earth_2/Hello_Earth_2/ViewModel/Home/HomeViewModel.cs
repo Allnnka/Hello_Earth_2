@@ -16,10 +16,10 @@ namespace Hello_Earth_2.ViewModel.Home
         private bool _isLogin = true;
         private bool _isRegister = false;
 
-        private Color _loginColor = Color.Red;
-        private Color _registrationColor = Color.Gray;
-        private Color _playerButtonColor = Color.Red;
-        private Color _parentButtonColor = Color.Gray;
+        private Color _loginColor = (Color)Application.Current.Resources["PrimaryColor"];
+        private Color _registrationColor = (Color)Application.Current.Resources["DisableTextColor"];
+        private Color _playerButtonColor = (Color)Application.Current.Resources["PrimaryColor"];
+        private Color _parentButtonColor = (Color)Application.Current.Resources["DisableTextColor"];
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -113,31 +113,35 @@ namespace Hello_Earth_2.ViewModel.Home
         private void RegistrationParentHandler()
         {
             IsRegistrationParent = !IsRegistrationParent;
-            ParentButtonColor = Color.Red;
-            PlayerButtonColor = Color.Gray;
+            Color tmp = PlayerButtonColor;
+            PlayerButtonColor = ParentButtonColor;
+            ParentButtonColor = tmp;
         }
 
         private void RegistrationChildHandler()
         {
             IsRegistrationChild =!IsRegistrationChild;
-            PlayerButtonColor = Color.Red;
-            ParentButtonColor = Color.Gray;
+            Color tmp = PlayerButtonColor;
+            PlayerButtonColor = ParentButtonColor;
+            ParentButtonColor = tmp;
         }
 
         private void LoginFormHandler()
         {
             IsLogin = true;
             IsRegister = false;
-            LoginColor = Color.Red;
-            RegistrationColor = Color.Gray;
+            Color tmp = LoginColor;
+            LoginColor = RegistrationColor;
+            RegistrationColor = tmp;
         }
 
         private void RegistrationFormHandler()
         {
             IsLogin = false;
             IsRegister = true;
-            LoginColor = Color.Gray;
-            RegistrationColor= Color.Red;
+            Color tmp = LoginColor;
+            LoginColor = RegistrationColor;
+            RegistrationColor = tmp;
         }
 
         private async void FurtherFormHandler()

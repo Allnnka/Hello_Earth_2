@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             x:Class="Hello_Earth_2.View.Home.HomePage">
+             x:Class="Hello_Earth_2.View.Home.HomePage"
+             NavigationPage.HasNavigationBar="false">
     <ContentPage.Content>
         <Frame>
             <Frame.Background>
@@ -13,34 +14,53 @@
                           Offset="1.0"/>
                 </LinearGradientBrush>
             </Frame.Background>
-            <StackLayout>
-                <StackLayout>
+            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <StackLayout Orientation="Horizontal" VerticalOptions="Start">
                     <Image Source="logo.jpg"/>
                 </StackLayout>
-                <Frame CornerRadius="10" Margin="20,0,20,0" Padding="45,20" BackgroundColor="Red">
-                    <StackLayout>
-                        <Grid ColumnSpacing="0">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="60"/>
-                            </Grid.RowDefinitions>
-                            <Button Text="Zaloguj się" Command="{Binding LoginFormCommand}" TextColor="{Binding LoginColor}"  Grid.Column="0" Grid.Row="0"/>
-                            <Button Text="Załóż konto" Command="{Binding RegistrationFormCommand}" TextColor="{Binding RegistrationColor}" Grid.Column="1" Grid.Row="0"/>
-                        </Grid>
+                <StackLayout VerticalOptions="StartAndExpand">
+                    <Frame CornerRadius="10" Padding="45,20" BackgroundColor="#ffffff">
+                        <StackLayout>
+                            <Grid ColumnSpacing="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="60"/>
+                                </Grid.RowDefinitions>
+                                <StackLayout Orientation="Vertical" Grid.Column="0" Grid.Row="0">
+                                    <Button Text="Zaloguj się" Command="{Binding LoginFormCommand}" TextColor="{Binding LoginColor}" Style="{StaticResource AuthToggleButton}"/>
+                                    <BoxView HeightRequest="2"
+                                     HorizontalOptions="FillAndExpand"
+                                     VerticalOptions="CenterAndExpand"
+                                     Margin="0,-10,0,0"
+                                     Color="{Binding LoginColor}" />
 
-                        <StackLayout IsVisible="{Binding IsRegister}">
-                            <Button Text="Profil Gracza" Command="{Binding PlayerCommand}" TextColor="{Binding PlayerButtonColor}"/>
-                            <Button Text="Profil Rodzica" Command="{Binding ParentCommand}" TextColor="{Binding ParentButtonColor}"/>
-                            <Button Text="These buttons" Style="{StaticResource PrimaryButton}" BackgroundColor="{StaticResource SecondaryBgColor}" />
+                                </StackLayout>
+                                <StackLayout Orientation="Vertical" Grid.Column="1" Margin="10,0,0,0" Grid.Row="0">
+                                    <Button Text="Załóż konto" Command="{Binding RegistrationFormCommand}" TextColor="{Binding RegistrationColor}" Style="{StaticResource AuthToggleButton}"/>
+
+                                    <BoxView HeightRequest="2"
+                                     HorizontalOptions="FillAndExpand"
+                                     VerticalOptions="CenterAndExpand"
+                                     Margin="0,-10,0,0"
+                                     Color="{Binding RegistrationColor}" />
+
+                                </StackLayout>
+                            </Grid>
+
+                            <StackLayout IsVisible="{Binding IsRegister}">
+                                <Button Text="Profil Gracza" Command="{Binding PlayerCommand}" TextColor="{Binding PlayerButtonColor}" Style="{StaticResource SecondButton}"/>
+                                <Button Text="Profil Rodzica" Command="{Binding ParentCommand}" TextColor="{Binding ParentButtonColor}" Style="{StaticResource ThirdButton}"/>
+                            </StackLayout>
                         </StackLayout>
-                    </StackLayout>
+                    </Frame>
+                </StackLayout>
 
-                </Frame>
-
-                <Button Text="Dalej" Command="{Binding FurtherCommand}"/>
+                <StackLayout Orientation="Horizontal" VerticalOptions="End">
+                    <Button Text="Dalej" Command="{Binding FurtherCommand}" HorizontalOptions="CenterAndExpand" Style="{StaticResource PrimaryButton}"/>
+                </StackLayout>
             </StackLayout>
         </Frame>
     </ContentPage.Content>
