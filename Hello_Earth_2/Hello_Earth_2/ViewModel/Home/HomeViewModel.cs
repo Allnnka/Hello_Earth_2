@@ -1,4 +1,5 @@
-﻿using Hello_Earth_2.View.Registration;
+﻿using Hello_Earth_2.Services;
+using Hello_Earth_2.View.Registration;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,8 @@ namespace Hello_Earth_2.ViewModel.Home
         private bool _isRegistrationChild = false;
         private bool _isLogin = true;
         private bool _isRegister = false;
+        private string _emailLogin;
+        private string _passwordLogin;
 
         private Color _loginColor = (Color)Application.Current.Resources["PrimaryColor"];
         private Color _registrationColor = (Color)Application.Current.Resources["DisableTextColor"];
@@ -28,6 +31,7 @@ namespace Hello_Earth_2.ViewModel.Home
         public ICommand LoginFormCommand { get; set; }
         public ICommand RegistrationFormCommand { get; set; }
         public ICommand FurtherCommand { get; set; }
+        IFirebaseAuthentication auth = DependencyService.Get<IFirebaseAuthentication>();
 
         public bool IsRegistrationParent
         { 
@@ -101,6 +105,19 @@ namespace Hello_Earth_2.ViewModel.Home
             }
         }
 
+        public string EmailLogin
+        {
+            get { return _emailLogin; }
+            set { _emailLogin = value; }
+        }
+
+        public string PasswordLogin
+        {
+            get { return _passwordLogin; }
+            set { _passwordLogin = value;}
+        }
+
+
         public HomeViewModel()
         {
             ParentCommand = new Command(()=> RegistrationParentHandler());
@@ -146,6 +163,10 @@ namespace Hello_Earth_2.ViewModel.Home
             {
                 await Application.Current.MainPage.Navigation.PushModalAsync(new RegistrationParentFormPage());
             }
+            else
+            {
+                LoginHandler();
+            }
         }
 
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
@@ -153,6 +174,12 @@ namespace Hello_Earth_2.ViewModel.Home
             var handler = PropertyChanged;
             if (handler != null)
                 handler(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private async void LoginHandler()
+        {
+            string token = await auth.LoginWithEmailPassword(EmailLogin, PasswordLogin);
+            App.Current.MainPage.DisplayAlert("Hello, Wysłano email", $"{ token}", "ok");
         }
     }
 

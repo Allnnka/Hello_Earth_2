@@ -4,30 +4,54 @@
              x:Class="Hello_Earth_2.View.Registration.RegistrationParentFormPage">
     <ContentPage.Content>
         <StackLayout>
-            <Entry
-                Keyboard="Chat"
-                Placeholder="Wpisz login"
-                Text="{Binding UserName}"
+            <Label
+                Text="Profil: Rodzic"    
             />
-            <Entry
-                Keyboard="Chat"
-                Placeholder="Wpisz adres e-mail"
-                Text="{Binding Email}"
-            />
-            <Entry
-                Keyboard="Chat"
-                IsPassword="True"
-                Placeholder="Wpisz hasło"
-                Text="{Binding Password}"
-            />
+            <StackLayout IsVisible="{Binding IsForm}">
+                <Entry
+                    Keyboard="Chat"
+                    Placeholder="Wpisz login"
+                    Text="{Binding UserName}"
+                />
+                <Entry
+                    Keyboard="Chat"
+                    Placeholder="Wpisz adres e-mail"
+                    Text="{Binding Email}"
+                />
+                <Entry
+                    Keyboard="Chat"
+                    IsPassword="True"
+                    Placeholder="Wpisz hasło"
+                    Text="{Binding Password}"
+                />
+            </StackLayout>
+            <StackLayout IsVisible="{Binding IsFurther}">
+                <Label
+                    Text="Klauzula informacyjna o przetwarzaniu danych osobowych"    
+                />
+                <Label
+                    Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "    
+                />
+                <CheckBox IsChecked="{Binding IsAcctepted}" />
+                <Label
+                    Text="Wyrażam zgodę na przetwarzanie moich danych osobowych..."    
+                />
+            </StackLayout>
+            
             <Button
                 Text="Cofnij"
-                x:Name="btnBack"
+                Command="{Binding BackCommand}"
             />
             <Button
                 Text="Dalej"
-                x:Name="btnTest"
-                Command="{Binding RegistrationCommand}"
+                IsVisible="{Binding IsForm}"
+                Command="{Binding FurtherCommand}"
+            />
+            <Button
+                Text="Zarejestruj"
+                IsVisible="{Binding IsFurther}"
+                IsEnabled="{Binding IsAcctepted}"
+                Command="{Binding FurtherCommand}"
             />
         </StackLayout>
     </ContentPage.Content>

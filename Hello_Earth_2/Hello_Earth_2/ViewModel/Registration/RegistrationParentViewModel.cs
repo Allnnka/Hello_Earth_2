@@ -1,13 +1,16 @@
 ﻿using Hello_Earth_2.Model;
 using Hello_Earth_2.Services;
 using Hello_Earth_2.Services.ServiceImplementation;
+using Hello_Earth_2.View.Home;
 using System;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace Hello_Earth_2.ViewModel.Home
 {
-    public class RegistrationParentViewModel
+    public class RegistrationParentViewModel : INotifyPropertyChanged
     {
         UserServiceImplementation userService;
 
@@ -15,6 +18,10 @@ namespace Hello_Earth_2.ViewModel.Home
         private string _email;
         private string _password;
 
+        private bool _isForm = true;
+        private bool _isFurther = false;
+        private bool _isAccepted = false;
+        public event PropertyChangedEventHandler PropertyChanged;
         IFirebaseAuthentication auth = DependencyService.Get<IFirebaseAuthentication>();
         public string Email
         {
@@ -34,20 +41,61 @@ namespace Hello_Earth_2.ViewModel.Home
             set { _userName = value; }
         }
 
-        private string _text;
-        public string Text
+        public bool IsForm
         {
-            get => _text;
-            set => _text = value;
+            get { return _isForm; }
+            set { 
+                _isForm = value;
+                OnPropertyChanged(nameof(IsForm));
+            }
+        }
 
+        public bool IsFurther
+        {
+            get { return _isFurther; }
+            set { 
+                _isFurther = value;
+                OnPropertyChanged(nameof(IsFurther));
+            }
+        }
+
+        public bool IsAcctepted
+        {
+            get { return _isAccepted; }
+            set { 
+                _isAccepted = value;
+                OnPropertyChanged(nameof(IsAcctepted));
+            }
         }
         public ICommand RegistrationCommand { get; set; }
+        public ICommand FurtherCommand { get; set; }
+        public ICommand BackCommand { get; set; }
         public RegistrationParentViewModel()
         {
             RegistrationCommand = new Command(() => RegistrateUser());
+            FurtherCommand = new Command(() => FurtherHandler());
+            BackCommand = new Command(() => BackHandler());
             userService = new UserServiceImplementation();
         }
 
+        private void FurtherHandler()
+        {
+            IsForm = false;
+            IsAcctepted = false;
+            IsFurther = true;
+        }
+        private async void BackHandler()
+        {
+            if (IsFurther)
+            {
+                IsForm = true;
+                IsFurther = false;
+            }
+            else
+            {
+                await Application.Current.MainPage.Navigation.PopModalAsync();
+            }
+        }
         private async void RegistrateUser()
         {
             string token = await auth.RegisterWithEmailPassword(Email, Password);
@@ -73,5 +121,12 @@ namespace Hello_Earth_2.ViewModel.Home
             }
 
         }
+            protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            var handler = PropertyChanged;
+            if (handler != null)
+                handler(this, new PropertyChangedEventArgs(propertyName));
+        }
+
     }
 }
