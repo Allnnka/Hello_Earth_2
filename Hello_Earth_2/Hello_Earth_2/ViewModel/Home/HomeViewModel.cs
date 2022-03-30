@@ -1,5 +1,6 @@
-﻿using Hello_Earth_2.Services;
-using Hello_Earth_2.View.Registration;
+﻿using Hello_Earth_2.Model;
+using Hello_Earth_2.Services;
+using Hello_Earth_2.Services.ServiceImplementation;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,12 +13,22 @@ namespace Hello_Earth_2.ViewModel.Home
 {
     public class HomeViewModel : INotifyPropertyChanged
     {
+        UserServiceImplementation userService;
         private bool _isRegistrationParent = false;
         private bool _isRegistrationChild = false;
         private bool _isLogin = true;
         private bool _isRegister = false;
+        private bool _isRegisterOpen = false;
+        private bool _isHomeOpen = true;
         private string _emailLogin;
         private string _passwordLogin;
+        private string _userName;
+        private string _email;
+        private string _password;
+
+        private bool _isForm = true;
+        private bool _isFurther = false;
+        private bool _isAccepted = false;
 
         private Color _loginColor = (Color)Application.Current.Resources["PrimaryColor"];
         private Color _registrationColor = (Color)Application.Current.Resources["DisableTextColor"];
@@ -31,8 +42,57 @@ namespace Hello_Earth_2.ViewModel.Home
         public ICommand LoginFormCommand { get; set; }
         public ICommand RegistrationFormCommand { get; set; }
         public ICommand FurtherCommand { get; set; }
+        public ICommand RegistrationCommand { get; set; }
+        public ICommand BackCommand { get; set; }
         IFirebaseAuthentication auth = DependencyService.Get<IFirebaseAuthentication>();
+        public string Email
+        {
+            get { return _email; }
+            set { _email = value; }
+        }
+        public string Password
+        {
+            get { return _password; }
+            set { _password = value; }
 
+        }
+
+        public string UserName
+        {
+            get { return _userName; }
+            set { _userName = value; }
+        }
+
+        public bool IsForm
+        {
+            get { return _isForm; }
+            set
+            {
+                _isForm = value;
+                OnPropertyChanged(nameof(IsForm));
+            }
+        }
+
+        public bool IsFurther
+        {
+            get { return _isFurther; }
+            set
+            {
+                _isFurther = value;
+                OnPropertyChanged(nameof(IsFurther));
+            }
+        }
+
+        public bool IsAcctepted
+        {
+            get { return _isAccepted; }
+            set
+            {
+                _isAccepted = value;
+                OnPropertyChanged(nameof(IsAcctepted));
+            }
+        }
+        
         public bool IsRegistrationParent
         { 
             get { return _isRegistrationParent; }
@@ -64,6 +124,26 @@ namespace Hello_Earth_2.ViewModel.Home
             {
                 _isRegister = value;
                 OnPropertyChanged(nameof(IsRegister));
+            }
+        }
+
+        public bool IsRegisterOpen
+        {
+            get { return _isRegisterOpen; }
+            set
+            {
+                _isRegisterOpen = value;
+                OnPropertyChanged(nameof(IsRegisterOpen));
+            }
+        }
+
+        public bool IsHomeOpen
+        {
+            get { return _isHomeOpen; }
+            set
+            {
+                _isHomeOpen = value;
+                OnPropertyChanged(nameof(IsHomeOpen));
             }
         }
 
@@ -157,11 +237,18 @@ namespace Hello_Earth_2.ViewModel.Home
             LoginColor = (Color)Application.Current.Resources["DisableTextColor"];
         }
 
-        private async void FurtherFormHandler()
+        private void FurtherFormHandler()
         {
             if(IsRegister && IsRegistrationParent)
             {
-                await Application.Current.MainPage.Navigation.PushModalAsync(new RegistrationParentFormPage());
+                IsRegisterOpen = true;
+                IsHomeOpen = false;
+                IsRegister = false;
+            }else if (IsRegisterOpen)
+            {
+                IsForm = false;
+                IsAcctepted = false;
+                IsFurther = true;
             }
             else
             {
@@ -180,6 +267,44 @@ namespace Hello_Earth_2.ViewModel.Home
         {
             string token = await auth.LoginWithEmailPassword(EmailLogin, PasswordLogin);
             App.Current.MainPage.DisplayAlert("Hello, Wysłano email", $"{ token}", "ok");
+        }
+
+        private async void BackHandler()
+        {
+            if (IsFurther)
+            {
+                IsForm = true;
+                IsFurther = false;
+            }
+            else
+            {
+                await Application.Current.MainPage.Navigation.PopModalAsync();
+            }
+        }
+        private async void RegistrateUser()
+        {
+            string token = await auth.RegisterWithEmailPassword(Email, Password);
+            bool isSend = await auth.SendEmailVerification();
+            if (isSend)
+            {
+                Parent parent = new Parent();
+                parent.UserName = Email;
+                parent.Role = Roles.PARENT;
+                try
+                {
+                    await userService.createUser(parent);
+                    App.Current.MainPage.DisplayAlert("Hello, Wysłano email", $"{ token}", "ok");
+                }
+                catch (Exception e)
+                {
+                    App.Current.MainPage.DisplayAlert("Oppss, coś poszło nie tak", $"{e.Message}", "ok");
+                }
+            }
+            else
+            {
+                App.Current.MainPage.DisplayAlert("Niet", $"{ token}", "ok");
+            }
+
         }
     }
 
