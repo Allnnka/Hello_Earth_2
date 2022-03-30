@@ -49,11 +49,26 @@
 
                                 </StackLayout>
                             </Grid>
-                            <Label Text="Wybierz profil"/>
 
                             <StackLayout IsVisible="{Binding IsRegister}">
-                                <Button Text="Profil Gracza" Command="{Binding PlayerCommand}" TextColor="{Binding PlayerButtonColor}" Style="{StaticResource SecondButton}"/>
-                                <Button Text="Profil Rodzica" Command="{Binding ParentCommand}" TextColor="{Binding ParentButtonColor}" Style="{StaticResource ThirdButton}"/>
+                                <Label 
+                                    Text="Wybierz profil" 
+                                    Margin="0,10"
+                                    HorizontalOptions="Center"
+                                    Style="{StaticResource TestLabel}"/>
+
+                                <Button 
+                                    Text="Profil Gracza" 
+                                    Command="{Binding PlayerCommand}" 
+                                    BackgroundColor="{Binding PlayerButtonColor}"
+                                    Style="{StaticResource SecondButton}"
+                                />
+                                <Button 
+                                    Text="Profil Rodzica" 
+                                    Command="{Binding ParentCommand}" 
+                                    BackgroundColor="{Binding ParentButtonColor}" 
+                                    Style="{StaticResource ThirdButton}"
+                                />
                             </StackLayout>
                             <StackLayout IsVisible="{Binding IsLogin}">
                                 <Entry

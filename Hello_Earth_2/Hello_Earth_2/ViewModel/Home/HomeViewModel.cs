@@ -21,8 +21,8 @@ namespace Hello_Earth_2.ViewModel.Home
 
         private Color _loginColor = (Color)Application.Current.Resources["PrimaryColor"];
         private Color _registrationColor = (Color)Application.Current.Resources["DisableTextColor"];
-        private Color _playerButtonColor = (Color)Application.Current.Resources["PrimaryColor"];
-        private Color _parentButtonColor = (Color)Application.Current.Resources["DisableTextColor"];
+        private Color _playerButtonColor = (Color)Application.Current.Resources["ThirdyColor"];
+        private Color _parentButtonColor = (Color)Application.Current.Resources["SecondaryColor"];
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -131,14 +131,14 @@ namespace Hello_Earth_2.ViewModel.Home
         {
             IsRegistrationParent = !IsRegistrationParent;
             ParentButtonColor = (Color)Application.Current.Resources["PrimaryColor"];
-            PlayerButtonColor = (Color)Application.Current.Resources["DisableTextColor"];
+            PlayerButtonColor = (Color)Application.Current.Resources["ThirdyColor"];
         }
 
         private void RegistrationChildHandler()
         {
             IsRegistrationChild =!IsRegistrationChild;
             PlayerButtonColor = (Color)Application.Current.Resources["PrimaryColor"];
-            ParentButtonColor = (Color)Application.Current.Resources["DisableTextColor"];
+            ParentButtonColor = (Color)Application.Current.Resources["SecondaryColor"];
         }
 
         private void LoginFormHandler()
