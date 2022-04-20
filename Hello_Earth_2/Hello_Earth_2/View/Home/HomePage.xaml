@@ -184,18 +184,12 @@
 
                                 </StackLayout>
                             </Grid>
-<<<<<<< HEAD
                             <Label Text="Profil: Rodzic"
                                    Style="{StaticResource ProfileText}"/>
-                            <StackLayout IsVisible="{Binding IsForm}">
+                            <StackLayout IsVisible="{Binding IsFormParent}">
                                 <Grid>
                                     <Frame Style="{StaticResource InputFrame}">
                                         <Entry Keyboard="Chat"
-=======
-                            <Label Text="Profil: Rodzic" />
-                            <StackLayout IsVisible="{Binding IsFormParent}">
-                                <Entry Keyboard="Chat"
->>>>>>> 40635433471a9a6b47c1aaa432e2c10a33369ed0
                                                Placeholder="Wpisz login"
                                                Text="{Binding UserName}"
                                                PlaceholderColor="Black">
@@ -250,18 +244,13 @@
                                        Style="{StaticResource FormLabelUnderInput}"></Label>
 
                             </StackLayout>
-<<<<<<< HEAD
-                            <StackLayout IsVisible="{Binding IsFurther}"
+                            <StackLayout IsVisible="{Binding IsFurtherParent}"
                                          WidthRequest="100">
                                 <Label Text="Klauzula informacyjna o przetwarzaniu danych osobowych"
                                        TextColor="Black"
                                        FontSize="15"
                                        FontAttributes="Bold"
                                        HorizontalTextAlignment="Center"/>
-=======
-                            <StackLayout IsVisible="{Binding IsFurtherParent}" WidthRequest="100">
-                                <Label Text="Klauzula informacyjna o przetwarzaniu danych osobowych" />
->>>>>>> 40635433471a9a6b47c1aaa432e2c10a33369ed0
                                 <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. " />
                                 <Grid>
                                     <Grid.ColumnDefinitions>
@@ -349,30 +338,17 @@
                                 Style="{StaticResource PrimaryButton}"
                                 WidthRequest="120"/>
                         <Button Text="Dalej"
-<<<<<<< HEAD
-                                IsVisible="{Binding IsForm}"
+                                IsVisible="{Binding IsFormParent}"
                                 Command="{Binding FurtherCommand}"
                                 HorizontalOptions="CenterAndExpand"
                                 Style="{StaticResource PrimaryButton}"
                                 WidthRequest="120"/>
                         <Button Text="Zarejestruj"
-                                IsVisible="{Binding IsFurther}"
+                                IsVisible="{Binding IsFurtherParent}"
                                 IsEnabled="{Binding IsAcctepted}"
                                 Command="{Binding FurtherCommand}"
                                 HorizontalOptions="CenterAndExpand"
                                 Style="{StaticResource PrimaryButton}" />
-=======
-                                    IsVisible="{Binding IsFormParent}"
-                                    Command="{Binding FurtherCommand}"
-                                    HorizontalOptions="CenterAndExpand"
-                                    Style="{StaticResource PrimaryButton}" />
-                        <Button Text="Zarejestruj"
-                                    IsVisible="{Binding IsFurtherParent}"
-                                    IsEnabled="{Binding IsAcctepted}"
-                                    Command="{Binding FurtherCommand}"
-                                    HorizontalOptions="CenterAndExpand"
-                                    Style="{StaticResource PrimaryButton}" />
->>>>>>> 40635433471a9a6b47c1aaa432e2c10a33369ed0
                     </StackLayout>
                     <StackLayout AbsoluteLayout.LayoutBounds="0.1,0.85,1,0.1" AbsoluteLayout.LayoutFlags="All" Orientation="Horizontal" VerticalOptions="End" IsVisible="{Binding IsRegistrationParentSuccess}">
                         <Button Text="Przejdź do aplikacji"
