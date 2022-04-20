@@ -71,6 +71,7 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AndroidPlainEntryEffect.cs" />
     <Compile Include="FirebaseAuthentication.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
@@ -98,7 +99,9 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\eye_password.png" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Hello_Earth_2\Hello_Earth_2.csproj">
       <Project>{9AE432A1-B75B-4C0E-86F0-05FAAF5B5E9F}</Project>
