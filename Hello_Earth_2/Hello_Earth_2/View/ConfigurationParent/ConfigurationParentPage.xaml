@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Hello_Earth_2.View.ConfigurationParent.ConfigurationParentPage"
+             xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
+             NavigationPage.HasNavigationBar="false"
+             >
+    <ContentPage.Content>
+        <Frame>
+            <Frame.Background>
+                <LinearGradientBrush StartPoint="0,0"
+                                         EndPoint="1,1">
+                    <GradientStop Color="{StaticResource PrimaryBgColor}"
+                                      Offset="0.1" />
+                    <GradientStop Color="{StaticResource SecondaryBgColor}"
+                                      Offset="1.0" />
+                </LinearGradientBrush>
+            </Frame.Background>
+            <AbsoluteLayout>
+                <AbsoluteLayout>
+                    <Image Source="logo.png"
+                           AbsoluteLayout.LayoutBounds="0,0,1,1"
+                           AbsoluteLayout.LayoutFlags="All"
+                           Aspect="AspectFill" />
+                </AbsoluteLayout>
+                <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <Frame AbsoluteLayout.LayoutBounds="0, 0.6, 1, 0.38" AbsoluteLayout.LayoutFlags="All" 
+                           HeightRequest="250" CornerRadius="10" Padding="50,20" BackgroundColor="#ffffff">
+                        <StackLayout>
+                            <Grid ColumnSpacing="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <StackLayout Orientation="Vertical"
+                                                    Grid.Column="0"
+                                                    Margin="10,0,10,0" IsVisible="{Binding IsCreatingFamily}">
+                                    <Label Text="Dokończ konfigurację swojego konta"/>
+                                    <Button Text="Dalej" Command="{Binding CreateFamilyCommand}"/>
+                                </StackLayout>
+                            </Grid>
+                            <Grid ColumnSpacing="0" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <StackLayout Orientation="Vertical"
+                                                    Grid.Column="0"
+                                                    Margin="10,0,10,0" IsVisible="{Binding IsQrCodeButton}">
+                                    <Label Text="Wygeneruj kod QR"/>
+                                    <Button Text="Dalej" Command="{Binding GenerateQRCodeCommand}"/>
+                                </StackLayout>
+                            </Grid>
+                            <Grid ColumnSpacing="0" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <zxing:ZXingBarcodeImageView BarcodeValue="test" WidthRequest="100" HeightRequest="100" IsVisible="{Binding IsQrCodeShown}"/>
+                            </Grid>
+                        </StackLayout>
+
+                    </Frame>
+                </AbsoluteLayout>
+            </AbsoluteLayout>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>

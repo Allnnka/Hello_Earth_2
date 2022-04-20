@@ -69,9 +69,19 @@
     </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
+    <PackageReference Include="ZXing.Net.Mobile">
+      <Version>2.4.1</Version>
+    </PackageReference>
+    <PackageReference Include="ZXing.Net.Mobile.Forms">
+      <Version>2.4.1</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="AndroidPlainEntryEffect.cs" />
+=======
+    <Compile Include="AssemblyInfo.cs" />
+>>>>>>> 40635433471a9a6b47c1aaa432e2c10a33369ed0
     <Compile Include="FirebaseAuthentication.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />

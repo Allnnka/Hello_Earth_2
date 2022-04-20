@@ -14,26 +14,35 @@ using Firebase;
 using Xamarin.Forms;
 using Hello_Earth_2.Droid;
 using Firebase.Auth;
+using Hello_Earth_2.Model.UserAuth;
 
 [assembly: Dependency(typeof(FirebaseAuthentication))]
 namespace Hello_Earth_2.Droid
 {
     public class FirebaseAuthentication : IFirebaseAuthentication
     {
-        public async Task<string> LoginWithEmailPassword(string email, string password)
+        public async Task<UserAuth> LoginWithEmailPassword(string email, string password)
         {
             var user = await FirebaseAuth.Instance?.SignInWithEmailAndPasswordAsync(email, password);
-            var token = user.User.GetIdToken(false);
-            return token.ToString();
+            UserAuth userAuth = new UserAuth();
+            userAuth.Uid = user.User.Uid;
+            return userAuth;
         }
 
-        public async Task<string> RegisterWithEmailPassword(string email, string password)
+        public async Task<UserAuth> RegisterWithEmailPassword(string email, string password)
         {
             var user = await FirebaseAuth.Instance.CreateUserWithEmailAndPasswordAsync(email, password);
-            var token = user.User.GetIdToken(false);
-            return token.ToString();
+            UserAuth userAuth = new UserAuth();
+            userAuth.Uid = user.User.Uid;
+            return userAuth;
         }
-
+        public UserAuth GetUserAuth()
+        {
+            var user = FirebaseAuth.Instance.CurrentUser;
+            UserAuth userAuth = new UserAuth();
+            userAuth.Uid = user.Uid;
+            return userAuth;
+        }
         public async Task<bool> SendEmailVerification()
         {
             try
