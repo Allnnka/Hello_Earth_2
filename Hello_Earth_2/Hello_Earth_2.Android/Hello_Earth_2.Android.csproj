@@ -77,11 +77,8 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Compile Include="AndroidPlainEntryEffect.cs" />
-=======
     <Compile Include="AssemblyInfo.cs" />
->>>>>>> 40635433471a9a6b47c1aaa432e2c10a33369ed0
     <Compile Include="FirebaseAuthentication.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
