@@ -1,6 +1,8 @@
 ﻿using Hello_Earth_2.Model;
+using Hello_Earth_2.Model.UserAuth;
 using Hello_Earth_2.Services;
 using Hello_Earth_2.Services.ServiceImplementation;
+using Hello_Earth_2.View.ConfigurationParent;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -282,31 +284,39 @@ namespace Hello_Earth_2.ViewModel.Home
             }
         }
 
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            var handler = PropertyChanged;
-            if (handler != null)
-                handler(this, new PropertyChangedEventArgs(propertyName));
-        }
 
         private async void LoginHandler()
         {
-            string token = await auth.LoginWithEmailPassword(EmailLogin, PasswordLogin);
-            App.Current.MainPage.DisplayAlert("Hello, Wysłano email", $"{ token}", "ok");
+            try
+            {
+                UserAuth userAuth = await auth.LoginWithEmailPassword(EmailLogin, PasswordLogin);
+                App.Current.MainPage = new NavigationPage(new ConfigurationParentPage());
+            }catch{
+                await App.Current.MainPage.DisplayAlert("Uwaga!","Nieprawidłowy login lub hasło", "ok");
+            }
+            
         }
 
         private void BackHandler()
         {
-            if (IsFormParent)
-            {
-                IsRegisterOpen = false;
-                IsHomeOpen = true;
-                IsRegister = true;
-            }else if (IsFurtherParent)
+            if (IsFurtherParent)
             {
                 IsFormParent = true;
                 IsAcctepted = false;
                 IsFurtherParent = false;
+            }
+            else if (IsRegistrationParentSuccess)
+            {
+                IsRegistrationParent = false;
+                IsRegistrationParentSuccess = false;
+                IsHomeOpen = true;
+                LoginFormHandler();
+            }
+            else if (IsFormParent)
+            {
+                IsRegisterOpen = false;
+                IsHomeOpen = true;
+                IsRegister = true;
             }
             /*else if (IsFurtherParent)
             {
@@ -320,7 +330,7 @@ namespace Hello_Earth_2.ViewModel.Home
         }
         private async void RegistrateUser()
         {
-            string token = await auth.RegisterWithEmailPassword(Email, Password);
+            UserAuth userAuth = await auth.RegisterWithEmailPassword(Email, Password);
             bool isSend = await auth.SendEmailVerification();
             if (isSend)
             {
@@ -330,7 +340,7 @@ namespace Hello_Earth_2.ViewModel.Home
                 parent.Role = Roles.PARENT;
                 try
                 {
-                    await userService.createUser(parent);
+                    await userService.CreateUser(parent,userAuth.Uid);
                     IsFurtherParent = false;
                     IsRegisterOpen=false;
                     IsRegistrationParentSuccess = true;
@@ -342,10 +352,17 @@ namespace Hello_Earth_2.ViewModel.Home
             }
             else
             {
-                App.Current.MainPage.DisplayAlert("Niet", $"{ token}", "ok");
+                App.Current.MainPage.DisplayAlert("Niet", $"Coś poszło nie tak", "ok");
             }
 
         }
+        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            var handler = PropertyChanged;
+            if (handler != null)
+                handler(this, new PropertyChangedEventArgs(propertyName));
+        }
+
     }
 
 }

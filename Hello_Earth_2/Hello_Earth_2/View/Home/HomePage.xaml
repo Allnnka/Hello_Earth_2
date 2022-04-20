@@ -196,7 +196,7 @@
                                 </StackLayout>
                             </Grid>
 
-                            <StackLayout IsVisible="{Binding IsLogin}">
+                            <StackLayout IsVisible="{Binding IsRegistrationParentSuccess}">
                                 <Label Text="Rejestracja zakończona sukcesem!" />
                             </StackLayout>
 
