@@ -22,6 +22,7 @@ namespace Hello_Earth_2.ViewModel.Configuration
 
         private bool _isCreatingFamily = true;
         private bool _isQrCodeButton = false;
+        private bool _isQrCodeShown = false;
 
         public ICommand CreateFamilyCommand { get; set; }
         public ICommand GenerateQRCodeCommand { get; set; }
@@ -52,6 +53,16 @@ namespace Hello_Earth_2.ViewModel.Configuration
             }
         }
 
+        public bool IsQrCodeShown
+        {
+            get { return _isQrCodeShown; }
+            set
+            {
+                _isQrCodeShown = value;
+                OnPropertyChanged(nameof(IsQrCodeShown));
+            }
+        }
+
         private async void CreateFamilyHandler()
         {
             UserAuth userAuth = auth.GetUserAuth();
@@ -66,9 +77,10 @@ namespace Hello_Earth_2.ViewModel.Configuration
             IsQrCodeButton = true;
         }
 
-        private async void GenerateQRCodeHandler()
+        private void GenerateQRCodeHandler()
         {
-
+            IsQrCodeButton = false;
+            IsQrCodeShown = true;
         }
 
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
