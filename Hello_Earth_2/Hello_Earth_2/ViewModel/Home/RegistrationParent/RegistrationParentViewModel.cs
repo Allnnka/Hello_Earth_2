@@ -107,6 +107,7 @@ namespace Hello_Earth_2.ViewModel.Home.RegistrationParent
                 try
                 {
                     await userService.CreateUser(parent, userAuth.Uid);
+                    auth.SignOut();
                     IsRegisterSatement = false;
                     IsRegisterSuccess = true;
                 }
@@ -127,21 +128,14 @@ namespace Hello_Earth_2.ViewModel.Home.RegistrationParent
             if (_isRegisterForm)
             {
                 IsRegisterForm = false;
+                IsAccepted = false;
                 IsRegisterSatement = true;
             }
         }
 
         private async void BackHandler()
         {
-            if (IsRegisterForm)
-            {
-                await Application.Current.MainPage.Navigation.PopAsync();
-            }
-            else
-            {
-                IsRegisterSatement = false;
-                IsRegisterForm = true;
-            }
+            await Application.Current.MainPage.Navigation.PopAsync();
         }
 
         private async void BackToLoginHandler()

@@ -36,6 +36,11 @@ namespace Hello_Earth_2.Droid
             userAuth.Uid = user.User.Uid;
             return userAuth;
         }
+
+        public void SignOut()
+        {
+            FirebaseAuth.Instance.SignOut();
+        }
         public UserAuth GetUserAuth()
         {
             var user = FirebaseAuth.Instance.CurrentUser;

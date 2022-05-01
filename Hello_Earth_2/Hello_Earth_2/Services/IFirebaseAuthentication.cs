@@ -12,5 +12,6 @@ namespace Hello_Earth_2.Services
         Task<UserAuth> RegisterWithEmailPassword(string email, string password);
         UserAuth GetUserAuth();
         Task<bool> SendEmailVerification();
+        void SignOut();
     }
 }

@@ -4,6 +4,7 @@
              x:Class="Hello_Earth_2.View.ConfigurationParent.ConfigurationParentPage"
              xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
              NavigationPage.HasNavigationBar="false"
+             xmlns:zxcm="clr-namespace:ZXing.Common;assembly=zxing.portable"
              >
     <ContentPage.Content>
         <Frame>
@@ -49,11 +50,22 @@
                                     <Button Text="Dalej" Command="{Binding GenerateQRCodeCommand}"/>
                                 </StackLayout>
                             </Grid>
-                            <Grid ColumnSpacing="0" >
+                            <Grid ColumnSpacing="0">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
-                                <zxing:ZXingBarcodeImageView BarcodeValue="test" WidthRequest="100" HeightRequest="100" IsVisible="{Binding IsQrCodeShown}"/>
+                                <StackLayout Orientation="Vertical"
+                                                    Grid.Column="0"
+                                             IsVisible="{Binding IsQrCodeShown}">
+                                    <zxing:ZXingBarcodeImageView BarcodeValue="{Binding BarCode}" 
+                                                                    WidthRequest="200" HeightRequest="200" 
+                                                                    >
+                                        <zxing:ZXingBarcodeImageView.BarcodeOptions>
+                                            <zxcm:EncodingOptions Width="200" Height="200" />
+                                        </zxing:ZXingBarcodeImageView.BarcodeOptions>
+                                    </zxing:ZXingBarcodeImageView>
+                                    <Button Text="Odśwież" Command="{Binding RefreshCommand}"/>
+                                </StackLayout>
                             </Grid>
                         </StackLayout>
 
