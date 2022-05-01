@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Hello_Earth_2.Services
 {
-    public interface IUserServives
+    public interface IUserServices
     {
         Task CreateUser(User user, string userUid);
         Task<User> GetUser(string userUid);

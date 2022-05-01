@@ -1,6 +1,7 @@
 ﻿using Hello_Earth_2.Model.UserAuth;
 using Hello_Earth_2.Services;
 using Hello_Earth_2.View.ConfigurationParent;
+using Hello_Earth_2.View.Home.RegistrationChild;
 using Hello_Earth_2.View.Home.RegistrationParent;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -148,10 +149,15 @@ namespace Hello_Earth_2.ViewModel.Home
         }
         private async void FurtherFormHandler()
         {
-            if(IsRegister && IsRegistrationParent)
+            if (IsRegister && IsRegistrationParent)
             {
                 await Application.Current.MainPage.Navigation.PushAsync(new RegistrationParentPage());
-            }else
+            } 
+            else if (IsRegister && IsRegistrationChild) 
+            { 
+                await Application.Current.MainPage.Navigation.PushAsync(new RegistrationChildPage());
+            }
+            else
             {
                 LoginHandler();
             }

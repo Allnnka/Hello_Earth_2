@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Hello_Earth_2.Services.ServiceImplementation
 {
-    public class UserServiceImplementation : IUserServives
+    public class UserServiceImplementation : IUserServices
     {
 
         public async Task CreateUser(User user, string userUid)
