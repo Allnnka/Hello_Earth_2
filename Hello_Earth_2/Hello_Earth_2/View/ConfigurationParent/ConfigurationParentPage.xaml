@@ -4,17 +4,16 @@
              x:Class="Hello_Earth_2.View.ConfigurationParent.ConfigurationParentPage"
              xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
              NavigationPage.HasNavigationBar="false"
-             xmlns:zxcm="clr-namespace:ZXing.Common;assembly=zxing.portable"
-             >
+             xmlns:zxcm="clr-namespace:ZXing.Common;assembly=zxing.portable">
     <ContentPage.Content>
         <Frame>
             <Frame.Background>
                 <LinearGradientBrush StartPoint="0,0"
-                                         EndPoint="1,1">
+                                     EndPoint="1,1">
                     <GradientStop Color="{StaticResource PrimaryBgColor}"
-                                      Offset="0.1" />
+                                  Offset="0.1" />
                     <GradientStop Color="{StaticResource SecondaryBgColor}"
-                                      Offset="1.0" />
+                                  Offset="1.0" />
                 </LinearGradientBrush>
             </Frame.Background>
             <AbsoluteLayout>
@@ -24,51 +23,87 @@
                            AbsoluteLayout.LayoutFlags="All"
                            Aspect="AspectFill" />
                 </AbsoluteLayout>
-                <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-                    <Frame AbsoluteLayout.LayoutBounds="0, 0.6, 1, 0.38" AbsoluteLayout.LayoutFlags="All" 
-                           HeightRequest="250" CornerRadius="10" Padding="50,20" BackgroundColor="#ffffff">
-                        <StackLayout>
+                <AbsoluteLayout VerticalOptions="FillAndExpand"
+                                HorizontalOptions="FillAndExpand">
+                    <Frame AbsoluteLayout.LayoutBounds="0, 0.6, 1, 0.38"
+                           AbsoluteLayout.LayoutFlags="All"
+                           WidthRequest="250"
+                           CornerRadius="10"
+                           Padding="50,20"
+                           BackgroundColor="#ffffff">
+                        <StackLayout HorizontalOptions="FillAndExpand">
+                            <Grid ColumnSpacing="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <StackLayout VerticalOptions="Center"
+                                             HorizontalOptions="Center"
+                                             HeightRequest="250"
+                                             Grid.Column="0"
+                                             Margin="10,0,10,0"
+                                             IsVisible="{Binding IsCreatingFamily}">
+                                    <Label
+                                           Margin="0,40,0,0"
+                                           Text="Dokończ konfigurację &#10; swojego konta"
+                                           FontSize="24"
+                                           HorizontalTextAlignment="Center"
+                                           TextColor="Black"
+                                           LineBreakMode="WordWrap" />
+
+                                    <Button Text="Dalej"
+                                            Style="{StaticResource PrimaryButton}"
+                                            WidthRequest="150"
+                                            Command="{Binding CreateFamilyCommand}"
+                                            HorizontalOptions="CenterAndExpand"
+                                            VerticalOptions="EndAndExpand" />
+                                </StackLayout>
+                            </Grid>
+                            <Grid ColumnSpacing="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <StackLayout 
+                                             VerticalOptions="Center"
+                                             HorizontalOptions="Center"
+                                             HeightRequest="250"
+                                             Grid.Column="0"
+                                             Margin="10,0,10,0"
+                                             IsVisible="{Binding IsQrCodeButton}">
+                                    <Label Text="Wygeneruj kod QR"
+                                           FontSize="24"
+                                           Margin="0,40,0,0"
+                                           HorizontalTextAlignment="Center"
+                                           TextColor="Black"
+                                           LineBreakMode="WordWrap" />
+                                    <Button Text="Dalej"
+                                            Style="{StaticResource PrimaryButton}"
+                                            WidthRequest="150"
+                                            Command="{Binding GenerateQRCodeCommand}"
+                                            HorizontalOptions="CenterAndExpand"
+                                            VerticalOptions="EndAndExpand"/>
+                                </StackLayout>
+                            </Grid>
                             <Grid ColumnSpacing="0">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
                                 <StackLayout Orientation="Vertical"
-                                                    Grid.Column="0"
-                                                    Margin="10,0,10,0" IsVisible="{Binding IsCreatingFamily}">
-                                    <Label Text="Dokończ konfigurację swojego konta"/>
-                                    <Button Text="Dalej" Command="{Binding CreateFamilyCommand}"/>
-                                </StackLayout>
-                            </Grid>
-                            <Grid ColumnSpacing="0" >
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*" />
-                                </Grid.ColumnDefinitions>
-                                <StackLayout Orientation="Vertical"
-                                                    Grid.Column="0"
-                                                    Margin="10,0,10,0" IsVisible="{Binding IsQrCodeButton}">
-                                    <Label Text="Wygeneruj kod QR"/>
-                                    <Button Text="Dalej" Command="{Binding GenerateQRCodeCommand}"/>
-                                </StackLayout>
-                            </Grid>
-                            <Grid ColumnSpacing="0">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*" />
-                                </Grid.ColumnDefinitions>
-                                <StackLayout Orientation="Vertical"
-                                                    Grid.Column="0"
+                                             Grid.Column="0"
                                              IsVisible="{Binding IsQrCodeShown}">
-                                    <zxing:ZXingBarcodeImageView BarcodeValue="{Binding BarCode}" 
-                                                                    WidthRequest="200" HeightRequest="200" 
-                                                                    >
+                                    <zxing:ZXingBarcodeImageView BarcodeValue="{Binding BarCode}"
+                                                                 WidthRequest="200"
+                                                                 HeightRequest="200">
                                         <zxing:ZXingBarcodeImageView.BarcodeOptions>
-                                            <zxcm:EncodingOptions Width="200" Height="200" />
+                                            <zxcm:EncodingOptions Width="200"
+                                                                  Height="200" />
                                         </zxing:ZXingBarcodeImageView.BarcodeOptions>
                                     </zxing:ZXingBarcodeImageView>
-                                    <Button Text="Odśwież" Command="{Binding RefreshCommand}"/>
+                                    <Button Text="Odśwież"
+                                            Style="{StaticResource PrimaryButton}"
+                                            Command="{Binding RefreshCommand}" />
                                 </StackLayout>
                             </Grid>
                         </StackLayout>
-
                     </Frame>
                 </AbsoluteLayout>
             </AbsoluteLayout>
