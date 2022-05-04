@@ -194,7 +194,20 @@ namespace Hello_Earth_2.ViewModel.Home.RegistrationChild
 
         private async void BackFormHandler()
         {
-            await Application.Current.MainPage.Navigation.PopAsync();
+            if (IsRegisterForm)
+            {
+                IsRegisterForm = false;
+                IsScannerButton = true;
+            }
+            else if (IsRegisterStatement)
+            {
+                IsRegisterForm = true;
+                IsRegisterStatement = false;
+            }
+            else
+            {
+                await Application.Current.MainPage.Navigation.PopAsync();
+            }
         }
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
