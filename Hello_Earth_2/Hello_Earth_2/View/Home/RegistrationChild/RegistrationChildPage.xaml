@@ -5,6 +5,7 @@
              x:Class="Hello_Earth_2.View.Home.RegistrationChild.RegistrationChildPage"
              NavigationPage.HasNavigationBar="false"
              xmlns:effects="clr-namespace:PlainEntryAndroidSample.Effects"
+             xmlns:local="clr-namespace:Hello_Earth_2.Effects"
              >
     <ContentPage.Content>
         
@@ -57,7 +58,7 @@
                                              HorizontalOptions="FillAndExpand"
                                              VerticalOptions="CenterAndExpand"
                                              Margin="0,-10,0,0"
-                                             Color="{Binding LoginColor}" />
+                                             />
 
                                 </StackLayout>
                                 <StackLayout Orientation="Vertical"
@@ -65,14 +66,15 @@
                                              Margin="10,0,0,0"
                                              Grid.Row="0">
                                     <Button Text="Załóż konto"
-                                            Style="{StaticResource AuthToggleButton}" />
+                                            Style="{StaticResource AuthToggleButton}"
+                                            TextColor="{Binding RegistrationColor}"/>
 
                                     <BoxView HeightRequest="2"
                                              HorizontalOptions="FillAndExpand"
                                              VerticalOptions="CenterAndExpand"
-                                             Margin="0,-10,0,0"/>
+                                             Margin="0,-10,0,0"
+                                             Color="{Binding RegistrationColor}"/>
                                     
-
                                 </StackLayout>
 
                             </Grid>
@@ -280,7 +282,7 @@
                                                 <ColumnDefinition  Width="15*" />
                                             </Grid.ColumnDefinitions>
                                             <Entry Keyboard="Chat"
-                                                   IsPassword="True"
+                                                   IsPassword="{Binding Source={x:Reference ShowPasswordActualTrigger}, Path=HidePassword}"
                                                    Placeholder="Wpisz hasło"
                                                    Text="{Binding Password}"
                                                    PlaceholderColor="Black">
@@ -288,11 +290,19 @@
                                                     <effects:PlainEntry />
                                                 </Entry.Effects>
                                             </Entry>
-                                            <Image Source="eye_password.png"
+                                            <ImageButton Source="eye_password.png"
                                                    Grid.Column="1"
                                                    Margin="0,0,15,0"
                                                    WidthRequest="20"
-                                                   HeightRequest="20"/>
+                                                   HeightRequest="20">
+                                                <ImageButton.Triggers>
+                                                    <EventTrigger Event="Clicked">
+                                                        <local:ShowPasswordTriggerAction ShowIcon="eye_password"
+                                                                                         HideIcon="eye_hide_password"
+                                                                                         x:Name="ShowPasswordActualTrigger" />
+                                                    </EventTrigger>
+                                                </ImageButton.Triggers>
+                                            </ImageButton>
                                         </Grid>
                                     </Frame>
                                 </Grid>
