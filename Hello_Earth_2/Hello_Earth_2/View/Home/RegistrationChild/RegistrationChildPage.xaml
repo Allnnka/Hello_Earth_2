@@ -148,6 +148,55 @@
                             </StackLayout>
                         </StackLayout>
                     </Frame>
+                    <Frame  CornerRadius="10" Padding="45,20" BackgroundColor="#ffffff" 
+                            HeightRequest="350" AbsoluteLayout.LayoutBounds="0, 170" IsVisible="{Binding IsRegisterSuccess}">
+                        <StackLayout >
+                            <Grid ColumnSpacing="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="60" />
+                                </Grid.RowDefinitions>
+                                <StackLayout Orientation="Vertical"
+                                                    Grid.Column="0"
+                                                    Grid.Row="0">
+                                    <Button Text="Zaloguj się"
+                                                Command="{Binding LoginFormCommand}"
+                                                TextColor="{Binding LoginColor}"
+                                                Style="{StaticResource AuthToggleButton}" />
+                                    <BoxView HeightRequest="2"
+                                                    HorizontalOptions="FillAndExpand"
+                                                    VerticalOptions="CenterAndExpand"
+                                                    Margin="0,-10,0,0"
+                                                    Color="{Binding LoginColor}" />
+
+                                </StackLayout>
+                                <StackLayout Orientation="Vertical"
+                                                    Grid.Column="1"
+                                                    Margin="10,0,0,0"
+                                                    Grid.Row="0">
+                                    <Button Text="Załóż konto"
+                                                Command="{Binding RegistrationFormCommand}"
+                                                TextColor="{Binding RegistrationColor}"
+                                                Style="{StaticResource AuthToggleButton}" />
+
+                                    <BoxView HeightRequest="2"
+                                                    HorizontalOptions="FillAndExpand"
+                                                    VerticalOptions="CenterAndExpand"
+                                                    Margin="0,-10,0,0"
+                                                    Color="{Binding RegistrationColor}" />
+
+                                </StackLayout>
+                            </Grid>
+
+                            <StackLayout>
+                                <Label Text="Rejestracja zakończona sukcesem!" />
+                            </StackLayout>
+
+                        </StackLayout>
+                    </Frame>
                     <Frame  CornerRadius="10"
                             Padding="45,20"
                             BackgroundColor="#ffffff"

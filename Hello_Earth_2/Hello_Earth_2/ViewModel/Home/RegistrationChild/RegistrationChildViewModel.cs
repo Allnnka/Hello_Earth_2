@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Hello_Earth_2.Model;
+using Hello_Earth_2.Model.UserAuth;
+using Hello_Earth_2.Services;
+using Hello_Earth_2.Services.ServiceImplementation;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -24,12 +28,17 @@ namespace Hello_Earth_2.ViewModel.Home.RegistrationChild
         bool _isRegisterStatement = false;
         bool _isRegisterSuccess = false;
         bool _isAccepted = false;
+        IFirebaseAuthentication auth = DependencyService.Get<IFirebaseAuthentication>();
+        UserServiceImplementation userService;
+        FamilyServiceImplementation familyService;
         public ICommand EnableScannerCommand { get; set; }
         public ICommand FurtherCommand { get; set; }
         public ICommand BackCommand { get; set; }
         public ICommand RegisterCommand { get; set; }
         public RegistrationChildViewModel()
         {
+            userService = new UserServiceImplementation();
+            familyService = new FamilyServiceImplementation();
             EnableScannerCommand = new Command(() => EnableScannerHandler());
             FurtherCommand = new Command(() => FurtherFormHandler());
             BackCommand = new Command(() => BackFormHandler());
@@ -149,6 +158,18 @@ namespace Hello_Earth_2.ViewModel.Home.RegistrationChild
         }
         private async void RegistraterHandler()
         {
+            UserAuth userAuth = await auth.RegisterWithEmailPassword(Email, Password);
+            Child child = new Child();
+            child.Email = Email;
+            child.UserName = UserName;
+            child.Role = Roles.CHILD;
+            child.FamilyId = ScanResult;
+            await userService.CreateUser(child, userAuth.Uid);
+            child.FamilyId = null;
+            child.Uid = userAuth.Uid;
+            await familyService.AddChildToFamily(child, ScanResult);
+            IsRegisterStatement = false;
+            IsRegisterSuccess = true;
         }
         private void EnableScannerHandler()
         {
@@ -157,6 +178,7 @@ namespace Hello_Earth_2.ViewModel.Home.RegistrationChild
         }
         public void OnScanComplete(string scannedCode)
         {
+            ScanResult = scannedCode;
             IsScanning = false;
             IsRegisterForm = true;
         }
