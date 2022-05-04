@@ -9,9 +9,14 @@ namespace Hello_Earth_2.Services.ServiceImplementation
 {
     internal class FamilyServiceImplementation : IFamilyServices
     {
+        public async Task AddChildToFamily(Child child, string parentId)
+        {
+            await RealtimeConfig.FirebaseConfig.Child("/families/" + parentId + "/Child/").PatchAsync(JsonConvert.SerializeObject(child));
+        }
+
         public async Task CreateFamily(Family family, string parentId)
         {
-            await RealtimeConfig.FirebaseConfig.Child("/families/"+ parentId).PatchAsync(JsonConvert.SerializeObject(family));
+            await RealtimeConfig.FirebaseConfig.Child("/families/" + parentId).PatchAsync(JsonConvert.SerializeObject(family));
         }
     }
 }

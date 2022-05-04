@@ -4,6 +4,7 @@
              xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
              x:Class="Hello_Earth_2.View.Home.RegistrationChild.RegistrationChildPage"
              NavigationPage.HasNavigationBar="false"
+             xmlns:effects="clr-namespace:PlainEntryAndroidSample.Effects"
              >
     <ContentPage.Content>
         
@@ -19,12 +20,8 @@
                 </LinearGradientBrush>
             </Frame.Background>
             <AbsoluteLayout>
-                <zxing:ZXingScannerView
-                    IsVisible="{Binding IsScanning}"
-                    IsScanning="{Binding IsScanning}"
-                    VerticalOptions="FillAndExpand"
-                />
-                <AbsoluteLayout IsVisible="{Binding IsForm}">
+                
+                <AbsoluteLayout>
                     <Image Source="logo.png"
                            AbsoluteLayout.LayoutBounds="0,0,1,1"
                            AbsoluteLayout.LayoutFlags="All"
@@ -33,13 +30,14 @@
                            />
                 </AbsoluteLayout>
                 <AbsoluteLayout VerticalOptions="FillAndExpand"
-                                HorizontalOptions="FillAndExpand" IsVisible="{Binding IsForm}">
+                                HorizontalOptions="FillAndExpand" >
                     <Frame AbsoluteLayout.LayoutBounds="0, 0.6, 1, 0.38"
                            AbsoluteLayout.LayoutFlags="All"
                            HeightRequest="250"
                            CornerRadius="10"
                            Padding="50,20"
-                           BackgroundColor="#ffffff">
+                           BackgroundColor="#ffffff"
+                           IsVisible="{Binding IsScannerButton}">
                         <StackLayout>
                             <Grid ColumnSpacing="0">
                                 <Grid.ColumnDefinitions>
@@ -80,12 +78,272 @@
                             </Grid>
                             <StackLayout>
                                 <Button Text="Włącz skaner" Command="{Binding EnableScannerCommand}"/>
-                                
                             </StackLayout>
                         </StackLayout>
                     </Frame>
-                    
+                    <Frame  CornerRadius="10"
+                            Padding="45,20"
+                            BackgroundColor="#ffffff"
+                            HeightRequest="350"
+                            AbsoluteLayout.LayoutBounds="0, 170"  IsVisible="{Binding IsRegisterStatement}">
+                        <StackLayout>
+                            <Grid ColumnSpacing="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="60" />
+                                </Grid.RowDefinitions>
+                                <StackLayout Orientation="Vertical"
+                                             Grid.Column="0"
+                                             Grid.Row="0">
+                                    <Button Text="Zaloguj się"
+                                            TextColor="{Binding LoginColor}"
+                                            Style="{StaticResource AuthToggleButton}" />
+                                    <BoxView HeightRequest="2"
+                                             HorizontalOptions="FillAndExpand"
+                                             VerticalOptions="CenterAndExpand"
+                                             Margin="0,-10,0,0"
+                                             Color="{Binding LoginColor}" />
+
+                                </StackLayout>
+                                <StackLayout Orientation="Vertical"
+                                             Grid.Column="1"
+                                             Margin="10,0,0,0"
+                                             Grid.Row="0">
+                                    <Button Text="Załóż konto"
+                                            TextColor="{Binding RegistrationColor}"
+                                            Style="{StaticResource AuthToggleButton}" />
+
+                                    <BoxView HeightRequest="2"
+                                             HorizontalOptions="FillAndExpand"
+                                             VerticalOptions="CenterAndExpand"
+                                             Margin="0,-10,0,0"
+                                             Color="{Binding RegistrationColor}" />
+
+                                </StackLayout>
+                            </Grid>
+                            <Label Text="Profil: Gracz"
+                                   Style="{StaticResource ProfileText}"/>
+                            <StackLayout WidthRequest="100">
+                                <Label Text="Klauzula informacyjna o przetwarzaniu danych osobowych"
+                                       TextColor="Black"
+                                       FontSize="15"
+                                       FontAttributes="Bold"
+                                       HorizontalTextAlignment="Center"/>
+                                <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. " />
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="8*" />
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox Grid.Column="0"
+                                              HorizontalOptions="StartAndExpand"
+                                              VerticalOptions="Center"
+                                              IsChecked="{Binding IsAccepted}" />
+                                    <Label Grid.Column="1" Text="Wyrażam zgodę na przetwarzanie moich danych osobowych..." />
+                                </Grid>
+
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                    <Frame  CornerRadius="10" Padding="45,20" BackgroundColor="#ffffff" 
+                            HeightRequest="350" AbsoluteLayout.LayoutBounds="0, 170" IsVisible="{Binding IsRegisterSuccess}">
+                        <StackLayout >
+                            <Grid ColumnSpacing="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="60" />
+                                </Grid.RowDefinitions>
+                                <StackLayout Orientation="Vertical"
+                                                    Grid.Column="0"
+                                                    Grid.Row="0">
+                                    <Button Text="Zaloguj się"
+                                                Command="{Binding LoginFormCommand}"
+                                                TextColor="{Binding LoginColor}"
+                                                Style="{StaticResource AuthToggleButton}" />
+                                    <BoxView HeightRequest="2"
+                                                    HorizontalOptions="FillAndExpand"
+                                                    VerticalOptions="CenterAndExpand"
+                                                    Margin="0,-10,0,0"
+                                                    Color="{Binding LoginColor}" />
+
+                                </StackLayout>
+                                <StackLayout Orientation="Vertical"
+                                                    Grid.Column="1"
+                                                    Margin="10,0,0,0"
+                                                    Grid.Row="0">
+                                    <Button Text="Załóż konto"
+                                                Command="{Binding RegistrationFormCommand}"
+                                                TextColor="{Binding RegistrationColor}"
+                                                Style="{StaticResource AuthToggleButton}" />
+
+                                    <BoxView HeightRequest="2"
+                                                    HorizontalOptions="FillAndExpand"
+                                                    VerticalOptions="CenterAndExpand"
+                                                    Margin="0,-10,0,0"
+                                                    Color="{Binding RegistrationColor}" />
+
+                                </StackLayout>
+                            </Grid>
+
+                            <StackLayout>
+                                <Label Text="Rejestracja zakończona sukcesem!" />
+                            </StackLayout>
+
+                        </StackLayout>
+                    </Frame>
+                    <Frame  CornerRadius="10"
+                            Padding="45,20"
+                            BackgroundColor="#ffffff"
+                            HeightRequest="350"
+                            AbsoluteLayout.LayoutBounds="0, 170" IsVisible="{Binding IsRegisterForm}">
+                        <StackLayout>
+                            <Grid ColumnSpacing="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="60" />
+                                </Grid.RowDefinitions>
+                                <StackLayout Orientation="Vertical"
+                                             Grid.Column="0"
+                                             Grid.Row="0">
+                                    <Button Text="Zaloguj się"
+                                            TextColor="{Binding LoginColor}"
+                                            Style="{StaticResource AuthToggleButton}" />
+                                    <BoxView HeightRequest="2"
+                                             HorizontalOptions="FillAndExpand"
+                                             VerticalOptions="CenterAndExpand"
+                                             Margin="0,-10,0,0"
+                                             Color="{Binding LoginColor}" />
+
+                                </StackLayout>
+                                <StackLayout Orientation="Vertical"
+                                             Grid.Column="1"
+                                             Margin="10,0,0,0"
+                                             Grid.Row="0">
+                                    <Button Text="Załóż konto"
+                                            TextColor="{Binding RegistrationColor}"
+                                            Style="{StaticResource AuthToggleButton}" />
+
+                                    <BoxView HeightRequest="2"
+                                             HorizontalOptions="FillAndExpand"
+                                             VerticalOptions="CenterAndExpand"
+                                             Margin="0,-10,0,0"
+                                             Color="{Binding RegistrationColor}" />
+
+                                </StackLayout>
+                            </Grid>
+                            <Label Text="Profil: Gracz"
+                                   Style="{StaticResource ProfileText}"/>
+                            <StackLayout >
+                                <Grid>
+                                    <Frame Style="{StaticResource InputFrame}">
+                                        <Entry Keyboard="Chat"
+                                               Placeholder="Wpisz login"
+                                               Text="{Binding UserName}"
+                                               PlaceholderColor="Black">
+                                            <Entry.Effects>
+                                                <effects:PlainEntry />
+                                            </Entry.Effects>
+                                        </Entry>
+                                    </Frame>
+                                </Grid>
+                                <Label Text="Login" Style="{StaticResource FormLabelUnderInput}"></Label>
+                                <Grid>
+                                    <Frame Style="{StaticResource InputFrame}">
+                                        <Entry Keyboard="Chat"
+                                               Placeholder="Wpisz adres e-mail"
+                                               Text="{Binding Email}"
+                                               PlaceholderColor="Black">
+                                            <Entry.Effects>
+                                                <effects:PlainEntry />
+                                            </Entry.Effects>
+                                        </Entry>
+                                    </Frame>
+                                </Grid>
+                                <Label Text="Adres e-mail"
+                                       Style="{StaticResource FormLabelUnderInput}"></Label>
+
+                                <Grid>
+                                    <Frame Style="{StaticResource InputFrame}"
+                                           Grid.Column="0">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition  Width="85*" />
+                                                <ColumnDefinition  Width="15*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Entry Keyboard="Chat"
+                                                   IsPassword="True"
+                                                   Placeholder="Wpisz hasło"
+                                                   Text="{Binding Password}"
+                                                   PlaceholderColor="Black">
+                                                <Entry.Effects>
+                                                    <effects:PlainEntry />
+                                                </Entry.Effects>
+                                            </Entry>
+                                            <Image Source="eye_password.png"
+                                                   Grid.Column="1"
+                                                   Margin="0,0,15,0"
+                                                   WidthRequest="20"
+                                                   HeightRequest="20"/>
+                                        </Grid>
+                                    </Frame>
+                                </Grid>
+                                <Label Text="Hasło"
+                                       Style="{StaticResource FormLabelUnderInput}"></Label>
+
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                    <StackLayout AbsoluteLayout.LayoutBounds="0.1,0.85,1,0.1"
+                                 AbsoluteLayout.LayoutFlags="All"
+                                 Orientation="Horizontal"
+                                 VerticalOptions="End">
+                    </StackLayout>
+                    <StackLayout AbsoluteLayout.LayoutBounds="0.1,0.85,1,0.1"
+                                 AbsoluteLayout.LayoutFlags="All"
+                                 Orientation="Horizontal"
+                                 VerticalOptions="End">
+                        <Button Text="Cofnij"
+                                Command="{Binding BackCommand}"
+                                HorizontalOptions="CenterAndExpand"
+                                Style="{StaticResource PrimaryButton}"
+                                WidthRequest="120"/>
+                        <Button Text="Dalej"
+                                IsVisible="{Binding IsRegisterForm}"
+                                Command="{Binding FurtherCommand}"
+                                HorizontalOptions="CenterAndExpand"
+                                Style="{StaticResource PrimaryButton}"
+                                WidthRequest="120"/>
+                        <Button Text="Zarejestruj"
+                                IsVisible="{Binding IsRegisterStatement}"
+                                IsEnabled="{Binding IsAccepted}"
+                                Command="{Binding RegisterCommand}"
+                                HorizontalOptions="CenterAndExpand"
+                                Style="{StaticResource PrimaryButton}" />
+                    </StackLayout>
+                    <StackLayout AbsoluteLayout.LayoutBounds="0.1,0.85,1,0.1" 
+                                 AbsoluteLayout.LayoutFlags="All" Orientation="Horizontal" 
+                                 VerticalOptions="End">
+                        <Button Text="Przejdź do aplikacji"
+                                    Command="{Binding BackCommand}"
+                                    HorizontalOptions="CenterAndExpand"
+                                    Style="{StaticResource PrimaryButton}" IsVisible="{Binding IsRegisterSuccess}" />
+                    </StackLayout>
                 </AbsoluteLayout>
+                <zxing:ZXingScannerView
+                    IsVisible="{Binding IsScanning}"
+                    IsScanning="{Binding IsScanning}"
+                    OnScanResult="CameraScanner_OnScanResult"
+                    VerticalOptions="FillAndExpand"
+                />
             </AbsoluteLayout>
         </Frame>
      

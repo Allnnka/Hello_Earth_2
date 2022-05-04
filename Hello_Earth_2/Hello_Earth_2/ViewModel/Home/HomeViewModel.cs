@@ -123,13 +123,15 @@ namespace Hello_Earth_2.ViewModel.Home
         }
         private void RegistrationParentHandler()
         {
-            IsRegistrationParent = !IsRegistrationParent;
+            IsRegistrationParent = true;
+            IsRegistrationChild = false;
             ParentButtonColor = (Color)Application.Current.Resources["PrimaryColor"];
             PlayerButtonColor = (Color)Application.Current.Resources["ThirdyColor"];
         }
         private void RegistrationChildHandler()
         {
-            IsRegistrationChild =!IsRegistrationChild;
+            IsRegistrationParent = false;
+            IsRegistrationChild = true;
             PlayerButtonColor = (Color)Application.Current.Resources["PrimaryColor"];
             ParentButtonColor = (Color)Application.Current.Resources["SecondaryColor"];
         }
@@ -157,7 +159,7 @@ namespace Hello_Earth_2.ViewModel.Home
             { 
                 await Application.Current.MainPage.Navigation.PushAsync(new RegistrationChildPage());
             }
-            else
+            else if(IsLogin)
             {
                 LoginHandler();
             }

@@ -9,7 +9,7 @@ namespace Hello_Earth_2.Model
     [DataContract]
     public class User
     {
-        
+        [JsonProperty("Uid")]
         public string Uid { get; set; }
         [JsonProperty("UserName")]
         public string UserName { get; set; }

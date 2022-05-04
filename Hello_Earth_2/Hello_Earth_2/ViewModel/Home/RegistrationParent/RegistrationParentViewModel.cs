@@ -135,7 +135,15 @@ namespace Hello_Earth_2.ViewModel.Home.RegistrationParent
 
         private async void BackHandler()
         {
-            await Application.Current.MainPage.Navigation.PopAsync();
+            if (IsRegisterSatement)
+            {
+                IsRegisterForm = true;
+                IsRegisterSatement = false;
+            }
+            else
+            {
+                await Application.Current.MainPage.Navigation.PopAsync();
+            }
         }
 
         private async void BackToLoginHandler()

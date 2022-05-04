@@ -9,5 +9,6 @@ namespace Hello_Earth_2.Services
     public interface IFamilyServices
     {
         Task CreateFamily(Family family, string parentId);
+        Task AddChildToFamily(Child child, string parentId);
     }
 }
