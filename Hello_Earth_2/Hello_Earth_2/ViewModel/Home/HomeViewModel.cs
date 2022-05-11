@@ -1,5 +1,6 @@
 ﻿using Hello_Earth_2.Model.UserAuth;
 using Hello_Earth_2.Services;
+using Hello_Earth_2.Services.ServiceImplementation;
 using Hello_Earth_2.View.ConfigurationParent;
 using Hello_Earth_2.View.Home.RegistrationChild;
 using Hello_Earth_2.View.Home.RegistrationParent;
@@ -33,9 +34,10 @@ namespace Hello_Earth_2.ViewModel.Home
         public ICommand LoginFormCommand { get; set; }
         public ICommand RegistrationFormCommand { get; set; }
         public ICommand FurtherCommand { get; set; }
+
         IFirebaseAuthentication auth = DependencyService.Get<IFirebaseAuthentication>();
-      
-       
+        UserServiceImplementation userService;
+
         public bool IsRegistrationParent
         { 
             get { return _isRegistrationParent; }
@@ -120,6 +122,7 @@ namespace Hello_Earth_2.ViewModel.Home
             LoginFormCommand = new Command(()=> LoginFormHandler());
             RegistrationFormCommand = new Command(() => RegistrationFormHandler());
             FurtherCommand = new Command(() => FurtherFormHandler());
+            userService = new UserServiceImplementation();
         }
         private void RegistrationParentHandler()
         {
@@ -170,7 +173,17 @@ namespace Hello_Earth_2.ViewModel.Home
             try
             {
                 UserAuth userAuth = await auth.LoginWithEmailPassword(EmailLogin, PasswordLogin);
-                App.Current.MainPage = new NavigationPage(new ConfigurationParentPage());
+                var user = await userService.GetUser(userAuth.Uid);
+                if(user.Role==Model.Roles.PARENT && !userAuth.IsEmailVerified)
+                {
+                    await App.Current.MainPage.DisplayAlert("Uwaga!", "Adres e-mail nie został jeszcze potwierdzony", "ok");
+                    auth.SignOut();
+                }
+                else
+                {
+                    App.Current.MainPage = new NavigationPage(new ConfigurationParentPage());
+                }
+                
             }catch{
                 await App.Current.MainPage.DisplayAlert("Uwaga!","Nieprawidłowy login lub hasło", "ok");
             }

@@ -26,6 +26,7 @@ namespace Hello_Earth_2.Droid
             var user = await FirebaseAuth.Instance?.SignInWithEmailAndPasswordAsync(email, password);
             UserAuth userAuth = new UserAuth();
             userAuth.Uid = user.User.Uid;
+            userAuth.IsEmailVerified = user.User.IsEmailVerified;
             return userAuth;
         }
 
@@ -34,6 +35,7 @@ namespace Hello_Earth_2.Droid
             var user = await FirebaseAuth.Instance.CreateUserWithEmailAndPasswordAsync(email, password);
             UserAuth userAuth = new UserAuth();
             userAuth.Uid = user.User.Uid;
+            userAuth.IsEmailVerified = user.User.IsEmailVerified;
             return userAuth;
         }
 
@@ -46,6 +48,7 @@ namespace Hello_Earth_2.Droid
             var user = FirebaseAuth.Instance.CurrentUser;
             UserAuth userAuth = new UserAuth();
             userAuth.Uid = user.Uid;
+            userAuth.IsEmailVerified = user.IsEmailVerified;
             return userAuth;
         }
         public async Task<bool> SendEmailVerification()

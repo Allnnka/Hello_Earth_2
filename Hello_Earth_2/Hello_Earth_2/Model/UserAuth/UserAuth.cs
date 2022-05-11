@@ -7,5 +7,6 @@ namespace Hello_Earth_2.Model.UserAuth
     public class UserAuth
     {
         public string Uid { get; set; }
+        public bool IsEmailVerified { get; set; }
     }
 }
