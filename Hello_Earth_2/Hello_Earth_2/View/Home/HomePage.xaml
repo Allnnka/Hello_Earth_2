@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:effects="clr-namespace:PlainEntryAndroidSample.Effects"
              x:Class="Hello_Earth_2.View.Home.HomePage"
-             NavigationPage.HasNavigationBar="false">
+             NavigationPage.HasNavigationBar="false"
+             xmlns:local ="clr-namespace:Hello_Earth_2.Effects">
     <ContentPage.Content>
 
         <Frame>
@@ -113,7 +114,7 @@
                                                 <ColumnDefinition  Width="15*" />
                                             </Grid.ColumnDefinitions>
                                             <Entry Keyboard="Chat"
-                                                   IsPassword="True"
+                                                   IsPassword="{Binding Source={x:Reference ShowPasswordActualTrigger}, Path=HidePassword}"
                                                    Placeholder="Wpisz hasło"
                                                    Text="{Binding PasswordLogin}"
                                                    PlaceholderColor="Black">
@@ -121,18 +122,25 @@
                                                     <effects:PlainEntry />
                                                 </Entry.Effects>
                                             </Entry>
-                                            <Image Source="eye_password.png"
-                                                   Grid.Column="1"
-                                                   Margin="0,0,15,0"
-                                                   WidthRequest="20"
-                                                   HeightRequest="20" />
+                                            <ImageButton Source="eye"
+                                                         Grid.Column="1"
+                                                         Margin="0,0,15,0"
+                                                         WidthRequest="20"
+                                                         BackgroundColor="Transparent"
+                                                         >
+                                                <ImageButton.Triggers>
+                                                    <EventTrigger Event="Clicked">
+                                                        <local:ShowPasswordTriggerAction ShowIcon="eye"
+                                                                                         HideIcon="eye_slash"
+                                                                                         x:Name="ShowPasswordActualTrigger" />
+                                                    </EventTrigger>
+                                                </ImageButton.Triggers>
+                                            </ImageButton>
                                         </Grid>
                                     </Frame>
                                 </Grid>
                                 <Label Text="Hasło"
                                        Style="{StaticResource FormLabelUnderInput}"></Label>
-
-
                             </StackLayout>
 
                         </StackLayout>

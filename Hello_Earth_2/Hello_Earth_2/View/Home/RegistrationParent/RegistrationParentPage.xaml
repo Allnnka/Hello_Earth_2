@@ -4,7 +4,7 @@
              xmlns:effects="clr-namespace:PlainEntryAndroidSample.Effects"
              x:Class="Hello_Earth_2.View.Home.RegistrationParent.RegistrationParentPage"
              NavigationPage.HasNavigationBar="false"
-             >
+             xmlns:local="clr-namespace:Hello_Earth_2.Effects">
     <ContentPage.Content>
         <Frame>
             <Frame.Background>
@@ -51,13 +51,13 @@
                                              VerticalOptions="CenterAndExpand"
                                              Margin="0,-10,0,0"
                                              Color="{Binding LoginColor}" />
-
                                 </StackLayout>
                                 <StackLayout Orientation="Vertical"
                                              Grid.Column="1"
                                              Margin="10,0,0,0"
                                              Grid.Row="0">
                                     <Button Text="Załóż konto"
+                                            TextColor="{Binding RegistrationColor}"
                                             Style="{StaticResource AuthToggleButton}" />
 
                                     <BoxView HeightRequest="2"
@@ -155,7 +155,7 @@
                                                 <ColumnDefinition  Width="15*" />
                                             </Grid.ColumnDefinitions>
                                             <Entry Keyboard="Chat"
-                                                   IsPassword="True"
+                                                   IsPassword="{Binding Source={x:Reference ShowPasswordActualTrigger}, Path=HidePassword}"
                                                    Placeholder="Wpisz hasło"
                                                    Text="{Binding Password}"
                                                    PlaceholderColor="Black">
@@ -163,11 +163,19 @@
                                                     <effects:PlainEntry />
                                                 </Entry.Effects>
                                             </Entry>
-                                            <Image Source="eye_password.png"
-                                                   Grid.Column="1"
-                                                   Margin="0,0,15,0"
-                                                   WidthRequest="20"
-                                                   HeightRequest="20"/>
+                                            <ImageButton Source="eye"
+                                                         Grid.Column="1"
+                                                         Margin="0,0,15,0"
+                                                         WidthRequest="20"
+                                                         BackgroundColor="Transparent">
+                                                <ImageButton.Triggers>
+                                                    <EventTrigger Event="Clicked">
+                                                        <local:ShowPasswordTriggerAction ShowIcon="eye"
+                                                                                         HideIcon="eye_slash"
+                                                                                         x:Name="ShowPasswordActualTrigger" />
+                                                    </EventTrigger>
+                                                </ImageButton.Triggers>
+                                            </ImageButton>
                                         </Grid>
                                     </Frame>
                                 </Grid>
@@ -175,14 +183,15 @@
                                        Style="{StaticResource FormLabelUnderInput}"></Label>
 
                             </StackLayout>
-                            <StackLayout WidthRequest="100" IsVisible="{Binding IsRegisterSatement}">
+                            <StackLayout WidthRequest="100" IsVisible="{Binding IsRegisterSatement}" VerticalOptions="FillAndExpand">
                                 <Label Text="Klauzula informacyjna o przetwarzaniu danych osobowych"
                                        TextColor="Black"
                                        FontSize="15"
                                        FontAttributes="Bold"
                                        HorizontalTextAlignment="Center"/>
-                                <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. " />
-                                <Grid>
+                                <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+                                       Margin="0,20,0,0"/>
+                                <Grid Margin="-5,20,0,0">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*" />
                                         <ColumnDefinition Width="8*" />

@@ -94,6 +94,17 @@ namespace Hello_Earth_2.ViewModel.Home.RegistrationParent
             set { _userName = value; }
         }
 
+        public Color RegistrationColor
+        {
+            get { return (Color)Application.Current.Resources["PrimaryColor"]; }
+            private set { }
+        }
+        public Color LoginColor
+        {
+            get { return (Color)Application.Current.Resources["DisableTextColor"]; }
+            private set { }
+        }
+
         private async void RegistraterHandler()
         {
             UserAuth userAuth = await auth.RegisterWithEmailPassword(Email, Password);
