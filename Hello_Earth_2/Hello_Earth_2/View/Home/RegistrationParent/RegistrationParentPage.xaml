@@ -130,7 +130,9 @@
                                         </Entry>
                                     </Frame>
                                 </Grid>
-                                <Label IsVisible="{Binding IsErrorUserName}" Text="{Binding ErrorUserName}"/>
+                                <Label IsVisible="{Binding IsErrorUserName}"
+                                       Text="{Binding ErrorUserName}"
+                                       Style="{StaticResource ErrorValidation}" />
                                 <Label Text="Login" Style="{StaticResource FormLabelUnderInput}"></Label>
                                 <Grid>
                                     <Frame Style="{StaticResource InputFrame}">
