@@ -13,6 +13,7 @@
             <Color x:Key="TextColor">#FAFCEE</Color>
             <Color x:Key="ProfileLabelTextColor">#AEC141</Color>
             <Color x:Key="InputBG">#EEEEEE</Color>
+            <Color x:Key="ErrorColor">Red</Color>
 
             <Style x:Key="PrimaryButton" TargetType="Button">
                 <Setter Property="BorderRadius" Value="10"/>
@@ -71,6 +72,10 @@
                 <Setter Property="FontSize"
                         Value="16" />
                 <Setter Property="Margin" Value="10,0,0,10"></Setter>
+            </Style>
+            <Style x:Key="ErrorValidation" TargetType="Label">
+                <Setter Property="TextColor"
+                        Value="{StaticResource ErrorColor}" />
             </Style>
             
         </ResourceDictionary>

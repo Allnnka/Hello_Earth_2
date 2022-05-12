@@ -105,7 +105,9 @@
                                     </Frame>
                                     
                                 </Grid>
-                                <Label IsVisible="{Binding IsErrorEmail}" Text="{Binding ErrorEmail}"/>
+                                <Label IsVisible="{Binding IsErrorEmail}"
+                                       Text="{Binding ErrorEmail}"
+                                       Style="{StaticResource ErrorValidation}"/>
                                 <Label Text="Adres e-mail"
                                        Style="{StaticResource FormLabelUnderInput}">
                                 </Label>
