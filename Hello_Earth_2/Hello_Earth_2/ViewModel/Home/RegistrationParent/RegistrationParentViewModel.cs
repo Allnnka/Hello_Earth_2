@@ -24,6 +24,14 @@ namespace Hello_Earth_2.ViewModel.Home.RegistrationParent
         bool _isRegisterSuccess = false;
         bool _isAccepted = false;
 
+        private string _errorUserName;
+        private string _errorEmail;
+        private string _errorPassword;
+
+        private bool _isErrorUserName;
+        private bool _isErrorEmail;
+        private bool _isErrorPassword;
+
         public ICommand FurtherCommand { get; set; }
         public ICommand BackCommand { get; set; }
         public ICommand RegisterCommand { get; set; }
@@ -35,6 +43,83 @@ namespace Hello_Earth_2.ViewModel.Home.RegistrationParent
             BackCommand = new Command(() => BackHandler());
             RegisterCommand = new Command(() => RegistraterHandler());
             BackToLoginCommand = new Command(() => BackToLoginHandler());
+        }
+
+        public string ErrorUserName
+        {
+            get
+            {
+                return _errorUserName;
+            }
+            set
+            {
+                _errorUserName = value;
+                OnPropertyChanged(nameof(ErrorUserName));
+            }
+        }
+
+        public string ErrorEmail
+        {
+            get
+            {
+                return _errorEmail;
+            }
+            set
+            {
+                _errorEmail = value;
+                OnPropertyChanged(nameof(ErrorEmail));
+            }
+        }
+        public string ErrorPassword
+        {
+            get
+            {
+                return _errorPassword;
+            }
+            set
+            {
+                _errorPassword = value;
+                OnPropertyChanged(nameof(ErrorPassword));
+            }
+        }
+
+        public bool IsErrorUserName
+        {
+            get
+            {
+                return _isErrorUserName;
+            }
+            set
+            {
+                _isErrorUserName = value;
+                OnPropertyChanged(nameof(IsErrorUserName));
+            }
+        }
+
+        public bool IsErrorPassword
+        {
+            get
+            {
+                return _isErrorPassword;
+            }
+            set
+            {
+                _isErrorPassword = value;
+                OnPropertyChanged(nameof(IsErrorPassword));
+            }
+        }
+
+        public bool IsErrorEmail
+        {
+            get
+            {
+                return _isErrorEmail;
+            }
+            set
+            {
+                _isErrorEmail = value;
+                OnPropertyChanged(nameof(IsErrorEmail));
+            }
         }
 
         public bool IsRegisterForm{
@@ -80,18 +165,18 @@ namespace Hello_Earth_2.ViewModel.Home.RegistrationParent
         public string Email
         {
             get { return _email; }
-            set { _email = value; }
+            set { _email = value; IsErrorEmail = false; }
         }
         public string Password
         {
             get { return _password; }
-            set { _password = value; }
+            set { _password = value; IsErrorPassword = false; }
         }
 
         public string UserName
         {
             get { return _userName; }
-            set { _userName = value; }
+            set { _userName = value; IsErrorUserName = false; }
         }
 
         public Color RegistrationColor
@@ -107,40 +192,83 @@ namespace Hello_Earth_2.ViewModel.Home.RegistrationParent
 
         private async void RegistraterHandler()
         {
-            UserAuth userAuth = await auth.RegisterWithEmailPassword(Email, Password);
-            bool isSend = await auth.SendEmailVerification();
-            if (isSend)
+            try
             {
-                Parent parent = new Parent();
-                parent.UserName = UserName;
-                parent.Email = Email;
-                parent.Role = Roles.PARENT;
-                try
+                UserAuth userAuth = await auth.RegisterWithEmailPassword(Email, Password);
+                bool isSend = await auth.SendEmailVerification();
+                if (isSend)
                 {
-                    await userService.CreateUser(parent, userAuth.Uid);
-                    auth.SignOut();
-                    IsRegisterSatement = false;
-                    IsRegisterSuccess = true;
+                    Parent parent = new Parent();
+                    parent.UserName = UserName;
+                    parent.Email = Email;
+                    parent.Role = Roles.PARENT;
+                    try
+                    {
+                        await userService.CreateUser(parent, userAuth.Uid);
+                        auth.SignOut();
+                        IsRegisterSatement = false;
+                        IsRegisterSuccess = true;
+                    }
+                    catch (Exception e)
+                    {
+                        App.Current.MainPage.DisplayAlert("Oppss, coś poszło nie tak", $"{e.Message}", "ok");
+                    }
                 }
-                catch (Exception e)
+                else
                 {
-                    App.Current.MainPage.DisplayAlert("Oppss, coś poszło nie tak", $"{e.Message}", "ok");
+                    App.Current.MainPage.DisplayAlert("Niet", $"Coś poszło nie tak", "ok");
                 }
-            }
-            else
+            } catch (Exception ex)
             {
-                App.Current.MainPage.DisplayAlert("Niet", $"Coś poszło nie tak", "ok");
+                if(ex.Message.ToString().Equals("The email address is badly formatted."))
+                {
+                    ErrorEmail = "Nieprawidłowy format adresu e-mail";
+                    IsErrorEmail = true;
+                }else if(ex.Message.ToString().Equals("The given password is invalid. [ Password should be at least 6 characters ]"))
+                {
+                    ErrorPassword = "Hasło jest zbyt krótkie. Powinno zawierać conajmniej 6 znaków";
+                    IsErrorPassword = true;
+                }else if(ex.Message.ToString().Equals("The email address is already in use by another account."))
+                {
+                    ErrorEmail = "Ten adres e-mail jest już używany";
+                    IsErrorEmail = true;
+                }
+                else
+                {
+                    ErrorEmail = "Wystąpił nieoczekiwany błąd. Sprawdź dane oraz połączenie z internetem, a następnie spróbuj ponownie.";
+                    IsErrorEmail = true;
+                }
+                IsRegisterForm = true;
+                IsAccepted = false;
+                IsRegisterSatement = false;
             }
-
         }
 
         private void FurtherFormHandler()
         {
-            if (_isRegisterForm)
+            if (String.IsNullOrEmpty(UserName))
             {
-                IsRegisterForm = false;
-                IsAccepted = false;
-                IsRegisterSatement = true;
+                ErrorUserName = "Nazwa użytkownika nie może być pusta";
+                IsErrorUserName = true;
+            }
+            else if (String.IsNullOrEmpty(Email))
+            {
+                ErrorEmail = "Adres e-mail nie może być pusty";
+                IsErrorEmail = true;
+            }
+            else if (String.IsNullOrEmpty(Password))
+            {
+                ErrorPassword = "Hasło nie może być puste";
+                IsErrorPassword = true;
+            }
+            else
+            {
+                if (_isRegisterForm)
+                {
+                    IsRegisterForm = false;
+                    IsAccepted = false;
+                    IsRegisterSatement = true;
+                }
             }
         }
 

@@ -4,6 +4,7 @@ using Hello_Earth_2.Services.ServiceImplementation;
 using Hello_Earth_2.View.ConfigurationParent;
 using Hello_Earth_2.View.Home.RegistrationChild;
 using Hello_Earth_2.View.Home.RegistrationParent;
+using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
@@ -21,6 +22,10 @@ namespace Hello_Earth_2.ViewModel.Home
         private string _emailLogin;
         private string _passwordLogin;
        
+        private bool _isErrorPassword;
+        private string _errorPassword;
+        private bool _isErrorEmail;
+        private string _errorEmail;
 
         private Color _loginColor = (Color)Application.Current.Resources["PrimaryColor"];
         private Color _registrationColor = (Color)Application.Current.Resources["DisableTextColor"];
@@ -108,13 +113,70 @@ namespace Hello_Earth_2.ViewModel.Home
         public string EmailLogin
         {
             get { return _emailLogin; }
-            set { _emailLogin = value; }
+            set { 
+                _emailLogin = value; 
+                IsErrorEmail = false; 
+            }
         }
         public string PasswordLogin
         {
             get { return _passwordLogin; }
-            set { _passwordLogin = value;}
+            set { 
+                _passwordLogin = value;
+                IsErrorPassword = false;
+            }
         }
+        public string ErrorPassword
+        {
+            get
+            {
+                return _errorPassword;
+            }
+            set
+            {
+                _errorPassword = value;
+                OnPropertyChanged(nameof(ErrorPassword));
+            }
+        }
+        public bool IsErrorPassword
+        {
+            get
+            {
+                return _isErrorPassword;
+            }
+            set
+            {
+                _isErrorPassword = value;
+                OnPropertyChanged(nameof(IsErrorPassword));
+            }
+        }
+
+        public bool IsErrorEmail
+        {
+            get
+            {
+                return _isErrorEmail;
+            }
+            set
+            {
+                _isErrorEmail = value;
+                OnPropertyChanged(nameof(IsErrorEmail));
+            }
+        }
+
+        public string ErrorEmail
+        {
+            get
+            {
+                return _errorEmail;
+            }
+            set
+            {
+                _errorEmail = value;
+                OnPropertyChanged(nameof(ErrorEmail));
+            }
+        }
+
         public HomeViewModel()
         {
             ParentCommand = new Command(()=> RegistrationParentHandler());
@@ -170,24 +232,46 @@ namespace Hello_Earth_2.ViewModel.Home
 
         private async void LoginHandler()
         {
-            try
+            if (String.IsNullOrEmpty(EmailLogin))
             {
-                UserAuth userAuth = await auth.LoginWithEmailPassword(EmailLogin, PasswordLogin);
-                var user = await userService.GetUser(userAuth.Uid);
-                if(user.Role==Model.Roles.PARENT && !userAuth.IsEmailVerified)
-                {
-                    await App.Current.MainPage.DisplayAlert("Uwaga!", "Adres e-mail nie został jeszcze potwierdzony", "ok");
-                    auth.SignOut();
-                }
-                else
-                {
-                    App.Current.MainPage = new NavigationPage(new ConfigurationParentPage());
-                }
-                
-            }catch{
-                await App.Current.MainPage.DisplayAlert("Uwaga!","Nieprawidłowy login lub hasło", "ok");
+                ErrorEmail = "Adres e-mail nie może być pusty";
+                IsErrorEmail = true;
             }
-            
+            else if (String.IsNullOrEmpty(PasswordLogin))
+            {
+                ErrorPassword = "Hasło nie może być puste";
+                IsErrorPassword = true;
+            }
+            else
+            {
+                try
+                {
+                    UserAuth userAuth = await auth.LoginWithEmailPassword(EmailLogin, PasswordLogin);
+                    var user = await userService.GetUser(userAuth.Uid);
+                    if (user.Role == Model.Roles.PARENT && !userAuth.IsEmailVerified)
+                    {
+                        await App.Current.MainPage.DisplayAlert("Uwaga!", "Adres e-mail nie został jeszcze potwierdzony", "ok");
+                        auth.SignOut();
+                    }
+                    else
+                    {
+                        App.Current.MainPage = new NavigationPage(new ConfigurationParentPage());
+                    }
+                }
+                catch (Exception ex)
+                {
+                    if(ex.Message.ToString().Equals("The email address is badly formatted."))
+                    {
+                        ErrorEmail = "Nieprawidłowy format adresu e-mail!";
+                        IsErrorEmail = true;
+                    }
+                    else
+                    {
+                        ErrorEmail = "Nieprawidłowy login, lub hasło. Sprawdź dane jeszcze raz i spróbuj ponownie!";
+                        IsErrorEmail = true;
+                    }
+                }
+            }
         }
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {

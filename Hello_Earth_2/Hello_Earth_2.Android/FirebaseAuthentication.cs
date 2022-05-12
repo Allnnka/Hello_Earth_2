@@ -23,20 +23,33 @@ namespace Hello_Earth_2.Droid
     {
         public async Task<UserAuth> LoginWithEmailPassword(string email, string password)
         {
-            var user = await FirebaseAuth.Instance?.SignInWithEmailAndPasswordAsync(email, password);
-            UserAuth userAuth = new UserAuth();
-            userAuth.Uid = user.User.Uid;
-            userAuth.IsEmailVerified = user.User.IsEmailVerified;
-            return userAuth;
+            try
+            {
+                var user = await FirebaseAuth.Instance?.SignInWithEmailAndPasswordAsync(email, password);
+                UserAuth userAuth = new UserAuth();
+                userAuth.Uid = user.User.Uid;
+                userAuth.IsEmailVerified = user.User.IsEmailVerified;
+                return userAuth;
+            }catch(Exception ex)
+            {
+                throw ex;
+            }
+
         }
 
         public async Task<UserAuth> RegisterWithEmailPassword(string email, string password)
         {
-            var user = await FirebaseAuth.Instance.CreateUserWithEmailAndPasswordAsync(email, password);
-            UserAuth userAuth = new UserAuth();
-            userAuth.Uid = user.User.Uid;
-            userAuth.IsEmailVerified = user.User.IsEmailVerified;
-            return userAuth;
+            try
+            {
+                var user = await FirebaseAuth.Instance.CreateUserWithEmailAndPasswordAsync(email, password);
+                UserAuth userAuth = new UserAuth();
+                userAuth.Uid = user.User.Uid;
+                userAuth.IsEmailVerified = user.User.IsEmailVerified;
+                return userAuth;
+            }catch(Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public void SignOut()
