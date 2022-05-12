@@ -257,6 +257,7 @@
                                         </Entry>
                                     </Frame>
                                 </Grid>
+                                
                                 <Label Text="Login" Style="{StaticResource FormLabelUnderInput}"></Label>
                                 <Grid>
                                     <Frame Style="{StaticResource InputFrame}">
@@ -270,6 +271,7 @@
                                         </Entry>
                                     </Frame>
                                 </Grid>
+                                <Label IsVisible="{Binding IsErrorEmail}" Text="{Binding ErrorEmail}"/>
                                 <Label Text="Adres e-mail"
                                        Style="{StaticResource FormLabelUnderInput}"></Label>
 
@@ -306,6 +308,7 @@
                                         </Grid>
                                     </Frame>
                                 </Grid>
+                                <Label IsVisible="{Binding IsErrorPassword}" Text="{Binding ErrorPassword}"/>
                                 <Label Text="Hasło"
                                        Style="{StaticResource FormLabelUnderInput}"></Label>
 
