@@ -150,7 +150,6 @@ namespace Hello_Earth_2.ViewModel.Home
                 OnPropertyChanged(nameof(IsErrorPassword));
             }
         }
-
         public bool IsErrorEmail
         {
             get
@@ -163,7 +162,6 @@ namespace Hello_Earth_2.ViewModel.Home
                 OnPropertyChanged(nameof(IsErrorEmail));
             }
         }
-
         public string ErrorEmail
         {
             get
@@ -176,7 +174,6 @@ namespace Hello_Earth_2.ViewModel.Home
                 OnPropertyChanged(nameof(ErrorEmail));
             }
         }
-
         public HomeViewModel()
         {
             ParentCommand = new Command(()=> RegistrationParentHandler());
@@ -185,6 +182,11 @@ namespace Hello_Earth_2.ViewModel.Home
             RegistrationFormCommand = new Command(() => RegistrationFormHandler());
             FurtherCommand = new Command(() => FurtherFormHandler());
             userService = new UserServiceImplementation();
+            UserAuth userAuth = auth.GetUserAuth();
+            if(userAuth.Uid != null)
+            {
+                NavigateToMain(userAuth.Uid);
+            }
         }
         private void RegistrationParentHandler()
         {
@@ -250,12 +252,16 @@ namespace Hello_Earth_2.ViewModel.Home
                     var user = await userService.GetUser(userAuth.Uid);
                     if (user.Role == Model.Roles.PARENT && !userAuth.IsEmailVerified)
                     {
-                        await App.Current.MainPage.DisplayAlert("Uwaga!", "Adres e-mail nie został jeszcze potwierdzony", "ok");
+                        bool answer = await App.Current.MainPage.DisplayAlert("Uwaga!", "Adres e-mail nie został jeszcze potwierdzony. Czy wysłać ponownie potwierdzenie?", "Tak", "Nie");
+                        if (answer)
+                        {
+                            await auth.SendEmailVerification();
+                        }
                         auth.SignOut();
                     }
                     else
                     {
-                        App.Current.MainPage = new NavigationPage(new ConfigurationParentPage());
+                        NavigateToMain(userAuth.Uid);
                     }
                 }
                 catch (Exception ex)
@@ -271,6 +277,18 @@ namespace Hello_Earth_2.ViewModel.Home
                         IsErrorEmail = true;
                     }
                 }
+            }
+        }
+        private async void NavigateToMain(string uid)
+        {
+            var user = await userService.GetUser(uid);
+            if (user.Role == Model.Roles.PARENT)
+            {
+                App.Current.MainPage = new NavigationPage(new ConfigurationParentPage());
+            }
+            else
+            {
+                App.Current.MainPage = new NavigationPage(new ConfigurationParentPage());
             }
         }
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)

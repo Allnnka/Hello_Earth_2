@@ -211,12 +211,20 @@ namespace Hello_Earth_2.ViewModel.Home.RegistrationParent
                     }
                     catch (Exception e)
                     {
-                        App.Current.MainPage.DisplayAlert("Oppss, coś poszło nie tak", $"{e.Message}", "ok");
+                        ErrorEmail = "Wystąpił nieoczekiwany błąd! Przepraszamy";
+                        IsErrorEmail = true;
+                        IsRegisterForm = true;
+                        IsAccepted = false;
+                        IsRegisterSatement = false;
                     }
                 }
                 else
                 {
-                    App.Current.MainPage.DisplayAlert("Niet", $"Coś poszło nie tak", "ok");
+                    ErrorEmail = "Nie udało się wysłać potwierdzenia na podany adres e-mail. Opcja będzie dostępna przy ponownej próbie logowania";
+                    IsErrorEmail = true;
+                    IsRegisterForm = true;
+                    IsAccepted = false;
+                    IsRegisterSatement = false;
                 }
             } catch (Exception ex)
             {

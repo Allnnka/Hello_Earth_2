@@ -58,11 +58,19 @@ namespace Hello_Earth_2.Droid
         }
         public UserAuth GetUserAuth()
         {
-            var user = FirebaseAuth.Instance.CurrentUser;
-            UserAuth userAuth = new UserAuth();
-            userAuth.Uid = user.Uid;
-            userAuth.IsEmailVerified = user.IsEmailVerified;
-            return userAuth;
+            try
+            {
+                var user = FirebaseAuth.Instance.CurrentUser;
+                UserAuth userAuth = new UserAuth
+                {
+                    Uid = user.Uid,
+                    IsEmailVerified = user.IsEmailVerified
+                };
+                return userAuth;
+            }catch(Exception ex)
+            {
+                return null;
+            }
         }
         public async Task<bool> SendEmailVerification()
         {
