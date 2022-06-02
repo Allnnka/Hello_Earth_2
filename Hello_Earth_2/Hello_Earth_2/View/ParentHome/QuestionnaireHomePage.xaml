@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Hello_Earth_2.View.ParentHome.QuestionnaireHomePage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Czy istnieją przeciwskazania do wychodzenia Twojego dziecka w celu wykonania zadania?"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <CheckBox IsChecked="{Binding IsGoOutProblem}"/>
+            <Label Text="Czy istnieją przeciwskazania do korzystania z zmywarki?"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <CheckBox IsChecked="{Binding IsDishwasherProblem}"/>
+            <Label Text="Czy istnieją przeciwskazania do spożywania mleka?"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <CheckBox IsChecked="{Binding IsDrinkingMilkProblem}"/>
+            <Label Text="Czy istnieją przeciwskazania do spożywania sezamu?"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <CheckBox IsChecked="{Binding IsEatingSesamProblem}"/>
+            <Button Text="Zapisz"
+                    Command="{Binding SaveQuestionnaireCommand}" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

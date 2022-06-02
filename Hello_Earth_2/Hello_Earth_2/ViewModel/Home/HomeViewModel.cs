@@ -1,6 +1,7 @@
 ﻿using Hello_Earth_2.Model.UserAuth;
 using Hello_Earth_2.Services;
 using Hello_Earth_2.Services.ServiceImplementation;
+using Hello_Earth_2.View.ChildHome;
 using Hello_Earth_2.View.ConfigurationParent;
 using Hello_Earth_2.View.Home.RegistrationChild;
 using Hello_Earth_2.View.Home.RegistrationParent;
@@ -288,7 +289,7 @@ namespace Hello_Earth_2.ViewModel.Home
             }
             else
             {
-                App.Current.MainPage = new NavigationPage(new ConfigurationParentPage());
+                App.Current.MainPage = new NavigationPage(new ChildHomePage());
             }
         }
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)

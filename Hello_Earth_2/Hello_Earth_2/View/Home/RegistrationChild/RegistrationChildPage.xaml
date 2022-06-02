@@ -346,7 +346,7 @@
                                  AbsoluteLayout.LayoutFlags="All" Orientation="Horizontal" 
                                  VerticalOptions="End">
                         <Button Text="Przejdź do aplikacji"
-                                    Command="{Binding BackCommand}"
+                                    Command="{Binding GoToAppCommand}"
                                     HorizontalOptions="CenterAndExpand"
                                     Style="{StaticResource PrimaryButton}" IsVisible="{Binding IsRegisterSuccess}" />
                     </StackLayout>

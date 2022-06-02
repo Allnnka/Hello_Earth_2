@@ -2,6 +2,7 @@
 using Hello_Earth_2.Model.UserAuth;
 using Hello_Earth_2.Services;
 using Hello_Earth_2.Services.ServiceImplementation;
+using Hello_Earth_2.View.ChildHome;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -44,6 +45,7 @@ namespace Hello_Earth_2.ViewModel.Home.RegistrationChild
         public ICommand FurtherCommand { get; set; }
         public ICommand BackCommand { get; set; }
         public ICommand RegisterCommand { get; set; }
+        public ICommand GoToAppCommand { get; set; }
         public RegistrationChildViewModel()
         {
             userService = new UserServiceImplementation();
@@ -52,6 +54,7 @@ namespace Hello_Earth_2.ViewModel.Home.RegistrationChild
             FurtherCommand = new Command(() => FurtherFormHandler());
             BackCommand = new Command(() => BackFormHandler());
             RegisterCommand = new Command(() => RegistraterHandler());
+            GoToAppCommand = new Command(() => GoToAppHandler());
         }
 
 
@@ -353,6 +356,10 @@ namespace Hello_Earth_2.ViewModel.Home.RegistrationChild
             {
                 await Application.Current.MainPage.Navigation.PopAsync();
             }
+        }
+        private void GoToAppHandler()
+        {
+            App.Current.MainPage = new NavigationPage(new ChildHomePage());
         }
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {

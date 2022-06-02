@@ -10,5 +10,7 @@ namespace Hello_Earth_2.Services
     {
         Task CreateFamily(Family family, string parentId);
         Task AddChildToFamily(Child child, string parentId);
+        Task<Family> GetFamilyData(string id);
+        Task UpdateChild(Child child, string parentId);
     }
 }

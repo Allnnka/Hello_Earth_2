@@ -9,5 +9,9 @@ namespace Hello_Earth_2.Model
     {
         [JsonProperty("FamilyId")]
         public string FamilyId { get; set; }
+        [JsonProperty("Questionnaire")]
+        public Questionnaire Questionnaire { get; set; }
+        [JsonProperty("IsQuestionnaireCompleted")]
+        public bool IsQuestionnaireCompleted { get; set; }
     }
 }

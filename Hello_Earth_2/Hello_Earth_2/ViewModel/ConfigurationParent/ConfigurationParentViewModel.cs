@@ -2,6 +2,7 @@
 using Hello_Earth_2.Model.UserAuth;
 using Hello_Earth_2.Services;
 using Hello_Earth_2.Services.ServiceImplementation;
+using Hello_Earth_2.View.ParentHome;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -37,6 +38,7 @@ namespace Hello_Earth_2.ViewModel.Configuration
             GenerateQRCodeCommand = new Command(() => GenerateQRCodeHandler());
             RefreshCommand = new Command(() => RefreshHandler());
             BarCode = auth.GetUserAuth().Uid;
+            CheckDataHandler();
         }
         public bool IsCreatingFamily
         {
@@ -102,6 +104,29 @@ namespace Hello_Earth_2.ViewModel.Configuration
         private void RefreshHandler()
         {
 
+        }
+
+        private async void CheckDataHandler()
+        {
+            Family family = await familyService.GetFamilyData(auth.GetUserAuth().Uid);
+            if(family == null)
+            {
+                IsCreatingFamily = true;
+                IsQrCodeButton = false;
+                IsQrCodeShown = false;
+            }else if (family.Child == null)
+            {
+                IsCreatingFamily = false;
+                IsQrCodeButton = true;
+                IsQrCodeShown = false;
+            }else if(family.Child.IsQuestionnaireCompleted != true)
+            {
+                App.Current.MainPage = new NavigationPage(new QuestionnaireHomePage());
+            }
+            else
+            {
+                App.Current.MainPage = new NavigationPage(new ParentHomePage());
+            }
         }
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {

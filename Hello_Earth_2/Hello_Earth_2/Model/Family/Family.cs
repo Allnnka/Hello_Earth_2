@@ -2,7 +2,9 @@
 {
     public class Family
     {
+        
         public Child Child { get; set; }
         public Parent Parent { get; set; }
+
     }
 }
