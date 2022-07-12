@@ -29,6 +29,8 @@ namespace Hello_Earth_2.ViewModel.Home.RegistrationChild
         bool _isRegisterStatement = false;
         bool _isRegisterSuccess = false;
         bool _isAccepted = false;
+        bool _isBackButtonVisible = true;
+
 
         private string _errorUserName;
         private string _errorEmail;
@@ -58,16 +60,20 @@ namespace Hello_Earth_2.ViewModel.Home.RegistrationChild
         }
 
 
-        public bool IsAnalyzing { 
-            get { 
-                return _isAnalyzing; 
+        public bool IsAnalyzing
+        {
+            get
+            {
+                return _isAnalyzing;
             }
-            set {
+            set
+            {
                 _isAnalyzing = value;
                 OnPropertyChanged(nameof(IsAnalyzing));
             }
         }
-        public bool IsScanning {
+        public bool IsScanning
+        {
             get
             {
                 return _isScanning;
@@ -89,6 +95,18 @@ namespace Hello_Earth_2.ViewModel.Home.RegistrationChild
             {
                 _isRegisterForm = value;
                 OnPropertyChanged(nameof(IsRegisterForm));
+            }
+        }
+        public bool IsBackButtonVisible
+        {
+            get
+            {
+                return _isBackButtonVisible;
+            }
+            set
+            {
+                _isBackButtonVisible = value;
+                OnPropertyChanged(nameof(IsBackButtonVisible));
             }
         }
 
@@ -214,19 +232,19 @@ namespace Hello_Earth_2.ViewModel.Home.RegistrationChild
             }
             set
             {
-                _isScannerButton= value;
+                _isScannerButton = value;
                 OnPropertyChanged(nameof(IsScannerButton));
             }
         }
 
-        public string ScanResult 
-        { 
-            get 
+        public string ScanResult
+        {
+            get
             {
                 return _scanResult;
             }
-            set 
-            { 
+            set
+            {
                 _scanResult = value;
                 OnPropertyChanged(nameof(ScanResult));
             }
@@ -274,7 +292,9 @@ namespace Hello_Earth_2.ViewModel.Home.RegistrationChild
                 await familyService.AddChildToFamily(child, ScanResult);
                 IsRegisterStatement = false;
                 IsRegisterSuccess = true;
-            }catch (Exception ex)
+                IsBackButtonVisible = false;
+            }
+            catch (Exception ex)
             {
                 if (ex.Message.ToString().Equals("The email address is badly formatted."))
                 {

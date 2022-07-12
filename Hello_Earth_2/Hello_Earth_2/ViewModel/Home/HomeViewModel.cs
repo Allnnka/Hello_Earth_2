@@ -184,7 +184,7 @@ namespace Hello_Earth_2.ViewModel.Home
             FurtherCommand = new Command(() => FurtherFormHandler());
             userService = new UserServiceImplementation();
             UserAuth userAuth = auth.GetUserAuth();
-            if(userAuth.Uid != null)
+            if(userAuth?.Uid != null)
             {
                 NavigateToMain(userAuth.Uid);
             }
