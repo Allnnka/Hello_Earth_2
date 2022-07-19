@@ -4,6 +4,10 @@
              x:Class="Hello_Earth_2.App">
     <Application.Resources>
         <ResourceDictionary>
+            <!-- Colors for the tab bar -->
+            <Color x:Key="TabBarTitleColor">#7F1F55</Color>
+            <Color x:Key="TabBarUnselectedColor">#828282</Color>
+            <!---->
             <Color x:Key="PrimaryBgColor">#D1E086</Color>
             <Color x:Key="SecondaryBgColor">#E8ECD2</Color>
             <Color x:Key="PrimaryColor">#7F1F55</Color>

@@ -1,7 +1,7 @@
 ﻿using Hello_Earth_2.Model.UserAuth;
 using Hello_Earth_2.Services;
 using Hello_Earth_2.Services.ServiceImplementation;
-using Hello_Earth_2.View.ChildHome;
+using Hello_Earth_2.View.Child;
 using Hello_Earth_2.View.ConfigurationParent;
 using Hello_Earth_2.View.Home.RegistrationChild;
 using Hello_Earth_2.View.Home.RegistrationParent;
@@ -177,9 +177,9 @@ namespace Hello_Earth_2.ViewModel.Home
         }
         public HomeViewModel()
         {
-            ParentCommand = new Command(()=> RegistrationParentHandler());
-            PlayerCommand = new Command(()=> RegistrationChildHandler());
-            LoginFormCommand = new Command(()=> LoginFormHandler());
+            ParentCommand = new Command(() => RegistrationParentHandler());
+            PlayerCommand = new Command(() => RegistrationChildHandler());
+            LoginFormCommand = new Command(() => LoginFormHandler());
             RegistrationFormCommand = new Command(() => RegistrationFormHandler());
             FurtherCommand = new Command(() => FurtherFormHandler());
             userService = new UserServiceImplementation();
@@ -285,11 +285,14 @@ namespace Hello_Earth_2.ViewModel.Home
             var user = await userService.GetUser(uid);
             if (user.Role == Model.Roles.PARENT)
             {
+               // var page = new ConfigurationParentPage();
+                //NavigationPage.SetHasNavigationBar(this, false);
                 App.Current.MainPage = new NavigationPage(new ConfigurationParentPage());
+
             }
             else
             {
-                App.Current.MainPage = new NavigationPage(new ChildHomePage());
+                App.Current.MainPage = new ChildBottomNavbarShell();
             }
         }
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)

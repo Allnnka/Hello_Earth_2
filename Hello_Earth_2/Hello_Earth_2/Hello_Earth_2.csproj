@@ -20,7 +20,19 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="View\ChildHome\ChildHomePage.xaml">
+    <Compile Update="View\Child\ChildBottomNavbarShell.xaml.cs">
+      <DependentUpon>ChildBottomNavbarShell.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="View\Child\ChildHome\ChildHomePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\Child\ChildBottomNavbarShell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\Child\ChildSettings\ChildSettingsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="View\ConfigurationParent\ConfigurationParentPage.xaml">

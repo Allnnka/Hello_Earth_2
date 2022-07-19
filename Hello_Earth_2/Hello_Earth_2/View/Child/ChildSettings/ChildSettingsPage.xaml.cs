@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Hello_Earth_2.View.ChildHome
+namespace Hello_Earth_2.View.Child.ChildSettings
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ChildHomePage : ContentPage
+    public partial class ChildSettingsPage : ContentPage
     {
-        public ChildHomePage()
+        public ChildSettingsPage()
         {
             InitializeComponent();
         }

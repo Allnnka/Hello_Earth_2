@@ -2,15 +2,12 @@
 using Hello_Earth_2.Model.UserAuth;
 using Hello_Earth_2.Services;
 using Hello_Earth_2.Services.ServiceImplementation;
-using Hello_Earth_2.View.ChildHome;
+using Hello_Earth_2.View.Child.ChildHome;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
-using ZXing;
 
 namespace Hello_Earth_2.ViewModel.Home.RegistrationChild
 {

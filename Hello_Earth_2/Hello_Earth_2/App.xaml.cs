@@ -10,8 +10,7 @@ namespace Hello_Earth_2
         public App()
         {
             InitializeComponent();
-            MainPage = new NavigationPage(new HomePage());
-
+            MainPage = new HomePage();
         }
 
         protected override void OnStart()

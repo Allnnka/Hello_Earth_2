@@ -1,0 +1,34 @@
+﻿<Shell  xmlns="http://xamarin.com/schemas/2014/forms"
+        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+        x:Class="Hello_Earth_2.View.Child.ChildBottomNavbarShell"
+        xmlns:home="clr-namespace:Hello_Earth_2.View.Child.ChildHome"
+        xmlns:settings="clr-namespace:Hello_Earth_2.View.Child.ChildSettings"
+        NavigationPage.HasNavigationBar="false">
+    <Shell.Resources>
+        <Style TargetType="TabBar">
+            <Setter Property="Shell.TabBarDisabledColor"
+                    Value="{DynamicResource TabBarDisabledColor}" />
+            <Setter Property="Shell.TabBarForegroundColor"
+                    Value="{DynamicResource TabBarForegroundColor}" />
+            <Setter Property="Shell.TabBarTitleColor"
+                    Value="{DynamicResource PrimaryColor}" />
+            <Setter Property="Shell.TabBarUnselectedColor"
+                    Value="{DynamicResource TabBarUnselectedColor}" />
+        </Style>
+    </Shell.Resources>
+    <TabBar>
+        <Tab Title="Home"
+             Icon="eye.png">
+            <ShellContent>
+                <home:ChildHomePage/>
+            </ShellContent>
+        </Tab>
+        <Tab Title="Settings"
+             Icon="eye.png">
+            <ShellContent>
+                <settings:ChildSettingsPage/>
+            </ShellContent>
+        </Tab>
+    </TabBar>
+
+</Shell>
