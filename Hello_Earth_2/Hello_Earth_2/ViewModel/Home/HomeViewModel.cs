@@ -274,7 +274,7 @@ namespace Hello_Earth_2.ViewModel.Home
                     }
                     else
                     {
-                        ErrorEmail = "Nieprawidłowy login, lub hasło. Sprawdź dane jeszcze raz i spróbuj ponownie!";
+                        ErrorEmail = "Nieprawidłowy login, lub hasło.\nSpróbuj ponownie!";
                         IsErrorEmail = true;
                     }
                 }
