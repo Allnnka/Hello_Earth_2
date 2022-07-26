@@ -285,10 +285,7 @@ namespace Hello_Earth_2.ViewModel.Home
             var user = await userService.GetUser(uid);
             if (user.Role == Model.Roles.PARENT)
             {
-               // var page = new ConfigurationParentPage();
-                //NavigationPage.SetHasNavigationBar(this, false);
-                App.Current.MainPage = new NavigationPage(new ConfigurationParentPage());
-
+                App.Current.MainPage = new ConfigurationParentPage();
             }
             else
             {

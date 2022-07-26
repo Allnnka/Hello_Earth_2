@@ -82,16 +82,34 @@ namespace Hello_Earth_2.ViewModel.ParentHome
 
         private async void SaveQuestionnaireHandler()
         {
-            Questionnaire  questionnaire = new Questionnaire();
-            questionnaire.IsDishwasherProblem = _isDishwasherProblem;
-            questionnaire.IsDrinkingMilkProblem = _isDrinkingMilkProblem;
-            questionnaire.IsGoOutProblem = _isGoOutProblem;
-            questionnaire.IsEatingSesamProblem= _isEatingSesamProblem;
             Family family = await familyService.GetFamilyData(auth.GetUserAuth().Uid);
-            family.Child.Questionnaire = questionnaire;
+            family.Child.Questionnaire = getQuestionnaire();
             family.Child.IsQuestionnaireCompleted = true;
             await familyService.CreateFamily(family, auth.GetUserAuth().Uid);
             App.Current.MainPage = new NavigationPage(new ParentHomePage());
+        }
+        private Questionnaire getQuestionnaire()
+        {
+            Questionnaire questionnaire = new Questionnaire
+            {
+                Contraindications = new List<Contraindications>()
+            };
+            if (_isDishwasherProblem)
+            {
+                questionnaire.Contraindications.Add(Contraindications.Dishwasher);
+            }
+            if (_isDrinkingMilkProblem){
+                questionnaire.Contraindications.Add(Contraindications.Milk);
+            }
+            if (_isEatingSesamProblem)
+            {
+                questionnaire.Contraindications.Add(Contraindications.Sesame);
+            }
+            if (_isGoOutProblem)
+            {
+                questionnaire.Contraindications.Add(Contraindications.Outside);
+            }
+            return questionnaire; 
         }
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
