@@ -4,9 +4,11 @@ using System.Text;
 
 namespace Hello_Earth_2.Model
 {
-    public class Steps
+    public class Ingredients
     {
         public string Name { get; set; }
-        public bool IsDone { get; set; }
+        public double Quantity { get; set; }
+        public bool IsBought { get; set; }
+        public string Unit { get; set; }
     }
 }

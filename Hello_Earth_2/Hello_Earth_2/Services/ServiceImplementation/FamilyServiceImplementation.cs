@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Hello_Earth_2.Services.ServiceImplementation
 {
-    internal class FamilyServiceImplementation : IFamilyServices
+    public class FamilyServiceImplementation : IFamilyServices
     {
-        public async Task AddChildToFamily(Child child, string parentId)
+        public async Task AddChildToFamily(ChildModel child, string parentId)
         {
             await RealtimeConfig.FirebaseConfig.Child("/families/" + parentId + "/Child/").PatchAsync(JsonConvert.SerializeObject(child));
         }
@@ -25,7 +25,7 @@ namespace Hello_Earth_2.Services.ServiceImplementation
             return await RealtimeConfig.FirebaseConfig.Child("/families/" + parentId).OnceSingleAsync<Family>();
         }
 
-        public async Task UpdateChild(Child child, string parentId)
+        public async Task UpdateChild(ChildModel child, string parentId)
         {
             await RealtimeConfig.FirebaseConfig.Child("/families/" + parentId + "/Child").PatchAsync(JsonConvert.SerializeObject(child));
         }

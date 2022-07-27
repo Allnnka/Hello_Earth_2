@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Hello_Earth_2.Services.ServiceImplementation;
+using Hello_Earth_2.ViewModel.Child.ChildHome;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +17,7 @@ namespace Hello_Earth_2.View.Child.ChildHome
         public ChildHomePage()
         {
             InitializeComponent();
+            BindingContext = new ChildHomeViewModel();
         }
     }
 }

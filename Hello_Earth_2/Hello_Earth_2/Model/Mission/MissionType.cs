@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Hello_Earth_2.Model
 {
-    public enum TaskType
+    public enum MissionType
     {
         Recipe,
     }

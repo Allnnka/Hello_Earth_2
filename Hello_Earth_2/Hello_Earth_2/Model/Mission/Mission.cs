@@ -13,7 +13,7 @@ namespace Hello_Earth_2.Model
         public List<Steps> Steps { get; set; }
         public List<Ingredients> Ingredients { get; set; }
         public List<Contraindications> Contraindications { get; set; }
-        public TaskType TaskType { get; set; }
+        public MissionType TaskType { get; set; }
         public bool IsBlocked { get; set; }
         public bool IsCompleted { get; set; }
         public bool IsStarted { get; set; }

@@ -278,7 +278,7 @@ namespace Hello_Earth_2.ViewModel.Home.RegistrationChild
             try
             {
                 UserAuth userAuth = await auth.RegisterWithEmailPassword(Email, Password);
-                Child child = new Child();
+                ChildModel child = new ChildModel();
                 child.Email = Email;
                 child.UserName = UserName;
                 child.Role = Roles.CHILD;
