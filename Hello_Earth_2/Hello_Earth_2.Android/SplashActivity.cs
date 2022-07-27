@@ -11,14 +11,14 @@ using System.Text;
 
 namespace Hello_Earth_2.Droid
 {
-    //[Activity(Theme = "@style/Theme.Splash", MainLauncher = false, NoHistory = true)]
-    //public class SplashActivity : Activity
-    //{
-    //    protected override void OnCreate(Bundle savedInstanceState)
-    //    {
-    //        base.OnCreate(savedInstanceState);
-    //        System.Threading.Thread.Sleep(3000);
-    //        StartActivity(typeof(MainActivity));
-    //    }
-    //}
+    [Activity(Theme = "@style/MainTheme.Splash", MainLauncher = true, NoHistory = true)]
+    public class SplashActivity : Activity
+    {
+        protected override void OnCreate(Bundle savedInstanceState)
+        {
+            base.OnCreate(savedInstanceState);
+            System.Threading.Thread.Sleep(3000);
+            StartActivity(typeof(MainActivity));
+        }
+    }
 }
